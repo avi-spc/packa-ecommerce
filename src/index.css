@@ -1,13 +1,258 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  padding: 0;
+  box-sizing: border-box; }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+html {
+  font-size: 50%; }
+
+body {
+  font-family: 'Sora', sans-serif;
+  line-height: 3rem; }
+
+.primary-heading {
+  font-size: 4.8rem;
+  font-weight: 700; }
+
+.secondary-heading {
+  font-size: 2.4rem;
+  font-weight: 700; }
+
+.tertiary-heading {
+  font-size: 2rem;
+  font-weight: 700; }
+
+.category-nav {
+  font-size: 2rem;
+  font-weight: 700;
+  background-color: #D9D9D9; }
+  .category-nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 3rem 16rem; }
+    .category-nav ul li:not(:last-child) {
+      margin-right: 4rem; }
+
+.btn {
+  display: inline-block;
+  border-radius: 1.5rem; }
+  .btn__add-to-cart {
+    font-size: 2.4rem;
+    font-weight: 700;
+    padding: 2.5rem 4rem;
+    background-color: #D9D9D9; }
+
+.nav-cart {
+  font-size: 2rem;
+  letter-spacing: .1em;
+  font-weight: 700;
+  display: flex;
+  align-items: flex-end; }
+  .nav-cart img {
+    height: 4.5rem; }
+
+.nav-location__deliver-to {
+  display: flex;
+  align-items: center; }
+  .nav-location__deliver-to span {
+    font-size: 1.6rem;
+    letter-spacing: .1em;
+    margin-left: .5rem;
+    line-height: 2rem; }
+  .nav-location__deliver-to img {
+    height: 1.44rem; }
+
+.nav-location__location-pin {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  margin-top: .5rem; }
+
+.nav-logo {
+  font-family: "Peace Sans";
+  font-size: 6.4rem;
+  letter-spacing: .1em;
+  margin-right: 5rem; }
+
+.nav-orders {
+  font-size: 2rem;
+  letter-spacing: 0.1em;
+  font-weight: 700; }
+
+.nav-search {
+  display: flex;
+  font-size: 2rem; }
+  .nav-search__search-category {
+    font-weight: 700;
+    padding: 2.5rem;
+    background-color: #828282;
+    border-radius: 1.5rem 0 0 1.5rem; }
+  .nav-search__search-input {
+    font-family: inherit;
+    font-size: inherit;
+    padding: 2.5rem;
+    background-color: #D9D9D9;
+    border-radius: 0 1.5rem 1.5rem 0;
+    border-style: none;
+    outline-style: none;
+    width: 50rem; }
+
+.navbar {
+  margin: 3rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: calc(100vw - 32rem); }
+
+.other-offers > div:first-child {
+  margin-top: 5rem;
+  margin-bottom: 3.5rem; }
+
+.other-offers .offers {
+  padding: 1.5rem;
+  background-color: #D9D9D9;
+  border-radius: 1.5rem; }
+  .other-offers .offers :not(:last-child) {
+    margin-bottom: 1.5rem; }
+
+.other-offers .offer {
+  padding: 2.7rem;
+  color: white;
+  background-color: #828282;
+  border-radius: 1.5rem; }
+
+.price-tag {
+  display: inline-block;
+  padding: 1.7rem 3.3rem;
+  background-color: black;
+  border-radius: 1.5rem;
+  margin: 3.5rem 0; }
+  .price-tag .price {
+    font-size: 4.8rem;
+    font-weight: 700;
+    color: white;
+    line-height: 6rem; }
+  .price-tag .discount {
+    font-size: 2.4rem;
+    color: white;
+    line-height: 3rem; }
+
+.product-card {
+  margin: 5rem 10rem;
+  font-size: 2rem;
+  width: 38rem; }
+  .product-card__product-image {
+    background-color: #D9D9D9;
+    border-radius: 1.5rem 1.5rem 0 0;
+    height: 25rem;
+    position: relative; }
+    .product-card__product-image .sale-tag {
+      font-size: 1.6rem;
+      background-color: #828282;
+      padding: .6rem 2rem;
+      border-radius: 5rem;
+      position: absolute;
+      top: 1.3rem;
+      right: 1.3rem; }
+  .product-card__product-details {
+    padding: 2rem;
+    background-color: #A5A5A5;
+    border-radius: 0 0 1.5rem 1.5rem; }
+    .product-card__product-details div:not(:last-child) {
+      margin-bottom: 1rem; }
+  .product-card .product-title {
+    font-weight: 700; }
+  .product-card .product-expected-delivery {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    background-color: #D9D9D9;
+    border-radius: 1.5rem;
+    padding: 1rem; }
+    .product-card .product-expected-delivery img {
+      margin-right: 1rem;
+      height: 3.2rem; }
+
+.product-description > div {
+  margin-top: 5rem;
+  margin-bottom: 3.5rem; }
+
+.product-description .description {
+  padding: 2.5rem;
+  font-size: 2rem;
+  background-color: #D9D9D9;
+  border-radius: 1.5rem; }
+
+.product-filter {
+  margin: 5rem 10rem;
+  width: 28rem;
+  background-color: #D9D9D9;
+  padding: 1.3rem;
+  border-radius: 1.5rem; }
+  .product-filter .filter-heading {
+    background-color: #828282;
+    padding: 1rem;
+    text-align: center;
+    border-radius: inherit; }
+  .product-filter__filter-category {
+    font-size: 2rem;
+    padding: 0 1.2rem; }
+    .product-filter__filter-category label {
+      display: inline-block;
+      margin-left: .5rem; }
+  .product-filter .filter-category__name {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700; }
+  .product-filter .filter-option {
+    display: flex;
+    align-items: center; }
+    .product-filter .filter-option:not(:last-child) {
+      margin-bottom: .5rem; }
+
+.product-visuals {
+  width: 61.5rem;
+  margin-right: 7.5rem; }
+  .product-visuals .primary-visual {
+    height: 61.5rem;
+    background-color: #D9D9D9;
+    border-radius: 1.5rem; }
+  .product-visuals .secondary-visuals {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-between; }
+  .product-visuals .visual {
+    width: 12.4rem;
+    height: 12.4rem;
+    background-color: #D9D9D9;
+    border-radius: 1.5rem; }
+    .product-visuals .visual:not(:last-child) {
+      margin-right: 4rem; }
+
+.product {
+  margin: 8rem 16rem;
+  display: flex; }
+  .product .product-name {
+    line-height: 6rem; }
+  .product .brand-name {
+    margin-top: 1rem;
+    margin-bottom: 2rem; }
+
+.quantity > div {
+  font-size: 2.4rem;
+  margin-bottom: 2rem; }
+
+.quantity .quantity-counter {
+  display: inline-block;
+  border: thin solid;
+  border-radius: 1.5rem;
+  padding: 1.8rem 2.5rem;
+  font-size: 2.4rem;
+  margin-bottom: 4rem; }
+  .quantity .quantity-counter .counter-controls {
+    display: flex; }
+    .quantity .quantity-counter .counter-controls div:not(:last-child) {
+      margin-right: 3.3rem; }

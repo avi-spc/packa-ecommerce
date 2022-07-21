@@ -1,0 +1,11 @@
+.btn {
+    display: inline-block;
+    border-radius: $normal-border-radius;
+
+    &__add-to-cart {
+        font-size: $medium-font-size;
+        font-weight: 700;
+        padding: 2.5rem 4rem;
+        background-color: $color-primary-light;
+    }
+}

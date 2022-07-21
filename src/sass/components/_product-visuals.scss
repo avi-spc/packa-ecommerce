@@ -1,0 +1,27 @@
+.product-visuals {
+    width: 61.5rem;
+    margin-right: 7.5rem;
+
+    .primary-visual {
+        height: 61.5rem;
+        background-color: $color-primary-light;
+        border-radius: $normal-border-radius;
+    }
+
+    .secondary-visuals {
+        margin-top: 4rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .visual {
+        width: 12.4rem;
+        height: 12.4rem;
+        background-color: $color-primary-light;
+        border-radius: $normal-border-radius;
+
+        &:not(:last-child){
+            margin-right: 4rem;
+        }
+    }
+}

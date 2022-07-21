@@ -1,0 +1,25 @@
+.nav-location {    
+    
+    &__deliver-to {
+        display: flex;
+        align-items: center;
+        
+        & span {
+            font-size: $small-font-size;
+            letter-spacing: .1em;
+            margin-left: .5rem;
+            line-height: 2rem;
+        }
+        
+        & img {
+            height: 1.44rem;
+        }
+    }
+    
+    &__location-pin {
+        font-size: $normal-font-size;
+        font-weight: 700;
+        letter-spacing: .1em;
+        margin-top: .5rem;
+    }
+}

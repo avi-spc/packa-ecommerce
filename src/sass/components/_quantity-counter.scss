@@ -1,0 +1,24 @@
+.quantity {
+
+    &>div {
+        font-size: $medium-font-size;
+        margin-bottom: 2rem;
+    }
+
+    .quantity-counter {
+        display: inline-block;
+        border: thin solid;
+        border-radius: $normal-border-radius;
+        padding: 1.8rem 2.5rem;
+        font-size: $medium-font-size;
+        margin-bottom: 4rem;
+    
+        .counter-controls {
+            display: flex;
+    
+            & div:not(:last-child) {
+                margin-right: 3.3rem;
+            }
+        }
+    }
+}
