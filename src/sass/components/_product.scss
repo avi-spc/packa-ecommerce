@@ -1,13 +1,13 @@
 .product {
-    margin: 8rem 16rem;
-    display: flex;
+    margin: 0 16rem;
 
-    .product-name {
-        line-height: 6rem;
+    .current-product {
+        display: flex;
+    
+        .brand-name {
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
     }
 
-    .brand-name {
-        margin-top: 1rem;
-        margin-bottom: 2rem;
-    }
 }

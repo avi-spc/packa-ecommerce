@@ -1,4 +1,6 @@
+import ShoppingCart from "./components/cart/ShoppingCart";
 import CategoryNavar from "./components/category_navbar/CategoryNavbar";
+import Checkout from "./components/checkout/Checkout";
 import Navbar from "./components/navbar/Navbar";
 import Product from "./components/product/Product";
 import ProductCard from "./components/products_search/ProductCard";
@@ -9,9 +11,7 @@ function App() {
     <div className="App">
       <Navbar />
       <CategoryNavar />
-      {/* <ProductCard />
-      <ProductFilter /> */}
-      <Product />
+      <Checkout />
     </div>
   );
 }

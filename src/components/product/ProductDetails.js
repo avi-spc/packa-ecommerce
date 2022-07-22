@@ -10,8 +10,8 @@ const ProductDetails = () => {
       <div className="product-name primary-heading">Hazelnut Instant Coffee 100g</div>
       <div className="brand-name secondary-heading">Brand : : Countrybean</div>
       <div className="rating primary-heading">•••••</div>
-      <PriceTag />
-      <QuantityCounter />
+      <PriceTag varirant="product"/>
+      <QuantityCounter variant="big" />
       <AddToCart />
       <ProductDesc />
       <Offers />

@@ -1,0 +1,79 @@
+.customer-reviews {
+    margin-top: 15rem;
+    
+    .reviews-ratings {
+        margin-top: 6rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    
+    .product-reviews, .product-ratings {
+        border-radius: $normal-border-radius;
+        background-color: $color-primary-light;
+    }
+
+    .product-ratings {
+        padding: 1.5rem;
+        width: 100%;
+
+        .out-of-rating {
+            border-radius: $normal-border-radius;
+            background-color: $color-secondary-light;
+            padding: 2.5rem;
+            color: $color-white;
+        }
+        
+        .rating-heading {
+            font-size: 3.2rem;
+            font-weight: 700;
+        }
+
+        .rating-count {
+            margin-top: 1.5rem;
+            font-size: $normal-font-size;
+        }
+
+        .rating-levels {
+            font-size: $normal-font-size;
+            margin: 4rem 0 2.5rem 0;
+            padding: 0 2.5rem;
+        }
+    }
+
+    .product-reviews {
+        padding: 4rem;
+        width: calc((100% - 9rem) * 1.9);
+        margin-left: 9rem;
+        color: #646161;
+
+        &>div:not(:last-child) {
+            margin-bottom: 5rem;
+        }
+
+        .individual-review {
+            display: flex;
+
+    
+            .user-image {
+                width: 22rem;
+                height: 7.5rem;
+                border-radius: $large-border-radius;
+                background-color: $color-secondary-light;
+                margin-right: 3rem;
+            }
+
+            .review-details {
+                margin-top: 1.5rem;
+            }
+        
+            .review-date, .review-content {
+                font-size: $normal-font-size;
+            }
+        
+            .review-content {
+                margin-top: 1.5rem;
+            }
+        }
+    }        
+}

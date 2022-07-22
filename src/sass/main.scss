@@ -2,9 +2,12 @@
 
 @import "base/base";
 @import "base/typography";
+@import "base/utilities";
 
-@import "components/category-nav";
 @import "components/buttons";
+@import "components/category-nav";
+@import "components/checkout";
+@import "components/customer-reviews";
 @import "components/nav-cart";
 @import "components/nav-location";
 @import "components/nav-logo";
@@ -20,4 +23,5 @@
 @import "components/product-visuals";
 @import "components/product";
 @import "components/quantity-counter";
+@import "components/shopping-cart"
 
