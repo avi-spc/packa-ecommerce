@@ -24,7 +24,8 @@ body {
 
 .tertiary-heading {
   font-size: 2rem;
-  font-weight: 700; }
+  font-weight: 700;
+  line-height: 2rem; }
 
 .p-center-text {
   text-align: center; }
@@ -211,6 +212,52 @@ body {
   color: white;
   background-color: #828282;
   border-radius: 1.5rem; }
+
+.section-payment > div:first-child {
+  margin-top: 5rem;
+  margin-bottom: 2.5rem; }
+
+.payment-modes {
+  padding: 2rem;
+  background-color: #5E5C5C;
+  border-radius: 1.5rem; }
+
+.payment-option {
+  display: flex;
+  align-items: flex-start;
+  padding: 3rem;
+  background-color: #828282;
+  border-radius: 1.5rem;
+  color: white; }
+  .payment-option__details {
+    margin-left: 3rem;
+    width: 50%; }
+  .payment-option__instruction {
+    font-size: 1.6rem;
+    margin-top: 2rem; }
+    .payment-option__instruction input, .payment-option__instruction select {
+      font-family: inherit;
+      font-size: inherit;
+      padding: 1.5rem;
+      background-color: #D9D9D9;
+      border-radius: 1.5rem;
+      border-style: none;
+      outline-style: none; }
+    .payment-option__instruction--name, .payment-option__instruction--number, .payment-option__instruction--expiry {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      .payment-option__instruction--name input, .payment-option__instruction--number input, .payment-option__instruction--expiry input {
+        width: 70%; }
+      .payment-option__instruction--name select:last-child, .payment-option__instruction--number select:last-child, .payment-option__instruction--expiry select:last-child {
+        margin-left: 2.5rem; }
+    .payment-option__instruction--upi-id input {
+      width: 70%;
+      margin-right: 1.6rem; }
+    .payment-option__instruction--upi-id div:first-child {
+      margin-bottom: 1.5rem; }
+  .payment-option:not(:last-child) {
+    margin-bottom: 2rem; }
 
 .price-tag {
   display: inline-block;
