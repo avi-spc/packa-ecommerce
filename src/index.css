@@ -213,6 +213,82 @@ body {
   background-color: #828282;
   border-radius: 1.5rem; }
 
+.section-order-summary {
+  font-size: 2rem;
+  padding: 2rem;
+  background-color: #5A5A5A;
+  border-radius: 1.5rem; }
+  .section-order-summary > :first-child {
+    margin: 1rem 0 2.6rem 0;
+    color: white; }
+  .section-order-summary .btn-proceed-to-pay {
+    color: white;
+    padding: 2.3rem 0;
+    text-align: center;
+    background-color: black;
+    border-radius: 1.5rem;
+    margin-top: 4.3rem; }
+
+.order-summary__charges, .order-summary__coupon, .order-summary__order-total {
+  padding: 2rem 2.4rem;
+  margin-bottom: 2rem; }
+
+.order-summary__charges {
+  background-color: #D9D9D9;
+  border-radius: inherit; }
+  .order-summary__charges--item-charges, .order-summary__charges--delivery-charges {
+    display: flex;
+    justify-content: space-between; }
+  .order-summary__charges > div:not(:last-child) {
+    margin-bottom: 1.5rem; }
+
+.order-summary__coupon {
+  background-color: #1C1C1C;
+  border-radius: inherit;
+  color: white;
+  position: relative; }
+  .order-summary__coupon input {
+    font-family: inherit;
+    font-size: inherit;
+    padding: 1.5rem;
+    background-color: #D9D9D9;
+    border-radius: 1.5rem;
+    border-style: none;
+    outline-style: none;
+    width: 100%;
+    margin-top: 2rem; }
+  .order-summary__coupon .btn-apply-coupon {
+    font-size: 1.6rem;
+    position: absolute;
+    bottom: 2.8rem;
+    right: 3.2rem;
+    background-color: black;
+    padding: .5rem 2.5rem;
+    border-radius: 5rem; }
+
+.order-summary__order-total {
+  background-color: #D9D9D9;
+  border-radius: inherit;
+  display: flex;
+  justify-content: space-between; }
+
+.section-orders-history {
+  margin: 0 16rem; }
+
+.order-meta {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-size: 1.6rem;
+  padding: 2.3rem 2.3rem 3.8rem 2.3rem;
+  background-color: #1C1C1C;
+  border-radius: 1.5rem 1.5rem 0 0; }
+  .order-meta > div:last-child {
+    text-align: right;
+    flex-grow: 3; }
+  .order-meta > div:not(:last-child) {
+    flex-grow: 1; }
+
 .section-payment > div:first-child {
   margin-top: 5rem;
   margin-bottom: 2.5rem; }

@@ -1,0 +1,23 @@
+.section-orders-history {
+    margin: 0 16rem;
+}
+
+.order-meta {
+    display: flex;
+    justify-content: space-between;
+    color: $color-white;
+    font-size: $small-font-size;
+
+    padding: 2.3rem 2.3rem 3.8rem 2.3rem;
+    background-color: $color-tertiary-dark;
+    border-radius: $normal-border-radius $normal-border-radius 0 0;
+
+    &>div:last-child {
+        text-align: right;
+        flex-grow: 3;
+    }
+
+    &>div:not(:last-child) {
+        flex-grow: 1;
+    }
+}
