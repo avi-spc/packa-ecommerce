@@ -3,9 +3,9 @@ import CardProductBtn from "../buttons/CartProductBtn";
 const IndividualAddress = () => {
     return (
         <div className="individual-address">
-            <div className="address">
+            <div className="individual-address__address-m-btn">
                 <input type="radio" />
-                <div className="address-details">
+                <div className="individual-address__address-details">
                     <div className="tertiary-heading">Akhilesh Kumar Yadav</div>
                     <div>
                         7/394, Vikas Nagar, LUCKNOW, UTTAR PRADESH, 226022,

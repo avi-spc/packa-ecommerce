@@ -1,12 +1,12 @@
 import IndividualCartProduct from "./IndividiualCartProduct";
 
 const CartProductsList = () => {
-  return (
-    <div className="cart-list">
-      <IndividualCartProduct />
-      <IndividualCartProduct />
-    </div>
-  );
+    return (
+        <div className="shopping-cart__products-list">
+            <IndividualCartProduct />
+            <IndividualCartProduct />
+        </div>
+    );
 };
 
 export default CartProductsList;

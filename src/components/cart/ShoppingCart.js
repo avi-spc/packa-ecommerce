@@ -1,24 +1,24 @@
 import CardProductBtn from "../buttons/CartProductBtn";
 import CartProductsList from "./CartProductsList";
 import CartSubtotal from "./CartSubtotal";
-import SubtotalSidebar from "./SubtotalSidebar";
+import SubtotalCheckout from "./SubtotalCheckout";
 
 const ShoppingCart = () => {
-  return (
-    <div className="shopping-cart">
-      <div className="heading-with-emptybtn margin-bottom-huge">
-        <div className="primary-heading">Shopping Cart</div>
-        <CardProductBtn name="Empty Cart" />
-      </div>
-      <div className="cart-with-sidebar">
-        <div className="cart-with-subtotal">
-          <CartProductsList />
-          <CartSubtotal />
-        </div>
-        <SubtotalSidebar />
-      </div>
-    </div>
-  );
+    return (
+        <section className="section-shopping-cart">
+            <div className="shopping-cart__heading-p-btn margin-bottom-huge">
+                <div className="primary-heading">Shopping Cart</div>
+                <CardProductBtn name="Empty Cart" />
+            </div>
+            <div className="shopping-cart__cart-p-subcheck">
+                <div className="shopping-cart__cart-p-subtotal">
+                    <CartProductsList />
+                    <CartSubtotal />
+                </div>
+                <SubtotalCheckout />
+            </div>
+        </section>
+    );
 };
 
 export default ShoppingCart;

@@ -1,10 +1,10 @@
 import IndividualAddress from "./IndividualAddress";
 
-const DeliveryAddress = () => {
+const DeliveryAddressList = () => {
     return (
-        <div className="delivery-address">
+        <div className="checkout-details__delivery-address-section">
             <div className="secondary-heading">Select a delivery address</div>
-            <div className="meta-address">
+            <div className="checkout-details__address-list">
                 <IndividualAddress />
                 <IndividualAddress />
             </div>
@@ -12,4 +12,4 @@ const DeliveryAddress = () => {
     );
 };
 
-export default DeliveryAddress;
+export default DeliveryAddressList;

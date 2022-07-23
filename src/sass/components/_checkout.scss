@@ -1,14 +1,10 @@
 .section-checkout {
     margin: 0 16rem;
 
-    .checkout-details-plus-summary {
+    .checkout-details-p-summary {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        
-        .checkout-details {
-            flex-grow: 2.7;
-        }
 
         &>section:last-child {
             flex-grow: 1;
@@ -16,46 +12,48 @@
         }
     }
 
-    
-    .meta-address {
-        padding: 2rem;
-        background-color: $color-secondary-dark;
-        border-radius: $normal-border-radius;
-        color: $color-white;
-        margin-top: 2.5rem;
-        
-        .individual-address {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            
-            background-color: $color-primary-dark;
-            padding: 3rem;
-            border-radius: $normal-border-radius;
-            
-            &:not(:last-child) {
-                margin-bottom: 2rem;
-            }
-        }
-    
-        .address {
-            display: flex;
-            align-items: flex-start;
-            
-            &-details {   
-                
-                line-height: 2rem;
-    
-                div:nth-child(2) {
-                    margin-top: .5rem;
-                }
+    .checkout-details {
+        flex-grow: 2.7;
 
-                &:not(:first-child) {
-                    font-size: $small-font-size;
-                }
-    
-                margin-left: 4rem;
+        &__address-list {
+            padding: 2rem;
+            background-color: $color-secondary-dark;
+            border-radius: $normal-border-radius;
+            color: $color-white;
+            margin-top: 2.5rem;               
+        }
+    }
+
+    .individual-address {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        background-color: $color-primary-dark;
+        padding: 3rem;
+        border-radius: $normal-border-radius;
+        
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+
+        &__address-m-btn {
+            display: flex;
+            align-items: flex-start;                    
+        }
+
+        &__address-details {
+            line-height: 2rem;
+
+            div:nth-child(2) {
+                margin-top: .5rem;
             }
+
+            &:not(:first-child) {
+                font-size: $small-font-size;
+            }
+
+            margin-left: 4rem;
         }
     }
 }
