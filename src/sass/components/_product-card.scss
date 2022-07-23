@@ -30,11 +30,11 @@
         }
     }
 
-    .product-title {
+    &__name {
         font-weight: 700;
     }
 
-    .product-expected-delivery {
+    &__eta {
         display: flex;
         align-items: center;
         font-size: $small-font-size;

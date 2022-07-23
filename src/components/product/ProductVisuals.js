@@ -1,12 +1,12 @@
 const ProductVisuals = () => {
   return (
     <div className="product-visuals">
-      <div className="primary-visual"></div>
-      <div className="secondary-visuals">
-        <div className="visual"></div>
-        <div className="visual"></div>
-        <div className="visual"></div>
-        <div className="visual"></div>
+      <div className="product-visuals__primary"></div>
+      <div className="product-visuals__secondary">
+        <div className="secondary-visual"></div>
+        <div className="secondary-visual"></div>
+        <div className="secondary-visual"></div>
+        <div className="secondary-visual"></div>
       </div>
     </div>
   );

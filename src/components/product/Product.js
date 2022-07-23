@@ -3,15 +3,15 @@ import ProductDetails from "./ProductDetails";
 import ProductVisuals from "./ProductVisuals";
 
 const Product = () => {
-  return (
-    <div className="product">
-      <div className="current-product">
-        <ProductVisuals />
-        <ProductDetails />
-      </div>
-      <CustomerReviews />
-    </div>
-  );
+    return (
+        <section className="product">
+            <div className="product__visuals-p-details">
+                <ProductVisuals />
+                <ProductDetails />
+            </div>
+            <CustomerReviews />
+        </section>
+    );
 };
 
 export default Product;

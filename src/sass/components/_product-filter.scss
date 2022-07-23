@@ -12,7 +12,7 @@
         border-radius: inherit;
     }
 
-    &__filter-category {
+    &__category {
         font-size: $normal-font-size;
         padding: 0 1.2rem;
 
@@ -20,12 +20,12 @@
             display: inline-block;
             margin-left: .5rem;
         }
-    }
 
-    .filter-category__name {
-        margin-top: 2rem;
-        margin-bottom: 1rem;
-        font-weight: 700;
+        &--name {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
     }
 
     .filter-option {

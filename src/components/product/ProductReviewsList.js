@@ -1,12 +1,12 @@
 import IndividualReview from "./IndividualReview";
 
-const ProductReviews = () => {
+const ProductReviewsList = () => {
     return (
-        <div className="product-reviews">
+        <div className="product-reviews-list">
             <IndividualReview />
             <IndividualReview />
         </div>
     );
 }
  
-export default ProductReviews;
+export default ProductReviewsList;

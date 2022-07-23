@@ -1,13 +1,80 @@
 .product {
     margin: 0 16rem;
 
-    .current-product {
+    &__visuals-p-details {
         display: flex;
-    
-        .brand-name {
-            margin-top: 1rem;
-            margin-bottom: 2rem;
+    }
+}
+
+.product-visuals {
+    width: 61.5rem;
+    margin-right: 7.5rem;
+
+    &__primary {
+        height: 61.5rem;
+        background-color: $color-primary-light;
+        border-radius: $normal-border-radius;
+    }
+
+    &__secondary {
+        margin-top: 4rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .secondary-visual {
+        width: 12.4rem;
+        height: 12.4rem;
+        background-color: $color-primary-light;
+        border-radius: $normal-border-radius;
+
+        &:not(:last-child){
+            margin-right: 4rem;
+        }
+    }
+}
+
+.product-details {
+    &__brand-name {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.product-description {
+    &>div {
+        margin-top: 5rem;
+        margin-bottom: 3.5rem;
+    }
+
+    p {
+        padding: 2.5rem;
+        font-size: $normal-font-size;
+        background-color: $color-primary-light;
+        border-radius: $normal-border-radius;
+    }
+}
+
+.product-offers {
+    &>div:first-child {
+        margin-top: 5rem;
+        margin-bottom: 3.5rem;
+    }
+
+    &__list{
+        padding: 1.5rem;
+        background-color: $color-primary-light;
+        border-radius: $normal-border-radius;
+
+        :not(:last-child) {
+            margin-bottom: 1.5rem;
         }
     }
 
+    .offer {
+        padding: 2.7rem;
+        color: $color-white;
+        background-color: $color-primary-dark;
+        border-radius: $normal-border-radius;
+    }
 }
