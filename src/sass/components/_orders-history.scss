@@ -21,3 +21,79 @@
         flex-grow: 1;
     }
 }
+
+.orders-history-plus-savings {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.orders-history {
+    padding: 2rem;
+    background-color: $color-secondary-dark;
+    border-radius: $normal-border-radius;
+    flex-grow: 2.7;
+    
+    &>div:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+
+    &__individual {
+        padding: 2.3rem;
+        background-color: $color-primary-light;
+        border-radius: 0 0 $normal-border-radius $normal-border-radius;
+
+        &>div:first-child {
+            margin-bottom: 3rem;
+        }
+    }
+}
+
+.order-products-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-product {
+    display: flex; 
+    
+    &:not(:last-child) {
+        margin-bottom: 2.3rem;
+    }
+
+    &__product-image {
+        width: 21.6rem;
+        height: 21.6rem;
+        border-radius: $normal-border-radius;
+        background-color: $color-secondary-dark;
+    }
+
+    &__product-details {
+        margin-left: 2.8rem;
+
+        .product-name {
+            margin-bottom: 1.5rem;
+            line-height: 2.5rem;
+        }
+    }
+}
+
+.order-actions {
+    &__btn {
+        font-size: $small-font-size;
+        text-align: center;
+        color: $color-white;
+        padding: 1.2rem 5.6rem;
+        background-color: $color-black;
+        border-radius: $normal-border-radius;
+        
+        &:not(:last-child) {
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+
+.section-lifetime-savings {
+    margin-left: 8rem;
+    flex-grow: 1;
+}

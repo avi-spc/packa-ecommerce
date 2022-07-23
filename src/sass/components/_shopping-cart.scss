@@ -8,7 +8,6 @@
     }
     
     .cart-with-sidebar {
-        margin-top: 5rem;
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
@@ -24,7 +23,7 @@
         display: flex;
         flex-direction: column;
         // align-items: flex-end;
-        width: calc((100%-8rem) * 2.7);
+        flex-grow: 2.7;
     }
     
     .cart-product {
@@ -80,7 +79,7 @@
         align-items: center;
         margin-left: 8rem;
 
-        width: 100%;
+        flex-grow: 1;
         font-size: $medium-font-size;
         color: $color-white;
         background-color: $color-secondary-dark;

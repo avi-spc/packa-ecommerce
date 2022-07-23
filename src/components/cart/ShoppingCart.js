@@ -6,7 +6,7 @@ import SubtotalSidebar from "./SubtotalSidebar";
 const ShoppingCart = () => {
   return (
     <div className="shopping-cart">
-      <div className="heading-with-emptybtn">
+      <div className="heading-with-emptybtn margin-bottom-huge">
         <div className="primary-heading">Shopping Cart</div>
         <CardProductBtn name="Empty Cart" />
       </div>

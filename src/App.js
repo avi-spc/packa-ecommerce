@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <Navbar />
       <CategoryNavar />
-      <OrdersHistory />
+      <ShoppingCart />
     </div>
   );
 }

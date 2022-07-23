@@ -7,7 +7,7 @@ const OrderMeta = () => {
             </div>
             <div className="order-meta__meta-type">
                 <div>TOTAL</div>
-                <div>rs. 1048</div>
+                <div>Rs. 1048</div>
             </div>
             <div className="order-meta__meta-type">
                 <div>SHIP TO</div>
