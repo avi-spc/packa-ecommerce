@@ -1,7 +1,88 @@
-.navbar {
-    margin: 3rem auto;
+.nav-primary {
+    margin: 3rem 16rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: calc(100vw - 32rem);
+
+    &__logo {
+        font-family: "Peace Sans";
+        margin-right: 5rem;
+        
+        h1 {
+            letter-spacing: .1em;
+            font-size: 6.4rem;
+            font-weight: normal;
+        }
+    }
+
+    &__cart {
+        font-size: $normal-font-size;
+        letter-spacing: .1em;
+        font-weight: 700;
+        display: flex;
+        align-items: flex-end;
+    
+        & img {
+            height: 4.5rem;
+        }
+    }
+
+    &__location {    
+    
+        .nav-location {
+            &__deliver-to {
+                display: flex;
+                align-items: center;
+                
+                & span {
+                    font-size: $small-font-size;
+                    letter-spacing: .1em;
+                    margin-left: .5rem;
+                    line-height: 2rem;
+                }
+                
+                & img {
+                    height: 1.44rem;
+                }
+            }
+            
+            &__location-pin {
+                font-size: $normal-font-size;
+                font-weight: 700;
+                letter-spacing: .1em;
+                margin-top: .5rem;
+            }
+        }
+    }
+
+    &__returns-p-orders {
+        font-size: $normal-font-size;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+    }
+
+    &__product-search {
+        display: flex;
+        font-size: $normal-font-size;
+    
+        .product-search {
+            &__search-category {
+                font-weight: 700;
+                padding: 2.5rem;
+                background-color: $color-primary-dark;
+                border-radius: $normal-border-radius 0 0 $normal-border-radius;
+            }
+        
+            &__search-input {
+                font-family: inherit;
+                font-size: inherit;
+                padding: 2.5rem;
+                background-color: $color-primary-light;
+                border-radius: 0 $normal-border-radius $normal-border-radius 0;
+                border-style: none;
+                outline-style: none;
+                width: 50rem;
+            }
+        }    
+    }
 }

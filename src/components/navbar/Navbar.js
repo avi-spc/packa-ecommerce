@@ -5,15 +5,15 @@ import NavOrders from "./NavOrders";
 import NavSearch from "./NavSearch";
 
 const Navbar = () => {
-  return (
-    <nav className="navbar">
-      <NavLogo />
-      <NavSearch />
-      <NavLocation />
-      <NavOrders />
-      <NavCart />
-    </nav>
-  );
+    return (
+        <nav className="nav-primary">
+            <NavLogo />
+            <NavSearch />
+            <NavLocation />
+            <NavOrders />
+            <NavCart />
+        </nav>
+    );
 };
 
 export default Navbar;

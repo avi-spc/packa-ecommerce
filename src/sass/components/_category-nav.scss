@@ -1,16 +1,18 @@
-.category-nav {
-    font-size: 2rem;
-    font-weight: 700;
-    background-color: $color-primary-light;
-    margin-bottom: 8rem;
+.nav-secondary {
+    &__products-category {
+        font-size: 2rem;
+        font-weight: 700;
+        background-color: $color-primary-light;
+        margin-bottom: 8rem;
+        
+        & ul {
+            display: flex;
+            list-style-type: none;
+            padding: 3rem 16rem;
     
-    & ul {
-        display: flex;
-        list-style-type: none;
-        padding: 3rem 16rem;
-
-        & li:not(:last-child) {
-            margin-right: 4rem;
+            & li:not(:last-child) {
+                margin-right: 4rem;
+            }
         }
     }
 }

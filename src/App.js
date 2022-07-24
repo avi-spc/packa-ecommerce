@@ -1,5 +1,5 @@
 import ShoppingCart from "./components/cart/ShoppingCart";
-import CategoryNavar from "./components/category_navbar/CategoryNavbar";
+import CategoryNavbar from "./components/navbar_category/CategoryNavbar";
 import Checkout from "./components/checkout/Checkout";
 import Navbar from "./components/navbar/Navbar";
 import OrdersHistory from "./components/orders/OrdersHistory";
@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <CategoryNavar />
+      <CategoryNavbar />
     </div>
   );
 }
