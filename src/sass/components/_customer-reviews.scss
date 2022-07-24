@@ -52,6 +52,11 @@
     background-color: $color-primary-light;
     flex-grow: 1;
 
+    &__average-p-rating-bar {
+        display: flex;
+        justify-content: space-between;
+    }
+
     &__average-rating {
         border-radius: $normal-border-radius;
         background-color: $color-secondary-light;

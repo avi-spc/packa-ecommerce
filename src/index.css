@@ -181,6 +181,9 @@ body {
   border-radius: 1.5rem;
   background-color: #D9D9D9;
   flex-grow: 1; }
+  .product-rating__average-p-rating-bar {
+    display: flex;
+    justify-content: space-between; }
   .product-rating__average-rating {
     border-radius: 1.5rem;
     background-color: #5A5A5A;
@@ -501,7 +504,10 @@ body {
     .product-filter .filter-option:not(:last-child) {
       margin-bottom: .5rem; }
 
-.rating-bar .material-symbols-outlined {
+.rating-bar__large .material-symbols-outlined {
+  font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 200, 'opsz' 20; }
+
+.rating-bar__small .material-symbols-outlined {
   font-variation-settings: 'FILL' 1, 'wght' 100, 'GRAD' -25, 'opsz' 20; }
 
 .rating-bar .negative {

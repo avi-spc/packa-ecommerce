@@ -13,7 +13,7 @@ const ProductDetails = () => {
             <div className="product-details__brand-name secondary-heading">
                 Brand : : Countrybean
             </div>
-            <div className="product-details__rating rating-bar">
+            <div className="product-details__rating rating-bar rating-bar__small">
                 <span className="material-symbols-outlined positive">circle</span>
                 <span className="material-symbols-outlined positive">circle</span>
                 <span className="material-symbols-outlined positive">circle</span>

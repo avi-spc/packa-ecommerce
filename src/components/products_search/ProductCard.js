@@ -9,7 +9,7 @@ const ProductCard = () => {
                 <div className="product-card__name">
                     Hazelnut Instant Coffee 100g
                 </div>
-                <div className="product-card__rating rating-bar">
+                <div className="product-card__rating rating-bar rating-bar__small">
                     <span className="material-symbols-outlined positive">circle</span>
                     <span className="material-symbols-outlined positive">circle</span>
                     <span className="material-symbols-outlined positive">circle</span>

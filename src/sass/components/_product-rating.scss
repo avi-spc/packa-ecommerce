@@ -1,10 +1,22 @@
 .rating-bar {
-    .material-symbols-outlined {
-      font-variation-settings:
-      'FILL' 1,
-      'wght' 100,
-      'GRAD' -25,
-      'opsz' 20
+    &__large {      
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 1,
+          'wght' 700,
+          'GRAD' 200,
+          'opsz' 20
+        }
+    }
+
+    &__small {
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 1,
+          'wght' 100,
+          'GRAD' -25,
+          'opsz' 20
+        }
     }
 
     .negative {
