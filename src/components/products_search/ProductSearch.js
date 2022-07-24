@@ -3,7 +3,7 @@ import ProductFilter from "./ProductFilter";
 
 const ProductSearch = () => {
     return (
-        <section className="section-product-search">
+        <section className="section-product-search container">
 
             <div className="product-search__filter-p-grid">
                 <ProductFilter />

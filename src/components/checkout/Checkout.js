@@ -5,7 +5,7 @@ import PaymentModes from "./paymant_modes/PaymentModes";
 
 const Checkout = () => {
     return (
-        <section className="section-checkout">
+        <section className="section-checkout container">
             <div className="primary-heading margin-bottom-huge">Checkout</div>
             <div className="checkout-details-p-summary">
                 <div className="checkout-details">

@@ -4,7 +4,7 @@ import LifetimeSavings from "./LifetimeSavings";
 
 const OrdersHistory = () => {
     return (
-        <section className="section-orders-history">
+        <section className="section-orders-history container">
             <div className="primary-heading margin-bottom-huge">Your Orders</div>
             <div className="orders-history-plus-savings">
                 <div className="orders-history">

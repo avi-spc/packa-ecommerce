@@ -6,7 +6,7 @@ import SubtotalCheckout from "./SubtotalCheckout";
 
 const ShoppingCart = () => {
     return (
-        <section className="section-shopping-cart">
+        <section className="section-shopping-cart container">
             <div className="shopping-cart__heading-p-btn margin-bottom-huge">
                 <div className="primary-heading">Shopping Cart</div>
                 <SecondaryButton name="Empty Cart" />

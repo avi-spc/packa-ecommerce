@@ -5,7 +5,7 @@ import RelatedProducts from "./RelatedProducts";
 
 const Product = () => {
     return (
-        <section className="product">
+        <section className="section-product container">
             <div className="product__visuals-p-details">
                 <ProductVisuals />
                 <ProductDetails />
