@@ -9,7 +9,13 @@ const ProductCard = () => {
                 <div className="product-card__name">
                     Hazelnut Instant Coffee 100g
                 </div>
-                <div className="product-card__rating">•••••</div>
+                <div className="product-card__rating rating-bar">
+                    <span className="material-symbols-outlined positive">circle</span>
+                    <span className="material-symbols-outlined positive">circle</span>
+                    <span className="material-symbols-outlined positive">circle</span>
+                    <span className="material-symbols-outlined negative">circle</span>
+                    <span className="material-symbols-outlined negative">circle</span>
+                </div>
                 <div className="product-card__price">Rs. 499 :: 73% Off</div>
                 <div className="product-card__eta">
                     <img src="/images/icons/delivery_icon.svg" alt="" />

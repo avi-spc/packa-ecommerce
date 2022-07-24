@@ -460,6 +460,12 @@ body {
     .product-filter .filter-option:not(:last-child) {
       margin-bottom: .5rem; }
 
+.rating-bar .material-symbols-outlined {
+  font-variation-settings: 'FILL' 1, 'wght' 100, 'GRAD' -25, 'opsz' 20; }
+
+.rating-bar .negative {
+  color: #D9D9D9; }
+
 .section-product-search {
   margin: 5rem 16rem; }
   .section-product-search .product-search__filter-p-grid {

@@ -13,7 +13,13 @@ const ProductDetails = () => {
             <div className="product-details__brand-name secondary-heading">
                 Brand : : Countrybean
             </div>
-            <div className="product-details__rating primary-heading">•••••</div>
+            <div className="product-details__rating rating-bar">
+                <span className="material-symbols-outlined positive">circle</span>
+                <span className="material-symbols-outlined positive">circle</span>
+                <span className="material-symbols-outlined positive">circle</span>
+                <span className="material-symbols-outlined negative">circle</span>
+                <span className="material-symbols-outlined negative">circle</span>
+            </div>
             <PriceTag variant="product" />
             <QuantityCounter variant="big" />
             <AddToCart />

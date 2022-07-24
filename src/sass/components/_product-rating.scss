@@ -1,0 +1,13 @@
+.rating-bar {
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 1,
+      'wght' 100,
+      'GRAD' -25,
+      'opsz' 20
+    }
+
+    .negative {
+      color: $color-primary-light;
+    }
+}
