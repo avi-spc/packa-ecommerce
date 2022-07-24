@@ -1,4 +1,4 @@
-import CartProductBtn from "../buttons/CartProductBtn";
+import SecondaryButton from "../buttons/SecondaryButton";
 
 const OrderProduct = () => {
     return (
@@ -6,7 +6,7 @@ const OrderProduct = () => {
             <div className="order-product__product-image"></div>
             <div className="order-product__product-details">
                 <div className="product-name tertiary-heading">Hazelnut Instant Coffee 100g</div>
-                <CartProductBtn name="Buy Again" />
+                <SecondaryButton name="Buy Again" />
             </div>
         </div>
     );

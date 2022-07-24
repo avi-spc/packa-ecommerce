@@ -1,13 +1,13 @@
-import CardProductBtn from "../buttons/CartProductBtn";
+import TertiaryButton from "../buttons/TertiaryButton";
 
 const OrderActions = () => {
     return (
         <div className="order-actions">
-            <div className="order-actions__btn btn-track-cta">Track Package</div>
-            <div className="order-actions__btn btn-cancel-return-cta">Cancel Order</div>
-            <div className="order-actions__btn btn-invoice-cta">Invoice</div>
+            <TertiaryButton name="Track Package" />
+            <TertiaryButton name="Cancel Order" />
+            <TertiaryButton name="Cancel Order" />
         </div>
     );
-}
- 
+};
+
 export default OrderActions;

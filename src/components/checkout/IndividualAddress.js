@@ -1,4 +1,4 @@
-import CardProductBtn from "../buttons/CartProductBtn";
+import SecondaryButton from "../buttons/SecondaryButton";
 
 const IndividualAddress = () => {
     return (
@@ -14,7 +14,7 @@ const IndividualAddress = () => {
                     <div>Phone : : 6666667766</div>
                 </div>
             </div>
-            <CardProductBtn name="Edit Address" />
+            <SecondaryButton name="Edit Address" />
         </div>
     );
 };

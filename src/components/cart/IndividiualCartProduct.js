@@ -1,4 +1,4 @@
-import CardProductBtn from "../buttons/CartProductBtn";
+import SecondaryButton from "../buttons/SecondaryButton";
 import QuantityCounter from "../product/QuantityCounter";
 
 const IndividualCartProduct = () => {
@@ -13,8 +13,8 @@ const IndividualCartProduct = () => {
                     </div>
                     <QuantityCounter variant="small" />
                     <div className="cart-product__action-buttons">
-                        <CardProductBtn name="Save for later" />
-                        <CardProductBtn name="Delete" />
+                        <SecondaryButton name="Save for later" />
+                        <SecondaryButton name="Delete" />
                     </div>
                 </div>
             </div>

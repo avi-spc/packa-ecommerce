@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <Navbar />
       <CategoryNavbar />
-      <Checkout />
+      <OrdersHistory />
     </div>
   );
 }

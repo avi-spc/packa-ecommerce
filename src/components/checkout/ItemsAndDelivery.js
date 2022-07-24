@@ -1,5 +1,3 @@
-import CardProductBtn from "../buttons/CartProductBtn";
-import QuantityCounter from "../product/QuantityCounter";
 import IndividualItem from "./IndividualItem";
 
 const ItemsAndDelivery = () => {

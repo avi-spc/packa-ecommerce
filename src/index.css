@@ -35,16 +35,22 @@ body {
 
 .btn {
   display: inline-block;
-  border-radius: 1.5rem; }
-  .btn__add-to-cart {
+  border-radius: 1.5rem;
+  text-align: center; }
+  .btn__primary {
     font-size: 2.4rem;
     font-weight: 700;
     padding: 2.5rem 4rem;
     background-color: #D9D9D9; }
-  .btn__cart-product-btn {
+  .btn__secondary {
     font-size: 1.6rem;
     padding: 1rem 2.3rem;
     color: white;
+    background-color: black; }
+  .btn__tertiary {
+    font-size: 1.6rem;
+    color: white;
+    padding: 1.2rem 5.6rem;
     background-color: black; }
 
 .nav-secondary__products-category {
@@ -359,14 +365,10 @@ body {
       margin-bottom: 1.5rem;
       line-height: 2.5rem; }
 
-.order-actions__btn {
-  font-size: 1.6rem;
-  text-align: center;
-  color: white;
-  padding: 1.2rem 5.6rem;
-  background-color: black;
-  border-radius: 1.5rem; }
-  .order-actions__btn:not(:last-child) {
+.order-actions {
+  display: flex;
+  flex-direction: column; }
+  .order-actions > div:not(:last-child) {
     margin-bottom: 1.5rem; }
 
 .section-lifetime-savings {

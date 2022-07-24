@@ -1,4 +1,4 @@
-import CardProductBtn from "../buttons/CartProductBtn";
+import SecondaryButton from "../buttons/SecondaryButton";
 import CartProductsLater from "./CartProductsLater";
 import CartProductsList from "./CartProductsList";
 import CartSubtotal from "./CartSubtotal";
@@ -9,7 +9,7 @@ const ShoppingCart = () => {
         <section className="section-shopping-cart">
             <div className="shopping-cart__heading-p-btn margin-bottom-huge">
                 <div className="primary-heading">Shopping Cart</div>
-                <CardProductBtn name="Empty Cart" />
+                <SecondaryButton name="Empty Cart" />
             </div>
             <div className="shopping-cart__cart-p-subcheck">
                 <div className="shopping-cart__cart-p-subtotal">

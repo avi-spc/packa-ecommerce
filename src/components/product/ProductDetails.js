@@ -1,8 +1,8 @@
-import AddToCart from "../buttons/AddToCart";
 import QuantityCounter from "./QuantityCounter";
 import PriceTag from "./PriceTag";
 import ProductDesc from "./ProductDesc";
 import ProductOffers from "./ProductOffers";
+import PriamryButton from "../buttons/PrimaryButton";
 
 const ProductDetails = () => {
     return (
@@ -22,7 +22,7 @@ const ProductDetails = () => {
             </div>
             <PriceTag variant="product" />
             <QuantityCounter variant="big" />
-            <AddToCart />
+            <PriamryButton name="ADD TO CART" />
             <ProductDesc />
             <ProductOffers />
         </div>

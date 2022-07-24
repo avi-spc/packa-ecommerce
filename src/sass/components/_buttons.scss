@@ -1,18 +1,26 @@
 .btn {
     display: inline-block;
     border-radius: $normal-border-radius;
+    text-align: center;
 
-    &__add-to-cart {
+    &__primary {
         font-size: $medium-font-size;
         font-weight: 700;
         padding: 2.5rem 4rem;
         background-color: $color-primary-light;
     }
 
-    &__cart-product-btn {
+    &__secondary {
         font-size: $small-font-size;
         padding: 1rem 2.3rem;
         color: $color-white;
+        background-color: $color-black;
+    }
+
+    &__tertiary {
+        font-size: $small-font-size;
+        color: $color-white;
+        padding: 1.2rem 5.6rem;
         background-color: $color-black;
     }
 }

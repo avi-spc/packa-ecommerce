@@ -1,4 +1,4 @@
-import CardProductBtn from "../../buttons/CartProductBtn";
+import SecondaryButton from "../../buttons/SecondaryButton";
 
 const UpiPayment = () => {
     return (
@@ -11,7 +11,7 @@ const UpiPayment = () => {
                 <div className="payment-option__instruction payment-option__instruction--upi-id">
                     <div>Please enter your UPI ID</div>
                     <input type="text" />                   
-                    <CardProductBtn name="Verify" />
+                    <SecondaryButton name="Verify" />
                 </div>
             </div>
         </div>

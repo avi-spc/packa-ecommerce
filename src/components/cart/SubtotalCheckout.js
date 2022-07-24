@@ -1,4 +1,4 @@
-import CardProductBtn from "../buttons/CartProductBtn";
+import SecondaryButton from "../buttons/SecondaryButton";
 import PriceTag from "../product/PriceTag";
 
 const SubtotalCheckout = () => {
@@ -6,7 +6,7 @@ const SubtotalCheckout = () => {
         <section className="subtotal-checkout">
             <div>{`Subtotal ( 2 items )`}</div>
             <PriceTag variant="subtotal" />
-            <CardProductBtn name="Checkout" />
+            <SecondaryButton name="Checkout" />
         </section>
     );
 };
