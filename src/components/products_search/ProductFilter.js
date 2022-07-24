@@ -1,6 +1,6 @@
 const ProductFilter = () => {
     return (
-        <div className="product-filter">
+        <section className="product-filter">
             <div className="filter-heading tertiary-heading">Filter</div>
             <div className="product-filter__category">
                 <div className="product-filter__category--name">Brand</div>
@@ -22,7 +22,7 @@ const ProductFilter = () => {
                     <label htmlFor="Nestle">Rs. 1000 - Rs. 2000</label>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

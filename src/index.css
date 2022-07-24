@@ -386,22 +386,21 @@ body {
   background-color: black;
   border-radius: 1.5rem;
   color: white; }
-  .price-tag .price {
+  .price-tag__price {
     font-size: 4.8rem;
     font-weight: 700;
     line-height: 6rem; }
-  .price-tag.product {
+  .price-tag__product {
     margin: 3.5rem 0; }
-    .price-tag.product .discount {
+    .price-tag__product--discount {
       font-size: 2.4rem;
       line-height: 3rem; }
-  .price-tag.subtotal {
+  .price-tag__subtotal {
     margin: 2rem 0 2.5rem 0; }
-    .price-tag.subtotal .discount {
+    .price-tag__subtotal--discount {
       display: none; }
 
 .product-card {
-  margin: 5rem 10rem;
   font-size: 2rem;
   width: 38rem; }
   .product-card__product-image {
@@ -437,8 +436,6 @@ body {
       height: 3.2rem; }
 
 .product-filter {
-  margin: 5rem 10rem;
-  width: 28rem;
   background-color: #D9D9D9;
   padding: 1.3rem;
   border-radius: 1.5rem; }
@@ -462,6 +459,17 @@ body {
     align-items: center; }
     .product-filter .filter-option:not(:last-child) {
       margin-bottom: .5rem; }
+
+.section-product-search {
+  margin: 5rem 16rem; }
+  .section-product-search .product-search__filter-p-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; }
+  .section-product-search .product-search__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-gap: 5rem; }
 
 .product {
   margin: 0 16rem; }

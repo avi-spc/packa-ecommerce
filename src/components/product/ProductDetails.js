@@ -14,7 +14,7 @@ const ProductDetails = () => {
                 Brand : : Countrybean
             </div>
             <div className="product-details__rating primary-heading">•••••</div>
-            <PriceTag varirant="product" />
+            <PriceTag variant="product" />
             <QuantityCounter variant="big" />
             <AddToCart />
             <ProductDesc />

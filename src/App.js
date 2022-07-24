@@ -6,6 +6,7 @@ import OrdersHistory from "./components/orders/OrdersHistory";
 import Product from "./components/product/Product";
 import ProductCard from "./components/products_search/ProductCard";
 import ProductFilter from "./components/products_search/ProductFilter";
+import ProductSearch from "./components/products_search/ProductSearch";
 
 function App() {
   return (

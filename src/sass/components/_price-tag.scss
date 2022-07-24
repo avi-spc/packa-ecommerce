@@ -5,27 +5,25 @@
     border-radius: $normal-border-radius;
     color: $color-white;
     
-    .price {
+    &__price {
         font-size: $large-font-size;
         font-weight: 700;
         line-height: 6rem;
     }
     
-    &.product {
-        
+    &__product {        
         margin: 3.5rem 0;
         
-        .discount {
+        &--discount {
             font-size: $medium-font-size;
             line-height: 3rem;
         }
     }
 
-    &.subtotal {
-
+    &__subtotal {
         margin: 2rem 0 2.5rem 0;
         
-        .discount {
+        &--discount {
             display: none;
         }
     }
