@@ -89,3 +89,20 @@
         text-align: center;    
     }
 }
+
+.section-products-later {
+    margin-top: 15rem;
+
+    .products-later {
+        &__items {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-gap: 3rem;
+
+            margin-top: 5rem;
+            padding: 3rem;
+            background-color: $color-primary-dark;
+            border-radius: $normal-border-radius;
+        }
+    }
+}

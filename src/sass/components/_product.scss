@@ -78,3 +78,30 @@
         border-radius: $normal-border-radius;
     }
 }
+
+.related-products {
+    background-color: $color-primary-light;
+    border-radius: $normal-border-radius;
+    padding: 5rem 5rem 7rem 5rem;
+    margin-top: 15rem;
+    
+    &__arrows-p-items {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        img {
+            flex-grow: .5;
+        }
+    }
+
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        padding: 3rem;
+        margin: 5rem 3rem 0 3rem;
+        flex-grow: 2;
+        background-color: $color-primary-dark;
+        border-radius: $normal-border-radius;
+    }
+}

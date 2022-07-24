@@ -1,4 +1,5 @@
 import CardProductBtn from "../buttons/CartProductBtn";
+import CartProductsLater from "./CartProductsLater";
 import CartProductsList from "./CartProductsList";
 import CartSubtotal from "./CartSubtotal";
 import SubtotalCheckout from "./SubtotalCheckout";
@@ -17,6 +18,7 @@ const ShoppingCart = () => {
                 </div>
                 <SubtotalCheckout />
             </div>
+            <CartProductsLater />
         </section>
     );
 };

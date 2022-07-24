@@ -1,6 +1,7 @@
 import CustomerReviews from "./CustomerReviews";
 import ProductDetails from "./ProductDetails";
 import ProductVisuals from "./ProductVisuals";
+import RelatedProducts from "./RelatedProducts";
 
 const Product = () => {
     return (
@@ -9,6 +10,7 @@ const Product = () => {
                 <ProductVisuals />
                 <ProductDetails />
             </div>
+            <RelatedProducts />
             <CustomerReviews />
         </section>
     );

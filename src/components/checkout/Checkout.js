@@ -1,4 +1,5 @@
 import DeliveryAddressList from "./DeliveryAddressList";
+import ItemsAndDelivery from "./ItemsAndDelivery";
 import OrderSummary from "./OrderSummary";
 import PaymentModes from "./paymant_modes/PaymentModes";
 
@@ -10,6 +11,7 @@ const Checkout = () => {
                 <div className="checkout-details">
                     <DeliveryAddressList />
                     <PaymentModes />
+                    <ItemsAndDelivery />
                 </div>
                 <OrderSummary />
             </div>

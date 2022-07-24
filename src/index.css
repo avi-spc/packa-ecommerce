@@ -96,6 +96,45 @@ body {
       .section-checkout .individual-address__address-details:not(:first-child) {
         font-size: 1.6rem; }
 
+.section-items-p-delivery > div:first-child {
+  margin-top: 5rem;
+  margin-bottom: 2.5rem; }
+
+.section-items-p-delivery .items-p-delivery__items-list {
+  background-color: #5E5C5C;
+  border-radius: 1.5rem;
+  padding: 2rem; }
+
+.section-items-p-delivery .individual-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-radius: 1.5rem;
+  background-color: #D9D9D9;
+  padding: 2.3rem; }
+  .section-items-p-delivery .individual-item:not(:last-child) {
+    margin-bottom: 2rem; }
+  .section-items-p-delivery .individual-item__details-m-price {
+    display: flex;
+    align-items: flex-start;
+    border-radius: inherit; }
+  .section-items-p-delivery .individual-item__details > div:not(:first-child) {
+    font-size: 2rem; }
+  .section-items-p-delivery .individual-item__image {
+    background-color: #5E5C5C;
+    border-radius: inherit;
+    width: 20rem;
+    height: 20rem;
+    margin-right: 4rem; }
+  .section-items-p-delivery .individual-item__quantity {
+    margin: 1rem 0 2rem 0; }
+  .section-items-p-delivery .individual-item__amount {
+    display: inline-block;
+    padding: 1.1rem 2.7rem;
+    color: white;
+    background-color: black;
+    border-radius: 1.5rem; }
+
 .customer-reviews {
   margin-top: 15rem; }
   .customer-reviews .reviews-p-ratings {
@@ -532,6 +571,26 @@ body {
   background-color: #828282;
   border-radius: 1.5rem; }
 
+.related-products {
+  background-color: #D9D9D9;
+  border-radius: 1.5rem;
+  padding: 5rem 5rem 7rem 5rem;
+  margin-top: 15rem; }
+  .related-products__arrows-p-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .related-products__arrows-p-items img {
+      flex-grow: .5; }
+  .related-products__items {
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem;
+    margin: 5rem 3rem 0 3rem;
+    flex-grow: 2;
+    background-color: #828282;
+    border-radius: 1.5rem; }
+
 .quantity .quantity-counter {
   display: inline-block;
   border: thin solid;
@@ -628,3 +687,14 @@ body {
     border-radius: 1.5rem;
     padding: 3.5rem;
     text-align: center; }
+
+.section-products-later {
+  margin-top: 15rem; }
+  .section-products-later .products-later__items {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-gap: 3rem;
+    margin-top: 5rem;
+    padding: 3rem;
+    background-color: #828282;
+    border-radius: 1.5rem; }
