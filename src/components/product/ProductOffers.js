@@ -1,12 +1,13 @@
 import IndividiualOffer from "./IndividiualOffer";
 
-const ProductOffers = () => {
+const ProductOffers = ({ offers }) => {
     return (
         <div className="product-offers">
             <div className="secondary-heading">Other Offers</div>
             <div className="product-offers__list">
-                <IndividiualOffer />
-                <IndividiualOffer />
+                {offers.map((offer) => {
+                    return <IndividiualOffer offer={offer} key={offer.id} />;
+                })}
             </div>
         </div>
     );

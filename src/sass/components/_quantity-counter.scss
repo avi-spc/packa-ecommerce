@@ -8,8 +8,16 @@
         color: $color-black;
     
         .counter-controls {
-            display: flex;         
+            display: flex; 
+            align-items: center;        
         }
+    }
+
+    .decrement, .increment {
+        background-color: $color-primary-light;
+        border-radius: $normal-border-radius;
+        padding: 1rem 2rem;
+        cursor: pointer;
     }
 }
 
@@ -42,7 +50,8 @@
     }
 
     .quantity-counter {
-        padding: 1.8rem 2.5rem;
+        // padding: 1.8rem 2.5rem;
+        padding: 1rem;
         font-size: $medium-font-size;
         margin-bottom: 4rem;
     }
