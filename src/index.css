@@ -228,9 +228,21 @@ a {
     letter-spacing: .1em;
     font-weight: 700;
     display: flex;
-    align-items: flex-end; }
+    align-items: center; }
     .nav-primary__cart img {
       height: 4.5rem; }
+    .nav-primary__cart .cart__heading-p-counter {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+    .nav-primary__cart .cart__counter {
+      line-height: 1;
+      padding: .7rem;
+      color: white;
+      background-color: black;
+      border-radius: 5rem;
+      font-size: 1.6rem; }
   .nav-primary__location .nav-location__deliver-to {
     display: flex;
     align-items: center; }

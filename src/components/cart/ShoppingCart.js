@@ -18,7 +18,7 @@ const ShoppingCart = () => {
                 </div>
                 <SubtotalCheckout />
             </div>
-            <CartProductsLater />
+            {/* <CartProductsLater /> */}
         </section>
     );
 };

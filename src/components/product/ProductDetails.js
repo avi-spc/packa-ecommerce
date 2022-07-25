@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import QuantityCounter from "./QuantityCounter";
 import PriceTag from "./PriceTag";
@@ -34,6 +34,12 @@ const ProductDetails = ({ product }) => {
         if (!(newQuantity < 0)) {
             setQuantity(newQuantity);
         }
+    };
+
+    const cartProduct = {
+        name: product.name,
+        quantity: quantity,
+        price: quantity * product.price,
     };
 
     useEffect(() => {
@@ -73,7 +79,7 @@ const ProductDetails = ({ product }) => {
                 quantity={quantity}
                 changeQuantity={changeQuantity}
             />
-            <PriamryButton name="ADD TO CART" />
+            <PriamryButton name="ADD TO CART" product={cartProduct} />
             <ProductDesc description={product.description} />
             <ProductOffers offers={product.offers} />
         </div>

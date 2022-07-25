@@ -11,29 +11,35 @@ import ProductFilter from "./components/products_search/ProductFilter";
 import ProductSearch from "./components/products_search/ProductSearch";
 import Footer from "./components/footer/Footer";
 import ProductsContextProvider from "./contexts/productsContext";
+import CartContextProvider from "./contexts/cartContext";
 
 function App() {
     return (
         <div className="App">
-            <ProductsContextProvider>
-                <BrowserRouter>
-                    <Navbar />
-                    <CategoryNavbar />
-                    <Routes>
-                        <Route path="/" element={<ProductSearch />} />
-                        <Route
-                            path="/products/:product_id"
-                            element={<Product />}
-                        />
-                        <Route
-                            path="/returns_orders"
-                            element={<OrdersHistory />}
-                        />
-                        <Route path="/shopcart" element={<ShoppingCart />} />
-                    </Routes>
-                    <Footer />
-                </BrowserRouter>
-            </ProductsContextProvider>
+            <BrowserRouter>
+                <CartContextProvider>
+                    <ProductsContextProvider>
+                        <Navbar />
+                        <CategoryNavbar />
+                        <Routes>
+                            <Route path="/" element={<ProductSearch />} />
+                            <Route
+                                path="/products/:product_id"
+                                element={<Product />}
+                            />
+                            <Route
+                                path="/returns_orders"
+                                element={<OrdersHistory />}
+                            />
+                            <Route
+                                path="/shopcart"
+                                element={<ShoppingCart />}
+                            />
+                        </Routes>
+                        <Footer />
+                    </ProductsContextProvider>
+                </CartContextProvider>
+            </BrowserRouter>
         </div>
     );
 }
