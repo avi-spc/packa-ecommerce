@@ -13,6 +13,10 @@ body {
   font-family: 'Sora', sans-serif;
   line-height: 3rem; }
 
+a {
+  text-decoration: none;
+  color: black; }
+
 .primary-heading {
   font-size: 4.8rem;
   font-weight: 700;
@@ -199,6 +203,13 @@ body {
     font-size: 2rem;
     margin: 4rem 0 2.5rem 0;
     padding: 0 2.5rem; }
+
+.footer__content {
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 3rem 0;
+  margin-top: 10rem;
+  background-color: #D9D9D9; }
 
 .nav-primary {
   margin: 3rem 16rem;

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import NavCart from "./NavCart";
 import NavLocation from "./NavLocation";
 import NavLogo from "./NavLogo";
@@ -7,11 +9,20 @@ import NavSearch from "./NavSearch";
 const Navbar = () => {
     return (
         <nav className="nav-primary">
-            <NavLogo />
+            <Link to="/">
+                <NavLogo />
+            </Link>
+
             <NavSearch />
             <NavLocation />
-            <NavOrders />
-            <NavCart />
+            
+            <Link to="/returns_orders">
+                <NavOrders />
+            </Link>
+            
+            <Link to="/shopcart">
+                <NavCart />
+            </Link>
         </nav>
     );
 };

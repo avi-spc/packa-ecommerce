@@ -1,0 +1,9 @@
+.footer {
+    &__content {
+        font-size: $small-font-size;
+        text-align: center;
+        padding: 3rem 0;
+        margin-top: 10rem;
+        background-color: $color-primary-light;
+    }
+}
