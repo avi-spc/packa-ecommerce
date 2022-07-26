@@ -2,8 +2,10 @@ import { useContext } from "react";
 
 import SecondaryButton from "../buttons/SecondaryButton";
 import QuantityCounter from "../product/QuantityCounter";
+import { CartContext } from "../../contexts/cartContext";
 
-const IndividualCartProduct = ({ cartProduct }) => {    
+const IndividualCartProduct = ({ cartProduct }) => {
+    const { removeProductFromCart } = useContext(CartContext);
     return (
         <div className="cart-product">
             <div className="cart-product__details-m-price">
@@ -11,10 +13,14 @@ const IndividualCartProduct = ({ cartProduct }) => {
                 <div className="cart-product__image"></div>
                 <div className="cart-product__details">
                     <div className="secondary-heading">{cartProduct.name}</div>
-                    <QuantityCounter variant="small" quantity={cartProduct.quantity} productID={cartProduct.id}/>
+                    <QuantityCounter variant="small" quantity={cartProduct.quantity} productID={cartProduct.id} />
                     <div className="cart-product__action-buttons">
                         <SecondaryButton name="Save for later" />
-                        <SecondaryButton name="Delete" />
+                        <SecondaryButton
+                            name="Delete"
+                            action={removeProductFromCart}
+                            actionPayload={{ productID: cartProduct.id }}
+                        />
                     </div>
                 </div>
             </div>

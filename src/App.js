@@ -35,6 +35,10 @@ function App() {
                                 path="/shopcart"
                                 element={<ShoppingCart />}
                             />
+                            <Route
+                                path="/checkout"
+                                element={<Checkout />}
+                            />
                         </Routes>
                         <Footer />
                     </ProductsContextProvider>

@@ -41,6 +41,19 @@ const CartContextProvider = (props) => {
         setCartTotalAmount(cartTotalAmount + product.quantity * product.rate);
     };
 
+    const removeProductFromCart = (productID) => {
+        setCart(
+            cart.filter((cartProduct) => {
+                if (cartProduct.id === productID) {
+                    setCartTotalQuantity(cartTotalQuantity - cartProduct.quantity);
+                    setCartTotalAmount(cartTotalAmount - cartProduct.amount);
+                }
+
+                return cartProduct.id !== productID;
+            })
+        );
+    };
+
     const changeCartTotalQuantity = (quantityChange) => {
         setCartTotalQuantity(cartTotalQuantity + quantityChange);
     };
@@ -76,6 +89,13 @@ const CartContextProvider = (props) => {
         setCart(modifiedCart);
     };
 
+    const emptyCart = () => {
+        console.log("emptycart");
+        setCartTotalAmount(0);
+        setCartTotalQuantity(0);
+        setCart([]);
+    };
+
     return (
         <CartContext.Provider
             value={{
@@ -83,8 +103,10 @@ const CartContextProvider = (props) => {
                 cartTotalQuantity,
                 cartTotalAmount,
                 addProductToCart,
+                removeProductFromCart,
                 changeCartTotalQuantity,
                 changeCartProductQuantity,
+                emptyCart,
             }}
         >
             {props.children}
