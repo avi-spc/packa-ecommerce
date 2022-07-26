@@ -4,7 +4,7 @@ export const ProductsStore = [
         name: "Hazelnut Instant Coffee 100g",
         brand: "Countrybean",
         rating: 2.9,
-        price: 799,
+        rate: 799,
         discount: 73,
         eta: "Sat, July 30",
         description:
@@ -25,7 +25,7 @@ export const ProductsStore = [
         name: "boAt Airdopes 121v2 Earbuds",
         brand: "Boat",
         rating: 4.4,
-        price: 1299,
+        rate: 1299,
         discount: 57,
         eta: "Tue, July 26",
         description:

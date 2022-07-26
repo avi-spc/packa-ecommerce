@@ -4,20 +4,31 @@ export const CartContext = createContext();
 
 const CartContextProvider = (props) => {
     const [cart, setCart] = useState([]);
-    const [cartTotalItems, setCartTotalItems] = useState(0);
+    const [cartTotalQuantity, setCartTotalQuantity] = useState(0);
 
-    const addItemToCart = (product) => {
+    const addProductToCart = (product) => {
         setCart([...cart, product]);
     };
 
-    const changeCartTotalItems = (numOfItems) => {
-        setCartTotalItems(numOfItems);
+    const changeCartTotalQuantity = (quantityChange) => {
+        setCartTotalQuantity(cartTotalQuantity + quantityChange);
+    };
+
+    const changeCartProductQuantity = (productID, newProductQuantity) => {
+        const modifiedCart = cart.map((cartProduct) => {
+            return cartProduct.id === productID
+                ? { ...cartProduct, quantity: newProductQuantity, amount: cartProduct.rate * newProductQuantity }
+                : cartProduct;
+        });
+
+        setCart(modifiedCart);
     };
 
     return (
-        <CartContext.Provider value={{ cart, cartTotalItems, addItemToCart, changeCartTotalItems }}>
+        <CartContext.Provider
+            value={{ cart, cartTotalQuantity, addProductToCart, changeCartTotalQuantity, changeCartProductQuantity }}
+        >
             {props.children}
-            {console.log(cart)}
         </CartContext.Provider>
     );
 };

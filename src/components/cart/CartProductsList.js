@@ -1,10 +1,11 @@
 import IndividualCartProduct from "./IndividiualCartProduct";
 
-const CartProductsList = () => {
+const CartProductsList = ({ cartProducts }) => {
     return (
         <div className="shopping-cart__products-list">
-            <IndividualCartProduct />
-            <IndividualCartProduct />
+            {cartProducts.map((cartProduct) => {
+                return <IndividualCartProduct cartProduct={cartProduct} key={cartProduct.id} />;
+            })}
         </div>
     );
 };

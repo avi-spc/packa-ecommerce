@@ -4,18 +4,17 @@ import { CartContext } from "../../contexts/cartContext";
 const PriamryButton = (props) => {
     const { product } = props;
 
-    const { cartTotalItems, addItemToCart, changeCartTotalItems } =
-        useContext(CartContext);
+    const { addProductToCart, changeCartTotalQuantity } = useContext(CartContext);
 
-    const addProductToCart = () => {
+    const addProductBatchToCart = () => {
         if (product.quantity > 0) {
-            addItemToCart(product);
-            changeCartTotalItems(cartTotalItems + product.quantity);
+            addProductToCart(product);
+            changeCartTotalQuantity(product.quantity);
         }
     };
 
     return (
-        <div className="btn btn__primary" onClick={addProductToCart}>
+        <div className="btn btn__primary" onClick={addProductBatchToCart}>
             {props.name}
         </div>
     );

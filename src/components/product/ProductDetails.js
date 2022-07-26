@@ -28,18 +28,20 @@ const ProductDetails = ({ product }) => {
     //     return ratingList;
     // };
 
-    const [quantity, setQuantity] = useState(0);
+    const [quantity, setQuantity] = useState(1);
 
     const changeQuantity = (newQuantity) => {
-        if (!(newQuantity < 0)) {
+        if (!(newQuantity < 1)) {
             setQuantity(newQuantity);
         }
     };
 
     const cartProduct = {
+        id: product.id,
         name: product.name,
         quantity: quantity,
-        price: quantity * product.price,
+        rate: product.rate,
+        amount: quantity * product.rate,
     };
 
     useEffect(() => {
@@ -52,16 +54,12 @@ const ProductDetails = ({ product }) => {
                 ratingBar.children[i].classList.add("negative");
             }
         }
-    });
+    }, []);
 
     return (
         <div className="product-details">
-            <div className="product-details__name primary-heading">
-                {product.name}
-            </div>
-            <div className="product-details__brand-name secondary-heading">
-                Brand : : {product.brand}
-            </div>
+            <div className="product-details__name primary-heading">{product.name}</div>
+            <div className="product-details__brand-name secondary-heading">Brand : : {product.brand}</div>
             <div className="product-details__rating rating-bar rating-bar__small">
                 <span className="material-symbols-outlined">circle</span>
                 <span className="material-symbols-outlined">circle</span>
@@ -69,16 +67,8 @@ const ProductDetails = ({ product }) => {
                 <span className="material-symbols-outlined">circle</span>
                 <span className="material-symbols-outlined">circle</span>
             </div>
-            <PriceTag
-                variant="product"
-                priceValue={product.price}
-                discountValue={product.discount}
-            />
-            <QuantityCounter
-                variant="big"
-                quantity={quantity}
-                changeQuantity={changeQuantity}
-            />
+            <PriceTag variant="product" priceValue={product.rate} discountValue={product.discount} />
+            <QuantityCounter variant="big" quantity={quantity} changeQuantity={changeQuantity} />
             <PriamryButton name="ADD TO CART" product={cartProduct} />
             <ProductDesc description={product.description} />
             <ProductOffers offers={product.offers} />
