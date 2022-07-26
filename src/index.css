@@ -17,6 +17,11 @@ a {
   text-decoration: none;
   color: black; }
 
+.empty-list-msg {
+  font-size: 2rem;
+  text-align: center;
+  color: white; }
+
 .primary-heading {
   font-size: 4.8rem;
   font-weight: 700;

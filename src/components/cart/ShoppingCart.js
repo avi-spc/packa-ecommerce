@@ -8,7 +8,7 @@ import SubtotalCheckout from "./SubtotalCheckout";
 import { CartContext } from "../../contexts/cartContext";
 
 const ShoppingCart = () => {
-    const { cart } = useContext(CartContext);
+    const { cart, cartTotalQuantity, cartTotalAmount } = useContext(CartContext);
 
     return (
         <section className="section-shopping-cart container">
@@ -18,10 +18,10 @@ const ShoppingCart = () => {
             </div>
             <div className="shopping-cart__cart-p-subcheck">
                 <div className="shopping-cart__cart-p-subtotal">
-                    <CartProductsList cartProducts={cart}/>
-                    <CartSubtotal />
+                    <CartProductsList cartProducts={cart} />
+                    <CartSubtotal cartTotalAmount={cartTotalAmount} cartProductsCount={cartTotalQuantity} />
                 </div>
-                <SubtotalCheckout />
+                <SubtotalCheckout cartTotalAmount={cartTotalAmount} cartProductsCount={cartTotalQuantity} />
             </div>
             {/* <CartProductsLater /> */}
         </section>

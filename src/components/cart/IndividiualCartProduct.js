@@ -18,7 +18,7 @@ const IndividualCartProduct = ({ cartProduct }) => {
                     </div>
                 </div>
             </div>
-            <div className="secondary-heading">Rs. {cartProduct.amount}</div>
+            <div className="secondary-heading">Rs. {cartProduct.amount}.00</div>
         </div>
     );
 };

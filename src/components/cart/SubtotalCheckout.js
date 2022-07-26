@@ -1,11 +1,11 @@
 import SecondaryButton from "../buttons/SecondaryButton";
 import PriceTag from "../product/PriceTag";
 
-const SubtotalCheckout = () => {
+const SubtotalCheckout = ({ cartProductsCount, cartTotalAmount }) => {
     return (
         <section className="subtotal-checkout">
-            <div>{`Subtotal ( 2 items )`}</div>
-            <PriceTag variant="subtotal" />
+            <div>{`Subtotal ( ${cartProductsCount} items )`}</div>
+            <PriceTag variant="subtotal" priceValue={cartTotalAmount} />
             <SecondaryButton name="Checkout" />
         </section>
     );

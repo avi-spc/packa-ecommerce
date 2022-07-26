@@ -7,10 +7,8 @@ const PriamryButton = (props) => {
     const { addProductToCart, changeCartTotalQuantity } = useContext(CartContext);
 
     const addProductBatchToCart = () => {
-        if (product.quantity > 0) {
-            addProductToCart(product);
-            changeCartTotalQuantity(product.quantity);
-        }
+        addProductToCart(product);
+        changeCartTotalQuantity(product.quantity);
     };
 
     return (
