@@ -8,7 +8,36 @@ const CartContextProvider = (props) => {
     const [cartTotalAmount, setCartTotalAmount] = useState(0);
 
     const addProductToCart = (product) => {
-        setCart([...cart, product]);
+        let cartProductCount = 0;
+        let isNewProduct = false;
+
+        if (cart.length === 0) {
+            isNewProduct = true;
+        }
+
+        const freshCart = cart.map((cartProduct) => {
+            if (cartProduct.id === product.id) {
+                return {
+                    ...cartProduct,
+                    quantity: cartProduct.quantity + product.quantity,
+                    amount: cartProduct.amount + product.amount,
+                };
+            }
+
+            cartProductCount++;
+            return cartProduct;
+        });
+
+        if (cartProductCount === freshCart.length) {
+            isNewProduct = true;
+        }
+
+        if (isNewProduct) {
+            setCart([...cart, product]);
+        } else {
+            setCart(freshCart);
+        }
+
         setCartTotalAmount(cartTotalAmount + product.quantity * product.rate);
     };
 
