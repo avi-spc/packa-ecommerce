@@ -7,7 +7,7 @@ import PaymentModes from "./paymant_modes/PaymentModes";
 import { CartContext } from "../../contexts/cartContext";
 
 const Checkout = () => {
-    const { cart, cartTotalQuantity, cartTotalAmount } = useContext(CartContext);
+    const { cart, cartTotalAmount, emptyCart } = useContext(CartContext);
 
     return (
         <section className="section-checkout container">
@@ -18,7 +18,7 @@ const Checkout = () => {
                     <PaymentModes />
                     <ItemsAndDelivery cartProducts={cart}/>
                 </div>
-                <OrderSummary cartTotalAmount={cartTotalAmount} />
+                <OrderSummary cartProducts={cart} cartTotalAmount={cartTotalAmount} emptyCart={emptyCart}/>
             </div>
         </section>
     );

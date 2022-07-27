@@ -14,6 +14,7 @@ import ProductsContextProvider from "./contexts/productsContext";
 import CartContextProvider from "./contexts/cartContext";
 import CheckoutContextProvider from "./contexts/checkoutContext";
 import PaymentProgress from "./components/checkout/PaymentProgress";
+import OrdersContextProvider from "./contexts/ordersContext";
 
 function App() {
     return (
@@ -22,17 +23,19 @@ function App() {
                 <CartContextProvider>
                     <ProductsContextProvider>
                         <CheckoutContextProvider>
-                            <Navbar />
-                            <CategoryNavbar />
-                            <Routes>
-                                <Route path="/" element={<ProductSearch />} />
-                                <Route path="/products/:product_id" element={<Product />} />
-                                <Route path="/returns_orders" element={<OrdersHistory />} />
-                                <Route path="/shopcart" element={<ShoppingCart />} />
-                                <Route path="/checkout" element={<Checkout />} />
-                                <Route path="/payment_progress" element={<PaymentProgress />} />
-                            </Routes>
-                            <Footer />
+                            <OrdersContextProvider>
+                                <Navbar />
+                                <CategoryNavbar />
+                                <Routes>
+                                    <Route path="/" element={<ProductSearch />} />
+                                    <Route path="/products/:product_id" element={<Product />} />
+                                    <Route path="/returns_orders" element={<OrdersHistory />} />
+                                    <Route path="/shopcart" element={<ShoppingCart />} />
+                                    <Route path="/checkout" element={<Checkout />} />
+                                    <Route path="/payment_progress" element={<PaymentProgress />} />
+                                </Routes>
+                                <Footer />
+                            </OrdersContextProvider>
                         </CheckoutContextProvider>
                     </ProductsContextProvider>
                 </CartContextProvider>

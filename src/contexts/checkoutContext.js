@@ -21,6 +21,11 @@ const CheckoutContextProvider = (props) => {
         setOrderTotalAmount(cartTotalAmount + deliveryAmount - couponAmount);
     };
 
+    const resetCheckout = () => {
+        setDeliveryAmount(0);
+        setCouponAmount(0);
+    };
+
     return (
         <CheckoutContext.Provider
             value={{
@@ -30,6 +35,7 @@ const CheckoutContextProvider = (props) => {
                 calculateDeliveryAmount,
                 calculateCouponAmount,
                 calculateOrderTotalAmount,
+                resetCheckout,
             }}
         >
             {props.children}

@@ -1,6 +1,8 @@
+const generateUniqueId = require("generate-unique-id");
+
 export const ProductsStore = [
     {
-        id: 1,
+        id: generateUniqueId(),
         name: "Hazelnut Instant Coffee 100g",
         brand: "Countrybean",
         rating: 2.9,
@@ -21,7 +23,7 @@ export const ProductsStore = [
         ],
     },
     {
-        id: 2,
+        id: generateUniqueId(),
         name: "boAt Airdopes 121v2 Earbuds",
         brand: "Boat",
         rating: 4.4,

@@ -2,8 +2,9 @@ import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { CheckoutContext } from "../../contexts/checkoutContext";
+import { OrdersContext } from "../../contexts/ordersContext";
 
-const OrderSummary = ({ cartTotalAmount }) => {
+const OrderSummary = ({ cartProducts, cartTotalAmount, emptyCart }) => {
     const {
         deliveryAmount,
         couponAmount,
@@ -11,10 +12,21 @@ const OrderSummary = ({ cartTotalAmount }) => {
         calculateDeliveryAmount,
         calculateCouponAmount,
         calculateOrderTotalAmount,
+        resetCheckout,
     } = useContext(CheckoutContext);
+
+    const { createOrder } = useContext(OrdersContext);
 
     const applyCoupon = () => {
         calculateCouponAmount(0.03 * cartTotalAmount);
+    };
+
+    const placeOrder = () => {
+        if (cartProducts.length) {
+            createOrder(cartProducts, orderTotalAmount);
+            emptyCart();
+            resetCheckout();
+        }
     };
 
     useEffect(() => {
@@ -49,9 +61,11 @@ const OrderSummary = ({ cartTotalAmount }) => {
                 <span>Order Total</span>
                 <span>Rs. {orderTotalAmount.toFixed(2)}</span>
             </div>
-            <Link to="/payment_progress">
-                <div className="btn-proceed-to-pay">Proceed to Pay</div>
-            </Link>
+            {/* <Link to="/returns_orders"> */}
+            <div className="btn-proceed-to-pay" onClick={placeOrder}>
+                Proceed to Pay
+            </div>
+            {/* </Link> */}
         </section>
     );
 };
