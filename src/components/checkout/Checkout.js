@@ -1,9 +1,14 @@
+import { useContext } from "react";
+
 import DeliveryAddressList from "./DeliveryAddressList";
 import ItemsAndDelivery from "./ItemsAndDelivery";
 import OrderSummary from "./OrderSummary";
 import PaymentModes from "./paymant_modes/PaymentModes";
+import { CartContext } from "../../contexts/cartContext";
 
 const Checkout = () => {
+    const { cart, cartTotalQuantity, cartTotalAmount } = useContext(CartContext);
+
     return (
         <section className="section-checkout container">
             <div className="primary-heading margin-bottom-huge">Checkout</div>
@@ -11,9 +16,9 @@ const Checkout = () => {
                 <div className="checkout-details">
                     <DeliveryAddressList />
                     <PaymentModes />
-                    <ItemsAndDelivery />
+                    <ItemsAndDelivery cartProducts={cart}/>
                 </div>
-                <OrderSummary />
+                <OrderSummary cartTotalAmount={cartTotalAmount} />
             </div>
         </section>
     );
