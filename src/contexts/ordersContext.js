@@ -5,8 +5,12 @@ export const OrdersContext = createContext();
 
 const OrdersContextProvider = (props) => {
     const [orders, setOrders] = useState([]);
+    const [savings, setSavings] = useState({
+        coupons: 0,
+        offers: 0,
+    });
 
-    const createOrder = (orderSet, orderTotal) => {
+    const createOrder = (orderSet, orderTotal, orderSavings) => {
         const generateOrderId = () => {
             let uid = generateUniqueId({
                 length: 17,
@@ -29,15 +33,11 @@ const OrdersContextProvider = (props) => {
             orderedProducts: orderSet,
         };
 
+        setSavings({ coupons: savings.coupons + orderSavings, offers: 0 });
         setOrders([...orders, newOrder]);
     };
 
-    return (
-        <OrdersContext.Provider value={{ orders, createOrder }}>
-            {props.children}
-            {console.log(generateUniqueId())}
-        </OrdersContext.Provider>
-    );
+    return <OrdersContext.Provider value={{ orders, savings, createOrder }}>{props.children}</OrdersContext.Provider>;
 };
 
 export default OrdersContextProvider;

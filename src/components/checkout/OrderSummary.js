@@ -23,7 +23,7 @@ const OrderSummary = ({ cartProducts, cartTotalAmount, emptyCart }) => {
 
     const placeOrder = () => {
         if (cartProducts.length) {
-            createOrder(cartProducts, orderTotalAmount);
+            createOrder(cartProducts, orderTotalAmount, couponAmount);
             emptyCart();
             resetCheckout();
         }

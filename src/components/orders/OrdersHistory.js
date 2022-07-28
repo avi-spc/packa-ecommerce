@@ -6,7 +6,7 @@ import LifetimeSavings from "./LifetimeSavings";
 import { OrdersContext } from "../../contexts/ordersContext";
 
 const OrdersHistory = () => {
-    const { orders } = useContext(OrdersContext);
+    const { orders, savings } = useContext(OrdersContext);
 
     return (
         <section className="section-orders-history container">
@@ -29,7 +29,7 @@ const OrdersHistory = () => {
                         <div className="empty-list-msg">You have no order history</div>
                     )}
                 </div>
-                <LifetimeSavings />
+                <LifetimeSavings savings={savings} />
             </div>
         </section>
     );
