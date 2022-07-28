@@ -12,7 +12,6 @@ const OrderSummary = ({ cartProducts, cartTotalAmount, emptyCart }) => {
         calculateDeliveryAmount,
         calculateCouponAmount,
         calculateOrderTotalAmount,
-        resetCheckout,
     } = useContext(CheckoutContext);
 
     const { createOrder } = useContext(OrdersContext);
@@ -25,13 +24,15 @@ const OrderSummary = ({ cartProducts, cartTotalAmount, emptyCart }) => {
         if (cartProducts.length) {
             createOrder(cartProducts, orderTotalAmount, couponAmount);
             emptyCart();
-            resetCheckout();
         }
     };
 
     useEffect(() => {
         calculateDeliveryAmount(cartTotalAmount);
-    }, []);
+        if (couponAmount) {
+            applyCoupon();
+        }
+    }, [cartTotalAmount]);
 
     useEffect(() => {
         calculateOrderTotalAmount(cartTotalAmount);
@@ -51,7 +52,7 @@ const OrderSummary = ({ cartProducts, cartTotalAmount, emptyCart }) => {
                 </div>
             </div>
             <div className="order-summary__coupon">
-                <div>Apply a coupon</div>
+                <div>Apply a coupon {couponAmount ? ` (applied already) ` : ""}</div>
                 <input type="text" />
                 <span className="btn btn-apply-coupon" onClick={applyCoupon}>
                     Apply

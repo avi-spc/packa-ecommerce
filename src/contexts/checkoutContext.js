@@ -13,17 +13,11 @@ const CheckoutContextProvider = (props) => {
     };
 
     const calculateCouponAmount = (couponAmount) => {
-        console.log(couponAmount);
         setCouponAmount(couponAmount);
     };
 
     const calculateOrderTotalAmount = (cartTotalAmount) => {
         setOrderTotalAmount(cartTotalAmount + deliveryAmount - couponAmount);
-    };
-
-    const resetCheckout = () => {
-        setDeliveryAmount(0);
-        setCouponAmount(0);
     };
 
     return (
@@ -35,7 +29,6 @@ const CheckoutContextProvider = (props) => {
                 calculateDeliveryAmount,
                 calculateCouponAmount,
                 calculateOrderTotalAmount,
-                resetCheckout,
             }}
         >
             {props.children}

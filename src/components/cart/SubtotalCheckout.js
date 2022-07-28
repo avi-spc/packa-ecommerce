@@ -7,10 +7,11 @@ const SubtotalCheckout = ({ cartProductsCount, cartTotalAmount }) => {
         <section className="subtotal-checkout">
             <div>{`Subtotal ( ${cartProductsCount} items )`}</div>
             <PriceTag variant="subtotal" priceValue={cartTotalAmount} />
-            <Link to="/checkout" className="btn btn__secondary">
-                Checkout
-            </Link>
-            {/* <SecondaryButton name="Checkout" /> */}
+            {cartProductsCount ? (
+                <Link to="/checkout" className="btn btn__secondary">
+                    Checkout
+                </Link>
+            ) : null}
         </section>
     );
 };

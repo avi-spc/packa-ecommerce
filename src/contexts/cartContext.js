@@ -6,17 +6,15 @@ const CartContextProvider = (props) => {
     const [cart, setCart] = useState([]);
     const [cartTotalQuantity, setCartTotalQuantity] = useState(0);
     const [cartTotalAmount, setCartTotalAmount] = useState(0);
+    const [isCartEmpty, setIsCartEmpty] = useState(true);
 
     const addProductToCart = (product) => {
         let cartProductCount = 0;
-        let isNewProduct = false;
-
-        if (cart.length === 0) {
-            isNewProduct = true;
-        }
+        let isNewProduct = true;
 
         const freshCart = cart.map((cartProduct) => {
             if (cartProduct.id === product.id) {
+                isNewProduct = false;
                 return {
                     ...cartProduct,
                     quantity: cartProduct.quantity + product.quantity,
@@ -24,13 +22,8 @@ const CartContextProvider = (props) => {
                 };
             }
 
-            cartProductCount++;
             return cartProduct;
         });
-
-        if (cartProductCount === freshCart.length) {
-            isNewProduct = true;
-        }
 
         if (isNewProduct) {
             setCart([...cart, product]);
@@ -38,20 +31,25 @@ const CartContextProvider = (props) => {
             setCart(freshCart);
         }
 
+        setIsCartEmpty(false);
         setCartTotalAmount(cartTotalAmount + product.quantity * product.rate);
     };
 
     const removeProductFromCart = (productID) => {
-        setCart(
-            cart.filter((cartProduct) => {
-                if (cartProduct.id === productID) {
-                    setCartTotalQuantity(cartTotalQuantity - cartProduct.quantity);
-                    setCartTotalAmount(cartTotalAmount - cartProduct.amount);
-                }
+        const modifiedCart = cart.filter((cartProduct) => {
+            if (cartProduct.id === productID) {
+                setCartTotalQuantity(cartTotalQuantity - cartProduct.quantity);
+                setCartTotalAmount(cartTotalAmount - cartProduct.amount);
+            }
 
-                return cartProduct.id !== productID;
-            })
-        );
+            return cartProduct.id !== productID;
+        });
+
+        if (!modifiedCart.length) {
+            setIsCartEmpty(true);
+        }
+
+        setCart(modifiedCart);
     };
 
     const changeCartTotalQuantity = (quantityChange) => {
@@ -86,13 +84,17 @@ const CartContextProvider = (props) => {
             });
         }
 
+        if (!modifiedCart.length) {
+            setIsCartEmpty(true);
+        }
+
         setCart(modifiedCart);
     };
 
     const emptyCart = () => {
-        console.log("emptycart");
-        setCartTotalAmount(0);
         setCartTotalQuantity(0);
+        setCartTotalAmount(0);
+        setIsCartEmpty(true);
         setCart([]);
     };
 
@@ -102,6 +104,7 @@ const CartContextProvider = (props) => {
                 cart,
                 cartTotalQuantity,
                 cartTotalAmount,
+                isCartEmpty,
                 addProductToCart,
                 removeProductFromCart,
                 changeCartTotalQuantity,
