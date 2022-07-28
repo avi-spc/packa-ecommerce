@@ -1,11 +1,16 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { ProductsContext } from "../../contexts/productsContext";
+import { ProductsStore } from "../../store/productsStore";
 
 const NavSearch = () => {
     const [searchString, setSearchString] = useState("");
     const [mappedStrings, setMappedStrings] = useState([]);
-    const [strings] = useState(["mobiles", "appliances", "mojin", "pantry", "match"]);
+    const [strings] = useState(["mobiles", "electronics", "computers", "coffee"]);
     const [activeIndex, setActiveIndex] = useState(-1);
     const [activeValue, setActiveValue] = useState(null);
+    const [isValidString, setisValidString] = useState(false);
+
+    const { fetchSearchedProducts } = useContext(ProductsContext);
 
     useEffect(() => {
         if (searchString.length && activeValue == null) {
@@ -47,6 +52,16 @@ const NavSearch = () => {
         }
     }, [mappedStrings]);
 
+    useEffect(() => {
+        if (isValidString) {
+            fetchSearchedProducts(
+                ProductsStore.filter((product) => {
+                    return product.category.includes(searchString);
+                })
+            );
+        }
+    }, [isValidString]);
+
     const handleChange = (e) => {
         if (e.code === "ArrowDown" && activeIndex < mappedStrings.length - 1) {
             setActiveIndex(activeIndex + 1);
@@ -55,8 +70,14 @@ const NavSearch = () => {
         } else if ((e.code === "Enter" || e.code === "NumpadEnter") && activeValue != null) {
             setSearchString(activeValue);
             document.querySelector(".product-search__string-list").classList.add("hide");
+            if (mappedStrings.length) {
+                setisValidString(true);
+            }
         } else if ((e.code === "Enter" || e.code === "NumpadEnter") && activeValue == null) {
             document.querySelector(".product-search__string-list").classList.add("hide");
+            if (mappedStrings.length) {
+                setisValidString(true);
+            }
         }
     };
 
@@ -71,6 +92,7 @@ const NavSearch = () => {
                     setSearchString(e.target.value);
                     setActiveIndex(-1);
                     setActiveValue(null);
+                    setisValidString(false);
                 }}
                 onKeyUp={(e) => handleChange(e)}
             />

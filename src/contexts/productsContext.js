@@ -4,10 +4,14 @@ import { ProductsStore } from "../store/productsStore";
 export const ProductsContext = createContext();
 
 const ProductsContextProvider = (props) => {
-    const [products] = useState(ProductsStore);
+    const [products, setProducts] = useState([]);
+
+    const fetchSearchedProducts = (searchProducts) => {
+        setProducts(searchProducts);
+    };
 
     return (
-        <ProductsContext.Provider value={{ products }}>
+        <ProductsContext.Provider value={{ products, fetchSearchedProducts }}>
             {props.children}
         </ProductsContext.Provider>
     );
