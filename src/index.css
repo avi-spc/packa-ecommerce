@@ -269,7 +269,8 @@ a {
     font-weight: 700; }
   .nav-primary__product-search {
     display: flex;
-    font-size: 2rem; }
+    font-size: 2rem;
+    position: relative; }
     .nav-primary__product-search .product-search__search-category {
       font-weight: 700;
       padding: 2.5rem;
@@ -284,6 +285,25 @@ a {
       border-style: none;
       outline-style: none;
       width: 50rem; }
+    .nav-primary__product-search .product-search__string-list {
+      list-style: none;
+      padding: 2.5rem 2.8rem;
+      margin-top: 1rem;
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      background-color: #828282;
+      border-radius: 1.5rem;
+      z-index: 100; }
+      .nav-primary__product-search .product-search__string-list li:not(:last-child) {
+        margin-bottom: 2.5rem; }
+      .nav-primary__product-search .product-search__string-list .active-ssr {
+        padding: 1.8rem 1.5rem;
+        background-color: #D9D9D9;
+        border-radius: 1.5rem; }
+
+.hide {
+  visibility: hidden; }
 
 .section-order-summary, .section-lifetime-savings {
   font-size: 2rem;

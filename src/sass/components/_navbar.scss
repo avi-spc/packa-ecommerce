@@ -82,6 +82,7 @@
     &__product-search {
         display: flex;
         font-size: $normal-font-size;
+        position: relative;
     
         .product-search {
             &__search-category {
@@ -101,6 +102,35 @@
                 outline-style: none;
                 width: 50rem;
             }
+
+
+            &__string-list {
+                list-style: none;
+                padding: 2.5rem 2.8rem;
+                margin-top: 1rem;
+                
+                position: absolute;
+                top: 100%;
+                width: 100%;
+                
+                background-color: $color-primary-dark;
+                border-radius: $normal-border-radius;
+                z-index: 100;
+                
+                li:not(:last-child) {
+                    margin-bottom: 2.5rem;
+                }               
+
+                .active-ssr {
+                    padding: 1.8rem 1.5rem;
+                    background-color: $color-primary-light;
+                    border-radius: $normal-border-radius;
+                }
+            }
         }    
     }
+}
+
+.hide {
+    visibility: hidden;
 }
