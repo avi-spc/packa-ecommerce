@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const NavSearch = () => {
     const [searchString, setSearchString] = useState("");
     const [mappedStrings, setMappedStrings] = useState([]);
-    const [strings] = useState(["mobiles", "appliances", "mojin", "pantry"]);
+    const [strings] = useState(["mobiles", "appliances", "mojin", "pantry", "match"]);
     const [activeIndex, setActiveIndex] = useState(-1);
     const [activeValue, setActiveValue] = useState(null);
 
@@ -30,8 +30,12 @@ const NavSearch = () => {
             listItems[activeIndex - 1].classList.remove("active-ssr");
         }
 
-        if (activeIndex > -1 && activeIndex < mappedStrings.length - 1) {
+        if (activeIndex < mappedStrings.length - 1) {
             listItems[activeIndex + 1].classList.remove("active-ssr");
+        }
+
+        if (activeIndex === -1) {
+            setActiveValue(null);
         }
     }, [activeIndex]);
 
@@ -44,7 +48,7 @@ const NavSearch = () => {
     }, [mappedStrings]);
 
     const handleChange = (e) => {
-        if (e.code === "ArrowDown") {
+        if (e.code === "ArrowDown" && activeIndex < mappedStrings.length - 1) {
             setActiveIndex(activeIndex + 1);
         } else if (e.code === "ArrowUp" && activeIndex > -1) {
             setActiveIndex(activeIndex - 1);
