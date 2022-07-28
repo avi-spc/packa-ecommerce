@@ -8,7 +8,7 @@ const NavSearch = () => {
     const [activeValue, setActiveValue] = useState(null);
 
     useEffect(() => {
-        if (searchString.length) {
+        if (searchString.length && activeValue == null) {
             setMappedStrings(
                 strings.filter((str) => {
                     return str.includes(searchString);
@@ -66,6 +66,7 @@ const NavSearch = () => {
                 onChange={(e) => {
                     setSearchString(e.target.value);
                     setActiveIndex(-1);
+                    setActiveValue(null);
                 }}
                 onKeyUp={(e) => handleChange(e)}
             />
