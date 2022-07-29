@@ -6,7 +6,7 @@ const ProductFilter = () => {
     const [brands, setBrands] = useState(null);
     const [selectedBrands, setSelectedBrands] = useState([]);
 
-    const { products } = useContext(ProductsContext);
+    const { products, fetchFilteredProducts } = useContext(ProductsContext);
 
     useEffect(() => {
         if (products.length) {
@@ -21,7 +21,11 @@ const ProductFilter = () => {
     }, [products]);
 
     useEffect(() => {
-        console.log(selectedBrands);
+        fetchFilteredProducts(
+            products.filter((product) => {
+                return selectedBrands.includes(product.brand);
+            })
+        );
     }, [selectedBrands]);
 
     const handleBrands = (e) => {
