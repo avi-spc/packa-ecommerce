@@ -5,8 +5,20 @@ import { ProductsContext } from "../../contexts/productsContext";
 const ProductFilter = () => {
     const [brands, setBrands] = useState(null);
     const [selectedBrands, setSelectedBrands] = useState([]);
+    const [filterOption, setFilterOption] = useState({
+        brands: [],
+        price: [],
+    });
 
     const { products, fetchFilteredProducts } = useContext(ProductsContext);
+
+    const priceCategories = [
+        { level: "price-range-0", range: "Under Rs. 1000", min: 0, max: 1000 },
+        { level: "price-range-1", range: "Rs. 1000 - Rs. 2000", min: 1000, max: 2000 },
+        { level: "price-range-2", range: "Rs. 2000 - Rs. 5000", min: 2000, max: 5000 },
+        { level: "price-range-3", range: "Rs. 5000 - Rs. 10000", min: 5000, max: 10000 },
+        { level: "price-range-4", range: "Over Rs. 10000", min: 10000, max: 999999999 },
+    ];
 
     useEffect(() => {
         if (products.length) {
@@ -23,21 +35,55 @@ const ProductFilter = () => {
     useEffect(() => {
         fetchFilteredProducts(
             products.filter((product) => {
-                return selectedBrands.includes(product.brand);
+                return selectedBrands.includes(product.brand) || inPriceRange(product.rate);
             })
         );
-    }, [selectedBrands]);
+    }, [selectedBrands, filterOption]);
 
     const handleBrands = (e) => {
         if (e.target.checked) {
             setSelectedBrands([...selectedBrands, e.target.value]);
+            setFilterOption({ ...filterOption, price: [...filterOption.price, handlePriceRange(e.target.value)] });
         } else {
             setSelectedBrands(
                 selectedBrands.filter((uncheckedBrand) => {
                     return uncheckedBrand !== e.target.value;
                 })
             );
+
+            setFilterOption({
+                ...filterOption,
+                price: filterOption.price.filter((r) => {
+                    return (
+                        r.min !== handlePriceRange(e.target.value).min && r.max !== handlePriceRange(e.target.value).max
+                    );
+                }),
+            });
         }
+    };
+
+    const handlePriceRange = (e) => {
+        const priceRange = priceCategories.find((range) => {
+            return range.level === e;
+        });
+
+        return { min: priceRange.min, max: priceRange.max };
+    };
+
+    const inPriceRange = (productPrice) => {
+        let inRange = false;
+        for (let priceRange of filterOption.price) {
+            console.log(priceRange);
+            if (productPrice >= priceRange.min && productPrice < priceRange.max) {
+                inRange = true;
+                break;
+            }
+        }
+
+        return inRange;
+        // filterOption.price.forEach((priceRange) => {
+
+        // });
     };
 
     return (
@@ -62,14 +108,20 @@ const ProductFilter = () => {
                     })}
 
                 <div className="product-filter__category--name">Price</div>
-                <div className="filter-option">
-                    <input type="checkbox" name="Countrybean" />
-                    <label htmlFor="Countrybean">Under Rs. 1000</label>
-                </div>
-                <div className="filter-option">
-                    <input type="checkbox" name="Nestle" />
-                    <label htmlFor="Nestle">Rs. 1000 - Rs. 2000</label>
-                </div>
+                {priceCategories.map((priceCategory, index) => {
+                    return (
+                        <div className="filter-option" key={index}>
+                            <input
+                                type="checkbox"
+                                id={priceCategory.level}
+                                name={priceCategory.level}
+                                value={priceCategory.level}
+                                onChange={(e) => handleBrands(e)}
+                            />
+                            <label htmlFor={priceCategory.level}>{priceCategory.range}</label>
+                        </div>
+                    );
+                })}
             </div>
         </section>
     );
