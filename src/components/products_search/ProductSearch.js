@@ -12,8 +12,8 @@ const ProductSearch = () => {
             <div className="product-search__filter-p-grid">
                 <ProductFilter />
                 <div className="product-search__grid">
-                    {filteredProducts.length
-                        ? filteredProducts.map((product) => {
+                    {filteredProducts.isFilterOn
+                        ? filteredProducts.products.map((product) => {
                               return <ProductCard product={product} key={product.id} />;
                           })
                         : products.map((product) => {

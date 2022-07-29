@@ -5,14 +5,17 @@ export const ProductsContext = createContext();
 
 const ProductsContextProvider = (props) => {
     const [products, setProducts] = useState([]);
-    const [filteredProducts, setFilteredProducts] = useState([]);
+    const [filteredProducts, setFilteredProducts] = useState({
+        isFilterOn: false,
+        products: [],
+    });
 
     const fetchSearchedProducts = (searchProducts) => {
         setProducts(searchProducts);
     };
 
-    const fetchFilteredProducts = (filteredProducts) => {
-        setFilteredProducts(filteredProducts);
+    const fetchFilteredProducts = (isFilterOn, filteredProducts) => {
+        setFilteredProducts({ isFilterOn, products: filteredProducts });
     };
 
     return (
