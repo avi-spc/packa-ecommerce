@@ -8,9 +8,10 @@ const NetbankingPayment = ({ p }) => {
     }, [bankName]);
 
     return (
-        <div className="payment-option payment-option--netbanking">
+        <label htmlFor="payment-radio-netbanking" className="payment-option payment-option--netbanking">
             <input
                 type="radio"
+                id="payment-radio-netbanking"
                 name="payment-radio"
                 value="Netbanking"
                 onChange={(e) => p({ paymentMethod: e.target.value, paymentPayload: {} })}
@@ -26,7 +27,7 @@ const NetbankingPayment = ({ p }) => {
                     </select>
                 </div>
             </div>
-        </div>
+        </label>
     );
 };
 

@@ -19,9 +19,10 @@ const UpiPayment = ({ p }) => {
     };
 
     return (
-        <div className="payment-option payment-option--upi">
+        <label htmlFor="payment-radio-upi" className="payment-option payment-option--upi">
             <input
                 type="radio"
+                id="payment-radio-upi"
                 name="payment-radio"
                 value="UPI"
                 onChange={(e) => p({ paymentMethod: e.target.value, paymentPayload: {} })}
@@ -34,7 +35,7 @@ const UpiPayment = ({ p }) => {
                     <SecondaryButton name="Verify" action={setUpiVerification} actionPayload={{}} />
                 </div>
             </div>
-        </div>
+        </label>
     );
 };
 

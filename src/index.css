@@ -45,6 +45,9 @@ a {
 .margin-bottom-huge {
   margin-bottom: 5rem; }
 
+.radio-selected {
+  background-color: #272727; }
+
 .btn {
   display: inline-block;
   border-radius: 1.5rem;

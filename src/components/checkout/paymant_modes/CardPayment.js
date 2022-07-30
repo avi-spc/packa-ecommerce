@@ -13,9 +13,10 @@ const CardPayment = ({ p }) => {
     }, [cardNumber, nameOnCard, expiryDate]);
 
     return (
-        <div className="payment-option payment-option--card">
+        <label htmlFor="payment-radio-card" className="payment-option payment-option--card">
             <input
                 type="radio"
+                id="payment-radio-card"
                 name="payment-radio"
                 value="Card"
                 onChange={(e) => p({ paymentMethod: e.target.value, paymentPayload: {} })}
@@ -48,7 +49,7 @@ const CardPayment = ({ p }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </label>
     );
 };
 

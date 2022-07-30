@@ -2,7 +2,7 @@ import SecondaryButton from "../buttons/SecondaryButton";
 
 const IndividualAddress = ({ address, selectDeliveryAddress }) => {
     return (
-        <div className="individual-address">
+        <label htmlFor={address.customerName} className="individual-address">
             <div className="individual-address__address-m-btn">
                 <input
                     type="radio"
@@ -11,16 +11,14 @@ const IndividualAddress = ({ address, selectDeliveryAddress }) => {
                     value={address.customerId}
                     onChange={(e) => selectDeliveryAddress(e.target.value)}
                 />
-                <label htmlFor={address.customerName}>
-                    <div className="individual-address__address-details">
-                        <div className="tertiary-heading">{address.customerName}</div>
-                        <div>{address.customerAddress}</div>
-                        <div>Phone : : {address.customerPhone}</div>
-                    </div>
-                </label>
+                <div className="individual-address__address-details">
+                    <div className="tertiary-heading">{address.customerName}</div>
+                    <div>{address.customerAddress}</div>
+                    <div>Phone : : {address.customerPhone}</div>
+                </div>
             </div>
             <SecondaryButton name="Edit Address" />
-        </div>
+        </label>
     );
 };
 

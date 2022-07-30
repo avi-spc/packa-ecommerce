@@ -10,7 +10,7 @@ const OrdersContextProvider = (props) => {
         offers: 0,
     });
 
-    const createOrder = (orderSet, orderTotal, orderSavings) => {
+    const createOrder = (orderSet, orderTotal, orderSavings, customerDetails) => {
         const generateOrderId = () => {
             let uid = generateUniqueId({
                 length: 17,
@@ -28,7 +28,8 @@ const OrdersContextProvider = (props) => {
                 placedDate: new Date().toDateString().slice(4),
                 deliveryDate: new Date(Date.now() + 604800000).toDateString().slice(4),
                 amount: orderTotal,
-                customerName: "Konami Grenger",
+                customerName: customerDetails.selectedAddress.customerName,
+                paymentMode: customerDetails.payment.paymentMethod,
             },
             orderedProducts: orderSet,
         };

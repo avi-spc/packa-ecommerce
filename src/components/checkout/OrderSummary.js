@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { CheckoutContext } from "../../contexts/checkoutContext";
+import { CustomerContext } from "../../contexts/customerContext";
 import { OrdersContext } from "../../contexts/ordersContext";
 
 const OrderSummary = ({ cartProducts, cartTotalAmount, emptyCart }) => {
@@ -15,6 +16,7 @@ const OrderSummary = ({ cartProducts, cartTotalAmount, emptyCart }) => {
     } = useContext(CheckoutContext);
 
     const { createOrder } = useContext(OrdersContext);
+    const { selectedAddress, payment } = useContext(CustomerContext);
 
     const applyCoupon = () => {
         calculateCouponAmount(0.03 * cartTotalAmount);
@@ -22,7 +24,7 @@ const OrderSummary = ({ cartProducts, cartTotalAmount, emptyCart }) => {
 
     const placeOrder = () => {
         if (cartProducts.length) {
-            createOrder(cartProducts, orderTotalAmount, couponAmount);
+            createOrder(cartProducts, orderTotalAmount, couponAmount, { selectedAddress, payment });
             emptyCart();
         }
     };

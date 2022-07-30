@@ -26,7 +26,7 @@ const CustomerContextProvider = (props) => {
     };
 
     return (
-        <CustomerContext.Provider value={{ addresses, selectDeliveryAddress, selectPaymentMode }}>
+        <CustomerContext.Provider value={{ addresses, selectedAddress, payment, selectDeliveryAddress, selectPaymentMode }}>
             {props.children}
             {console.log("h")}
         </CustomerContext.Provider>
