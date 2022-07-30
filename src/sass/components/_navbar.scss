@@ -104,7 +104,7 @@
             }
 
 
-            &__string-list {
+            &__suggested-searches-list {
                 list-style: none;
                 padding: 2.5rem 2.8rem;
                 margin-top: 1rem;
@@ -122,7 +122,7 @@
                     margin-bottom: 2.5rem;
                 }               
 
-                .active-ssr {
+                .active-suggested-string {
                     padding: 1.8rem 1.5rem;
                     color: $color-black;
                     background-color: $color-primary-light;
@@ -131,8 +131,4 @@
             }
         }    
     }
-}
-
-.hide {
-    visibility: hidden;
 }

@@ -17,11 +17,6 @@ a {
   text-decoration: none;
   color: black; }
 
-.empty-list-msg {
-  font-size: 2rem;
-  text-align: center;
-  color: white; }
-
 .primary-heading {
   font-size: 4.8rem;
   font-weight: 700;
@@ -47,6 +42,14 @@ a {
 
 .radio-selected {
   background-color: #272727; }
+
+.empty-list-msg {
+  font-size: 2rem;
+  text-align: center;
+  color: white; }
+
+.hidden {
+  visibility: hidden; }
 
 .btn {
   display: inline-block;
@@ -288,7 +291,7 @@ a {
       border-style: none;
       outline-style: none;
       width: 50rem; }
-    .nav-primary__product-search .product-search__string-list {
+    .nav-primary__product-search .product-search__suggested-searches-list {
       list-style: none;
       padding: 2.5rem 2.8rem;
       margin-top: 1rem;
@@ -299,16 +302,13 @@ a {
       background-color: #828282;
       border-radius: 1.5rem;
       z-index: 100; }
-      .nav-primary__product-search .product-search__string-list li:not(:last-child) {
+      .nav-primary__product-search .product-search__suggested-searches-list li:not(:last-child) {
         margin-bottom: 2.5rem; }
-      .nav-primary__product-search .product-search__string-list .active-ssr {
+      .nav-primary__product-search .product-search__suggested-searches-list .active-suggested-string {
         padding: 1.8rem 1.5rem;
         color: black;
         background-color: #D9D9D9;
         border-radius: 1.5rem; }
-
-.hide {
-  visibility: hidden; }
 
 .section-order-summary, .section-lifetime-savings {
   font-size: 2rem;

@@ -13,3 +13,13 @@
 .radio-selected {
     background-color: $color-selected-dark;
 }
+
+.empty-list-msg {
+    font-size: $normal-font-size;
+    text-align: center;
+    color: $color-white;
+}
+
+.hidden {
+    visibility: hidden;
+}

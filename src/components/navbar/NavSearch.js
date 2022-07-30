@@ -1,84 +1,90 @@
 import { useContext, useEffect, useState } from "react";
+
 import { ProductsContext } from "../../contexts/productsContext";
 import { ProductsStore } from "../../store/productsStore";
+import { ProductCategories } from "../../store/productsCategory";
 
 const NavSearch = () => {
     const [searchString, setSearchString] = useState("");
-    const [mappedStrings, setMappedStrings] = useState([]);
-    const [strings] = useState(["mobiles", "electronics", "computers", "coffee"]);
-    const [activeIndex, setActiveIndex] = useState(-1);
-    const [activeValue, setActiveValue] = useState(null);
-    const [isValidString, setisValidString] = useState(false);
+    const [suggestedSearchStrings, setSuggestedSearchStrings] = useState([]);
+    const [currentSuggestedStringIndex, setCurrentSuggestedStringIndex] = useState(-1);
+    const [currentSuggestedStringValue, setCurrentSuggestedStringValue] = useState(null);
+    const [hasUserEntered, setHasUserEntered] = useState(false);
 
     const { fetchSearchedProducts } = useContext(ProductsContext);
 
     useEffect(() => {
-        if (searchString.length && activeValue == null) {
-            setMappedStrings(
-                strings.filter((str) => {
-                    return str.includes(searchString);
+        if (searchString.length && currentSuggestedStringValue == null) {
+            setSuggestedSearchStrings(
+                ProductCategories.filter((category) => {
+                    return category.includes(searchString.toLowerCase());
                 })
             );
         } else {
-            setMappedStrings([]);
+            setSuggestedSearchStrings([]);
         }
     }, [searchString]);
 
     useEffect(() => {
-        const listItems = Array.from(document.getElementsByClassName("ssr"));
-        if (activeIndex > -1) {
-            listItems[activeIndex].classList.add("active-ssr");
-            setActiveValue(mappedStrings[activeIndex]);
+        const listItems = Array.from(document.getElementsByClassName("suggested-string"));
+
+        if (currentSuggestedStringIndex > -1) {
+            listItems[currentSuggestedStringIndex].classList.add("active-suggested-string");
+            setCurrentSuggestedStringValue(suggestedSearchStrings[currentSuggestedStringIndex]);
         }
 
-        if (activeIndex > 0) {
-            listItems[activeIndex - 1].classList.remove("active-ssr");
+        if (currentSuggestedStringIndex > 0) {
+            listItems[currentSuggestedStringIndex - 1].classList.remove("active-suggested-string");
         }
 
-        if (activeIndex < mappedStrings.length - 1) {
-            listItems[activeIndex + 1].classList.remove("active-ssr");
+        if (currentSuggestedStringIndex < suggestedSearchStrings.length - 1) {
+            listItems[currentSuggestedStringIndex + 1].classList.remove("active-suggested-string");
         }
 
-        if (activeIndex === -1) {
-            setActiveValue(null);
+        if (currentSuggestedStringIndex === -1) {
+            setCurrentSuggestedStringValue(null);
         }
-    }, [activeIndex]);
+    }, [currentSuggestedStringIndex]);
 
     useEffect(() => {
-        if (mappedStrings.length) {
-            document.querySelector(".product-search__string-list").classList.remove("hide");
+        if (suggestedSearchStrings.length) {
+            document.querySelector(".product-search__suggested-searches-list").classList.remove("hidden");
         } else {
-            document.querySelector(".product-search__string-list").classList.add("hide");
+            document.querySelector(".product-search__suggested-searches-list").classList.add("hidden");
         }
-    }, [mappedStrings]);
+    }, [suggestedSearchStrings]);
 
     useEffect(() => {
-        if (isValidString) {
+        if (hasUserEntered) {
             fetchSearchedProducts(
                 ProductsStore.filter((product) => {
-                    return product.category.includes(searchString);
+                    return product.category.includes(searchString.toLowerCase());
                 })
             );
         }
-    }, [isValidString]);
+    }, [hasUserEntered]);
 
-    const handleChange = (e) => {
-        if (e.code === "ArrowDown" && activeIndex < mappedStrings.length - 1) {
-            setActiveIndex(activeIndex + 1);
-        } else if (e.code === "ArrowUp" && activeIndex > -1) {
-            setActiveIndex(activeIndex - 1);
-        } else if ((e.code === "Enter" || e.code === "NumpadEnter") && activeValue != null) {
-            setSearchString(activeValue);
-            document.querySelector(".product-search__string-list").classList.add("hide");
-            if (mappedStrings.length) {
-                setisValidString(true);
+    const handleSuggestedSearchStringsNavigation = (e) => {
+        if (e.code === "ArrowDown" && currentSuggestedStringIndex < suggestedSearchStrings.length - 1) {
+            setCurrentSuggestedStringIndex(currentSuggestedStringIndex + 1);
+        } else if (e.code === "ArrowUp" && currentSuggestedStringIndex > -1) {
+            setCurrentSuggestedStringIndex(currentSuggestedStringIndex - 1);
+        } else if (e.code === "Enter" || e.code === "NumpadEnter") {
+            document.querySelector(".product-search__suggested-searches-list").classList.add("hidden");
+
+            if (currentSuggestedStringValue != null) {
+                setSearchString(currentSuggestedStringValue);
             }
-        } else if ((e.code === "Enter" || e.code === "NumpadEnter") && activeValue == null) {
-            document.querySelector(".product-search__string-list").classList.add("hide");
-            if (mappedStrings.length) {
-                setisValidString(true);
-            }
+
+            setHasUserEntered(true);
         }
+    };
+
+    const handleSearchStringChange = (e) => {
+        setSearchString(e.target.value);
+        setCurrentSuggestedStringIndex(-1);
+        setCurrentSuggestedStringValue(null);
+        setHasUserEntered(false);
     };
 
     return (
@@ -88,19 +94,14 @@ const NavSearch = () => {
                 className="product-search__search-input"
                 type="text"
                 value={searchString}
-                onChange={(e) => {
-                    setSearchString(e.target.value);
-                    setActiveIndex(-1);
-                    setActiveValue(null);
-                    setisValidString(false);
-                }}
-                onKeyUp={(e) => handleChange(e)}
+                onChange={(e) => handleSearchStringChange(e)}
+                onKeyUp={(e) => handleSuggestedSearchStringsNavigation(e)}
             />
-            <ul className="product-search__string-list hide">
-                {mappedStrings.map((str, index) => {
+            <ul className="product-search__suggested-searches-list hidden">
+                {suggestedSearchStrings.map((suggestedString, index) => {
                     return (
-                        <li className="ssr" key={index}>
-                            {str}
+                        <li className="suggested-string" key={index}>
+                            {suggestedString}
                         </li>
                     );
                 })}
