@@ -37,7 +37,7 @@
 
         &__address-m-btn {
             display: flex;
-            align-items: flex-start;                    
+            align-items: flex-start;   
         }
 
         &__address-details {
@@ -114,6 +114,5 @@
             background-color: $color-black;
             border-radius: $normal-border-radius;
         }
-
     }
 }

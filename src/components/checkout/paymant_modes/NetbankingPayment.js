@@ -1,14 +1,28 @@
-const NetbankingPayment = () => {
+import { useEffect, useState } from "react";
+
+const NetbankingPayment = ({ p }) => {
+    const [bankName, setBankName] = useState("");
+
+    useEffect(() => {
+        p({ paymentMethod: "Netbanking", paymentPayload: { bankName } });
+    }, [bankName]);
+
     return (
         <div className="payment-option payment-option--netbanking">
-            <input type="radio" />
+            <input
+                type="radio"
+                name="payment-radio"
+                value="Netbanking"
+                onChange={(e) => p({ paymentMethod: e.target.value, paymentPayload: {} })}
+            />
             <div className="payment-option__details">
-                <div className="payment-option__heading tertiary-heading">
-                    Netbanking
-                </div>
+                <div className="payment-option__heading tertiary-heading">Netbanking</div>
                 <div className="payment-option__instruction payment-option__instruction--bank-name">
-                    <select>
+                    <select value={bankName} onChange={(e) => setBankName(e.target.value)}>
                         <option value="">Choose an option</option>
+                        <option value="SBI">SBI</option>
+                        <option value="HDFC">HDFC</option>
+                        <option value="ICICI">ICICI</option>
                     </select>
                 </div>
             </div>
