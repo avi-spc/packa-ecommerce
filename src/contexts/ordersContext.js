@@ -29,6 +29,7 @@ const OrdersContextProvider = (props) => {
                 deliveryDate: new Date(Date.now() + 604800000).toDateString().slice(4),
                 amount: orderTotal,
                 customerName: customerDetails.selectedAddress.customerName,
+                customerAddress: customerDetails.selectedAddress.customerAddress,
                 paymentMode: customerDetails.payment.paymentMethod,
             },
             orderedProducts: orderSet,

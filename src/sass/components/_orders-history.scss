@@ -8,6 +8,24 @@
     background-color: $color-tertiary-dark;
     border-radius: $normal-border-radius $normal-border-radius 0 0;
 
+    .customer-meta {
+        position: relative;
+
+        &__address-p-payment {
+            position: absolute;
+            display: none;
+            top: 125%;
+            padding: 1rem 2rem;
+            background-color: $color-secondary-dark;
+            border-radius: $normal-border-radius;
+            width: 200%;
+        }
+
+        &:hover .customer-meta__address-p-payment {
+            display: block;
+        }
+    }
+
     &>div:last-child {
         text-align: right;
         flex-grow: 3;

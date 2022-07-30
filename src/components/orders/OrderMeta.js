@@ -11,7 +11,13 @@ const OrderMeta = ({ orderMeta }) => {
             </div>
             <div className="order-meta__meta-type">
                 <div>SHIP TO</div>
-                <div>{orderMeta.customerName}</div>
+                <div className="customer-meta">
+                    {orderMeta.customerName}
+                    <div className="customer-meta__address-p-payment">
+                        <div className="customer-meta__address">Address : {orderMeta.customerAddress}</div>
+                        <div className="customer-meta__payment-mode">Payment Mode : {orderMeta.paymentMode}</div>
+                    </div>
+                </div>
             </div>
             <div className="order-meta__meta-type">
                 <div>ORDER ID</div>
