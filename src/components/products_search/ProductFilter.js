@@ -3,11 +3,8 @@ import { useContext, useEffect, useState } from "react";
 import { ProductsContext } from "../../contexts/productsContext";
 
 const ProductFilter = () => {
-    const [brands, setBrands] = useState(null);
-    const [filterOption, setFilterOption] = useState({
-        brands: [],
-        price: [],
-    });
+    const [searchedProductsBrands, extractSearchedProductsBrands] = useState([]);
+    const [filterOptions, setFilterOptions] = useState({ brandNames: [], priceRanges: [] });
 
     const { products, fetchFilteredProducts } = useContext(ProductsContext);
 
@@ -20,79 +17,72 @@ const ProductFilter = () => {
     ];
 
     useEffect(() => {
-        if (products.length) {
-            const brandSet = new Set(
-                products.map((product) => {
-                    return product.brand;
-                })
-            );
+        const brandSet = new Set(
+            products.map((product) => {
+                return product.brand;
+            })
+        );
 
-            setBrands(Array.from(brandSet));
-        }
+        extractSearchedProductsBrands(Array.from(brandSet));
     }, [products]);
 
     useEffect(() => {
         fetchFilteredProducts(
-            filterOption.brands.length || filterOption.price.length,
+            filterOptions.brandNames.length || filterOptions.priceRanges.length,
             products.filter((product) => {
-                return filterOption.brands.includes(product.brand) || inPriceRange(product.rate);
+                return filterOptions.brandNames.includes(product.brand) || isInPriceRange(product.rate);
             })
         );
-    }, [filterOption]);
+    }, [filterOptions]);
 
-    const handlePriceFilter = (e) => {
+    const handlePriceRangeFilter = (e) => {
         if (e.target.checked) {
-            // setSelectedBrands([...selectedBrands, e.target.value]);
-            setFilterOption({ ...filterOption, price: [...filterOption.price, handlePriceRange(e.target.value)] });
+            setFilterOptions({
+                ...filterOptions,
+                priceRanges: [...filterOptions.priceRanges, createPriceRangeObject(e.target.value)],
+            });
         } else {
-            // setSelectedBrands(
-            //     selectedBrands.filter((uncheckedBrand) => {
-            //         return uncheckedBrand !== e.target.value;
-            //     })
-            // );
-
-            setFilterOption({
-                ...filterOption,
-                price: filterOption.price.filter((r) => {
+            setFilterOptions({
+                ...filterOptions,
+                priceRanges: filterOptions.priceRanges.filter((uncheckedPriceRange) => {
                     return (
-                        r.min !== handlePriceRange(e.target.value).min && r.max !== handlePriceRange(e.target.value).max
+                        uncheckedPriceRange.min !== createPriceRangeObject(e.target.value).min &&
+                        uncheckedPriceRange.max !== createPriceRangeObject(e.target.value).max
                     );
                 }),
             });
         }
     };
 
-    const handleBrandeFilter = (e) => {
+    const handleBrandNamesFilter = (e) => {
         if (e.target.checked) {
-            setFilterOption({ ...filterOption, brands: [...filterOption.brands, e.target.value] });
+            setFilterOptions({ ...filterOptions, brandNames: [...filterOptions.brandNames, e.target.value] });
         } else {
-            setFilterOption({
-                ...filterOption,
-                brands: filterOption.brands.filter((uncheckedBrand) => {
+            setFilterOptions({
+                ...filterOptions,
+                brandNames: filterOptions.brandNames.filter((uncheckedBrand) => {
                     return uncheckedBrand !== e.target.value;
                 }),
             });
         }
     };
 
-    const handlePriceRange = (e) => {
-        const priceRange = priceCategories.find((range) => {
-            return range.level === e;
+    const createPriceRangeObject = (selectedLevel) => {
+        const priceRange = priceCategories.find((category) => {
+            return category.level === selectedLevel;
         });
 
         return { min: priceRange.min, max: priceRange.max };
     };
 
-    const inPriceRange = (productPrice) => {
-        let inRange = false;
-        for (let priceRange of filterOption.price) {
+    const isInPriceRange = (productPrice) => {
+        for (let priceRange of filterOptions.priceRanges) {
             if (productPrice >= priceRange.min && productPrice < priceRange.max) {
-                inRange = true;
-                break;
+                return true;
             }
         }
 
-        return inRange;
+        return false;
     };
 
     return (
@@ -100,21 +90,20 @@ const ProductFilter = () => {
             <div className="filter-heading tertiary-heading">Filter</div>
             <div className="product-filter__category">
                 <div className="product-filter__category--name">Brand</div>
-                {brands &&
-                    brands.map((brand, index) => {
-                        return (
-                            <div className="filter-option" key={index}>
-                                <input
-                                    type="checkbox"
-                                    id={brand}
-                                    name={brand}
-                                    value={brand}
-                                    onChange={(e) => handleBrandeFilter(e)}
-                                />
-                                <label htmlFor={brand}>{brand}</label>
-                            </div>
-                        );
-                    })}
+                {searchedProductsBrands.map((brand, index) => {
+                    return (
+                        <div className="filter-option" key={index}>
+                            <input
+                                type="checkbox"
+                                id={brand}
+                                name={brand}
+                                value={brand}
+                                onChange={(e) => handleBrandNamesFilter(e)}
+                            />
+                            <label htmlFor={brand}>{brand}</label>
+                        </div>
+                    );
+                })}
 
                 <div className="product-filter__category--name">Price</div>
                 {priceCategories.map((priceCategory, index) => {
@@ -125,7 +114,7 @@ const ProductFilter = () => {
                                 id={priceCategory.level}
                                 name={priceCategory.level}
                                 value={priceCategory.level}
-                                onChange={(e) => handlePriceFilter(e)}
+                                onChange={(e) => handlePriceRangeFilter(e)}
                             />
                             <label htmlFor={priceCategory.level}>{priceCategory.range}</label>
                         </div>

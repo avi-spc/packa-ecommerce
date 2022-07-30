@@ -1,5 +1,4 @@
-import { createContext, useContext, useState } from "react";
-import { CartContext } from "./cartContext";
+import { createContext, useState } from "react";
 
 export const CheckoutContext = createContext();
 

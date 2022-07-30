@@ -9,7 +9,6 @@ const CartContextProvider = (props) => {
     const [isCartEmpty, setIsCartEmpty] = useState(true);
 
     const addProductToCart = (product) => {
-        let cartProductCount = 0;
         let isNewProduct = true;
 
         const freshCart = cart.map((cartProduct) => {
