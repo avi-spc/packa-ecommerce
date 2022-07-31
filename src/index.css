@@ -54,7 +54,8 @@ a {
 .btn {
   display: inline-block;
   border-radius: 1.5rem;
-  text-align: center; }
+  text-align: center;
+  cursor: pointer; }
   .btn__primary {
     font-size: 2.4rem;
     font-weight: 700;
@@ -324,7 +325,8 @@ a {
     text-align: center;
     background-color: black;
     border-radius: 1.5rem;
-    margin-top: 4.3rem; }
+    margin-top: 4.3rem;
+    cursor: pointer; }
 
 .order-summary__charges, .order-summary__coupon, .order-summary__order-total {
   padding: 2rem 2.4rem;
@@ -378,7 +380,8 @@ a {
   background-color: #1C1C1C;
   border-radius: 1.5rem 1.5rem 0 0; }
   .order-meta .customer-meta {
-    position: relative; }
+    position: relative;
+    cursor: pointer; }
     .order-meta .customer-meta__address-p-payment {
       position: absolute;
       display: none;

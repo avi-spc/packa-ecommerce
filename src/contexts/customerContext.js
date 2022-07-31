@@ -6,7 +6,7 @@ export const CustomerContext = createContext();
 
 const CustomerContextProvider = (props) => {
     const [addresses] = useState(AddressesStore);
-    const [selectedAddress, setSelectedAddress] = useState({});
+    const [selectedAddress, setSelectedAddress] = useState(null);
     const [selectedPayment, setSelectedPayment] = useState({ paymentMode: "", paymentPayload: {} });
 
     const selectDeliveryAddress = (deliveryAddressId) => {

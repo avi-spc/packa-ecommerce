@@ -23,10 +23,8 @@ const OrderSummary = ({ cartProducts, cartTotalAmount, emptyCart }) => {
     };
 
     const placeOrder = () => {
-        if (cartProducts.length) {
-            createOrder(cartProducts, orderTotalAmount, couponAmount, { selectedAddress, selectedPayment });
-            emptyCart();
-        }
+        createOrder(cartProducts, orderTotalAmount, couponAmount, { selectedAddress, selectedPayment });
+        emptyCart();
     };
 
     useEffect(() => {
@@ -65,9 +63,12 @@ const OrderSummary = ({ cartProducts, cartTotalAmount, emptyCart }) => {
                 <span>Rs. {orderTotalAmount.toFixed(2)}</span>
             </div>
             {/* <Link to="/returns_orders"> */}
-            <div className="btn-proceed-to-pay" onClick={placeOrder}>
-                Proceed to Pay
-            </div>
+            {selectedAddress != null && selectedPayment.paymentMode !== "" ? (
+                <div className="btn-proceed-to-pay" onClick={placeOrder}>
+                    Proceed to Pay
+                </div>
+            ) : null}
+
             {/* </Link> */}
         </section>
     );

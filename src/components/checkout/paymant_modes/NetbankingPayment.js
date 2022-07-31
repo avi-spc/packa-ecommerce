@@ -5,7 +5,7 @@ const NetbankingPayment = ({ createPaymentDetails }) => {
 
     useEffect(() => {
         createPaymentDetails({
-            paymentMethod: "Netbanking",
+            paymentMode: "Netbanking",
             paymentPayload: { bankName },
         });
     }, [bankName]);
@@ -17,7 +17,7 @@ const NetbankingPayment = ({ createPaymentDetails }) => {
                 id="payment-radio-netbanking"
                 name="payment-radio"
                 value="Netbanking"
-                onChange={(e) => createPaymentDetails({ paymentMethod: e.target.value, paymentPayload: {} })}
+                onChange={(e) => createPaymentDetails({ paymentMode: e.target.value, paymentPayload: {} })}
             />
             <div className="payment-option__details">
                 <div className="payment-option__heading tertiary-heading">Netbanking</div>

@@ -30,7 +30,7 @@ const OrdersContextProvider = (props) => {
                 amount: orderTotal,
                 customerName: customerDetails.selectedAddress.customerName,
                 customerAddress: customerDetails.selectedAddress.customerAddress,
-                paymentMode: customerDetails.selectedPayment.paymentMethod,
+                paymentMode: customerDetails.selectedPayment.paymentMode,
             },
             orderedProducts: orderSet,
         };

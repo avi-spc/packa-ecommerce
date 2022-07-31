@@ -2,6 +2,7 @@
     display: inline-block;
     border-radius: $normal-border-radius;
     text-align: center;
+    cursor: pointer;
 
     &__primary {
         font-size: $medium-font-size;

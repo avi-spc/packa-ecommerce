@@ -42,6 +42,7 @@ const ProductDetails = ({ product }) => {
         quantity: quantity,
         rate: product.rate,
         amount: quantity * product.rate,
+        deliveryDate: product.eta,
     };
 
     useEffect(() => {

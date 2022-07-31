@@ -8,7 +8,7 @@ const UpiPayment = ({ createPaymentDetails }) => {
 
     useEffect(() => {
         createPaymentDetails({
-            paymentMethod: "UPI",
+            paymentMode: "UPI",
             paymentPayload: { upiId, isUpiVerified },
         });
     }, [upiId, isUpiVerified]);
@@ -28,7 +28,7 @@ const UpiPayment = ({ createPaymentDetails }) => {
                 id="payment-radio-upi"
                 name="payment-radio"
                 value="UPI"
-                onChange={(e) => createPaymentDetails({ paymentMethod: e.target.value, paymentPayload: {} })}
+                onChange={(e) => createPaymentDetails({ paymentMode: e.target.value, paymentPayload: {} })}
             />
             <div className="payment-option__details">
                 <div className="payment-option__heading tertiary-heading">UPI Apps</div>

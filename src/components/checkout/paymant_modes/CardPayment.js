@@ -7,7 +7,7 @@ const CardPayment = ({ createPaymentDetails }) => {
 
     useEffect(() => {
         createPaymentDetails({
-            paymentMethod: "Card",
+            paymentMode: "Card",
             paymentPayload: { cardNumber, nameOnCard, expiryDate },
         });
     }, [cardNumber, nameOnCard, expiryDate]);
@@ -19,7 +19,7 @@ const CardPayment = ({ createPaymentDetails }) => {
                 id="payment-radio-card"
                 name="payment-radio"
                 value="Card"
-                onChange={(e) => createPaymentDetails({ paymentMethod: e.target.value, paymentPayload: {} })}
+                onChange={(e) => createPaymentDetails({ paymentMode: e.target.value, paymentPayload: {} })}
             />
             <div className="payment-option__details">
                 <div className="payment-option__heading tertiary-heading">Debit // Credit // ATM Card</div>
