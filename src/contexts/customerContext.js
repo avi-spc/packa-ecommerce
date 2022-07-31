@@ -7,11 +7,7 @@ export const CustomerContext = createContext();
 const CustomerContextProvider = (props) => {
     const [addresses] = useState(AddressesStore);
     const [selectedAddress, setSelectedAddress] = useState({});
-
-    const [payment, setPayment] = useState({
-        paymentMode: "",
-        paymentPayload: {},
-    });
+    const [selectedPayment, setSelectedPayment] = useState({ paymentMode: "", paymentPayload: {} });
 
     const selectDeliveryAddress = (deliveryAddressId) => {
         setSelectedAddress(
@@ -21,14 +17,15 @@ const CustomerContextProvider = (props) => {
         );
     };
 
-    const selectPaymentMode = (paymentInfo) => {
-        setPayment(paymentInfo);
+    const selectPaymentMode = (paymentDetails) => {
+        setSelectedPayment(paymentDetails);
     };
 
     return (
-        <CustomerContext.Provider value={{ addresses, selectedAddress, payment, selectDeliveryAddress, selectPaymentMode }}>
+        <CustomerContext.Provider
+            value={{ addresses, selectedAddress, selectedPayment, selectDeliveryAddress, selectPaymentMode }}
+        >
             {props.children}
-            {console.log("h")}
         </CustomerContext.Provider>
     );
 };

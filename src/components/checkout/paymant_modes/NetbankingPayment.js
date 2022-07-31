@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 
-const NetbankingPayment = ({ p }) => {
+const NetbankingPayment = ({ createPaymentDetails }) => {
     const [bankName, setBankName] = useState("");
 
     useEffect(() => {
-        p({ paymentMethod: "Netbanking", paymentPayload: { bankName } });
+        createPaymentDetails({
+            paymentMethod: "Netbanking",
+            paymentPayload: { bankName },
+        });
     }, [bankName]);
 
     return (
@@ -14,7 +17,7 @@ const NetbankingPayment = ({ p }) => {
                 id="payment-radio-netbanking"
                 name="payment-radio"
                 value="Netbanking"
-                onChange={(e) => p({ paymentMethod: e.target.value, paymentPayload: {} })}
+                onChange={(e) => createPaymentDetails({ paymentMethod: e.target.value, paymentPayload: {} })}
             />
             <div className="payment-option__details">
                 <div className="payment-option__heading tertiary-heading">Netbanking</div>

@@ -9,24 +9,24 @@ import { CustomerContext } from "../../../contexts/customerContext";
 
 const PaymentModes = () => {
     const { selectPaymentMode } = useContext(CustomerContext);
-    const [payload, setPayload] = useState({});
+    const [paymentDetails, setPaymentDetails] = useState({});
 
-    const p = (paylodObject) => {
-        setPayload(paylodObject);
+    const createPaymentDetails = (paymentObject) => {
+        setPaymentDetails(paymentObject);
     };
 
     return (
         <section className="section-payment">
-            <div className="secondary-heading">Select a payemnt method</div>
+            <div className="secondary-heading">Select a payment method</div>
             <div className="payment-modes">
-                <CardPayment p={p} />
-                <NetbankingPayment p={p} />
-                <UpiPayment p={p} />
-                <PodPayment p={p} />
+                <CardPayment createPaymentDetails={createPaymentDetails} />
+                <NetbankingPayment createPaymentDetails={createPaymentDetails} />
+                <UpiPayment createPaymentDetails={createPaymentDetails} />
+                <PodPayment createPaymentDetails={createPaymentDetails} />
                 <SecondaryButton
-                    name="Use this Payment Address"
+                    name="Use this Payment Method"
                     action={selectPaymentMode}
-                    actionPayload={{ productID: payload }}
+                    actionPayload={{ payload: paymentDetails }}
                 />
             </div>
         </section>

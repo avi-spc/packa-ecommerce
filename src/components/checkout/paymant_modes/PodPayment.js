@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
-const PodPayment = ({ p }) => {
+const PodPayment = ({ createPaymentDetails }) => {
     const [paymentMode, setPaymentMode] = useState("");
 
     useEffect(() => {
-        p({ paymentMethod: "POD", paymentPayload: {} });
+        createPaymentDetails({ paymentMethod: "POD", paymentPayload: {} });
     }, [paymentMode]);
 
     return (
@@ -14,7 +14,7 @@ const PodPayment = ({ p }) => {
                 id="payment-radio-pod"
                 name="payment-radio"
                 value="POD"
-                onChange={(e) => p({ paymentMethod: e.target.value, paymentPayload: {} })}
+                onChange={(e) => createPaymentDetails({ paymentMethod: e.target.value, paymentPayload: {} })}
             />
             <div className="payment-option__details">
                 <div className="payment-option__heading tertiary-heading">Pay On Delivery</div>

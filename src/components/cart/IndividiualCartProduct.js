@@ -19,7 +19,7 @@ const IndividualCartProduct = ({ cartProduct }) => {
                         <SecondaryButton
                             name="Delete"
                             action={removeProductFromCart}
-                            actionPayload={{ productID: cartProduct.id }}
+                            actionPayload={{ payload: cartProduct.id }}
                         />
                     </div>
                 </div>

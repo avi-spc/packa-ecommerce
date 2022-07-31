@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 
-const CardPayment = ({ p }) => {
+const CardPayment = ({ createPaymentDetails }) => {
     const [cardNumber, setCardNumber] = useState("");
     const [nameOnCard, setNameOnCard] = useState("");
-    const [expiryDate, setExpiryDate] = useState({
-        month: 0,
-        year: 0,
-    });
+    const [expiryDate, setExpiryDate] = useState({ month: 0, year: 0 });
 
     useEffect(() => {
-        p({ paymentMethod: "Card", paymentPayload: { cardNumber, nameOnCard, expiryDate } });
+        createPaymentDetails({
+            paymentMethod: "Card",
+            paymentPayload: { cardNumber, nameOnCard, expiryDate },
+        });
     }, [cardNumber, nameOnCard, expiryDate]);
 
     return (
@@ -19,7 +19,7 @@ const CardPayment = ({ p }) => {
                 id="payment-radio-card"
                 name="payment-radio"
                 value="Card"
-                onChange={(e) => p({ paymentMethod: e.target.value, paymentPayload: {} })}
+                onChange={(e) => createPaymentDetails({ paymentMethod: e.target.value, paymentPayload: {} })}
             />
             <div className="payment-option__details">
                 <div className="payment-option__heading tertiary-heading">Debit // Credit // ATM Card</div>
@@ -34,13 +34,19 @@ const CardPayment = ({ p }) => {
                 <div className="payment-option__instruction payment-option__instruction--expiry">
                     <label>Expiry Date</label>
                     <div>
-                        <select onChange={(e) => setExpiryDate({ ...expiryDate, month: e.target.value })}>
+                        <select
+                            name="month-dropdown"
+                            onChange={(e) => setExpiryDate({ ...expiryDate, month: e.target.value })}
+                        >
                             <option value="01">01</option>
                             <option value="02">02</option>
                             <option value="03">03</option>
                             <option value="04">04</option>
                         </select>
-                        <select onChange={(e) => setExpiryDate({ ...expiryDate, year: e.target.value })}>
+                        <select
+                            name="year-dropdown"
+                            onChange={(e) => setExpiryDate({ ...expiryDate, year: e.target.value })}
+                        >
                             <option value="2021">2021</option>
                             <option value="2022">2022</option>
                             <option value="2023">2023</option>
