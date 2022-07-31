@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import SecondaryButton from "../../buttons/SecondaryButton";
 
-const UpiPayment = ({ createPaymentDetails }) => {
+const UpiPayment = ({ createPaymentDetails, radioSelector }) => {
     const [upiId, setUpiId] = useState("");
     const [isUpiVerified, setIsUpiVerified] = useState(false);
 
@@ -28,7 +28,10 @@ const UpiPayment = ({ createPaymentDetails }) => {
                 id="payment-radio-upi"
                 name="payment-radio"
                 value="UPI"
-                onChange={(e) => createPaymentDetails({ paymentMode: e.target.value, paymentPayload: {} })}
+                onChange={(e) => {
+                    createPaymentDetails({ paymentMode: e.target.value, paymentPayload: {} });
+                    radioSelector.paintSelectedStyle(e.target.name);
+                }}
             />
             <div className="payment-option__details">
                 <div className="payment-option__heading tertiary-heading">UPI Apps</div>

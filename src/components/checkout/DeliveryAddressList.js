@@ -2,9 +2,12 @@ import { useContext } from "react";
 
 import IndividualAddress from "./IndividualAddress";
 import { CustomerContext } from "../../contexts/customerContext";
+import RadioSelector from "./RadioSelector";
 
 const DeliveryAddressList = () => {
     const { addresses, selectDeliveryAddress } = useContext(CustomerContext);
+
+    const radioSelector = new RadioSelector();
 
     return (
         <section className="checkout-details__delivery-address-section">
@@ -15,6 +18,7 @@ const DeliveryAddressList = () => {
                         <IndividualAddress
                             address={address}
                             selectDeliveryAddress={selectDeliveryAddress}
+                            radioSelector={radioSelector}
                             key={index}
                         />
                     );

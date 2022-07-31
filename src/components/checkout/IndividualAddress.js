@@ -1,6 +1,6 @@
 import SecondaryButton from "../buttons/SecondaryButton";
 
-const IndividualAddress = ({ address, selectDeliveryAddress }) => {
+const IndividualAddress = ({ address, selectDeliveryAddress, radioSelector }) => {
     return (
         <label htmlFor={address.customerName} className="individual-address">
             <div className="individual-address__address-m-btn">
@@ -9,7 +9,10 @@ const IndividualAddress = ({ address, selectDeliveryAddress }) => {
                     id={address.customerName}
                     name="address-radio"
                     value={address.customerId}
-                    onChange={(e) => selectDeliveryAddress(e.target.value)}
+                    onChange={(e) => {
+                        selectDeliveryAddress(e.target.value);
+                        radioSelector.paintSelectedStyle(e.target.name);
+                    }}
                 />
                 <div className="individual-address__address-details">
                     <div className="tertiary-heading">{address.customerName}</div>

@@ -12,10 +12,11 @@ html {
 body {
   font-family: 'Sora', sans-serif;
   line-height: 3rem; }
-
-a {
-  text-decoration: none;
-  color: black; }
+  body a {
+    text-decoration: none;
+    color: black; }
+  body label {
+    cursor: pointer; }
 
 .primary-heading {
   font-size: 4.8rem;
@@ -41,7 +42,7 @@ a {
   margin-bottom: 5rem; }
 
 .radio-selected {
-  background-color: #272727; }
+  background-color: #272727 !important; }
 
 .empty-list-msg {
   font-size: 2rem;

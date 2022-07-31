@@ -5,6 +5,8 @@ import NetbankingPayment from "./NetbankingPayment";
 import UpiPayment from "./UpiPayment";
 import PodPayment from "./PodPayment";
 import SecondaryButton from "../../buttons/SecondaryButton";
+import RadioSelector from "../RadioSelector";
+
 import { CustomerContext } from "../../../contexts/customerContext";
 
 const PaymentModes = () => {
@@ -15,14 +17,16 @@ const PaymentModes = () => {
         setPaymentDetails(paymentObject);
     };
 
+    const radioSelector = new RadioSelector();
+
     return (
         <section className="section-payment">
             <div className="secondary-heading">Select a payment method</div>
             <div className="payment-modes">
-                <CardPayment createPaymentDetails={createPaymentDetails} />
-                <NetbankingPayment createPaymentDetails={createPaymentDetails} />
-                <UpiPayment createPaymentDetails={createPaymentDetails} />
-                <PodPayment createPaymentDetails={createPaymentDetails} />
+                <CardPayment createPaymentDetails={createPaymentDetails} radioSelector={radioSelector}/>
+                <NetbankingPayment createPaymentDetails={createPaymentDetails} radioSelector={radioSelector}/>
+                <UpiPayment createPaymentDetails={createPaymentDetails} radioSelector={radioSelector}/>
+                <PodPayment createPaymentDetails={createPaymentDetails} radioSelector={radioSelector}/>
                 <SecondaryButton
                     name="Use this Payment Method"
                     action={selectPaymentMode}

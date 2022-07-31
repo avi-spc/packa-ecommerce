@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const NetbankingPayment = ({ createPaymentDetails }) => {
+const NetbankingPayment = ({ createPaymentDetails, radioSelector }) => {
     const [bankName, setBankName] = useState("");
 
     useEffect(() => {
@@ -17,7 +17,10 @@ const NetbankingPayment = ({ createPaymentDetails }) => {
                 id="payment-radio-netbanking"
                 name="payment-radio"
                 value="Netbanking"
-                onChange={(e) => createPaymentDetails({ paymentMode: e.target.value, paymentPayload: {} })}
+                onChange={(e) => {
+                    createPaymentDetails({ paymentMode: e.target.value, paymentPayload: {} });
+                    radioSelector.paintSelectedStyle(e.target.name);
+                }}
             />
             <div className="payment-option__details">
                 <div className="payment-option__heading tertiary-heading">Netbanking</div>

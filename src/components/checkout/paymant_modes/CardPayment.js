@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const CardPayment = ({ createPaymentDetails }) => {
+const CardPayment = ({ createPaymentDetails, radioSelector }) => {
     const [cardNumber, setCardNumber] = useState("");
     const [nameOnCard, setNameOnCard] = useState("");
     const [expiryDate, setExpiryDate] = useState({ month: 0, year: 0 });
@@ -19,7 +19,10 @@ const CardPayment = ({ createPaymentDetails }) => {
                 id="payment-radio-card"
                 name="payment-radio"
                 value="Card"
-                onChange={(e) => createPaymentDetails({ paymentMode: e.target.value, paymentPayload: {} })}
+                onChange={(e) => {
+                    createPaymentDetails({ paymentMode: e.target.value, paymentPayload: {} });
+                    radioSelector.paintSelectedStyle(e.target.name);
+                }}
             />
             <div className="payment-option__details">
                 <div className="payment-option__heading tertiary-heading">Debit // Credit // ATM Card</div>
