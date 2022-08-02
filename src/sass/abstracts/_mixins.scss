@@ -1,0 +1,4 @@
+@mixin containerBorderColor {
+    border: thin solid;
+    border-radius: $normal-border-radius;
+}

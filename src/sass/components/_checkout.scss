@@ -15,10 +15,8 @@
 
         &__address-list {
             padding: 2rem;
-            background-color: $color-secondary-dark;
-            border-radius: $normal-border-radius;
-            color: $color-white;
             margin-top: 2.5rem;               
+            @include containerBorderColor;
         }
     }
 
@@ -27,8 +25,8 @@
         justify-content: space-between;
         align-items: center;
         
-        background-color: $color-primary-dark;
         padding: 3rem;
+        background-color: $color-primary-light;
         border-radius: $normal-border-radius;
         
         &:not(:last-child) {
@@ -64,9 +62,8 @@
 
     .items-p-delivery {
         &__items-list {
-            background-color: $color-secondary-dark;
-            border-radius: $normal-border-radius;
             padding: 2rem;   
+            @include containerBorderColor;
         }
     }
 
@@ -96,7 +93,7 @@
         }
 
         &__image {
-            background-color: $color-secondary-dark;
+            background-color: $color-primary-dark;
             border-radius: inherit;
             width: 20rem;
             height: 20rem;

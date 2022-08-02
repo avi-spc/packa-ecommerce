@@ -21,7 +21,7 @@
 
     &__subtotal {
         margin: 2rem 0 2.5rem 0;
-        
+        box-shadow: 0 .6rem 5rem rgba($color: $color-black, $alpha: .25);
         &--discount {
             display: none;
         }

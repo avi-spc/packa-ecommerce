@@ -115,6 +115,7 @@
                 
                 background-color: $color-primary-dark;
                 border-radius: $normal-border-radius;
+                box-shadow: 0 .6rem 5rem rgba($color: $color-black, $alpha: .25);
                 z-index: 100;
                 
                 li:not(:last-child) {

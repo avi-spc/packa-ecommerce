@@ -1,11 +1,10 @@
 .order-meta {
     display: flex;
     justify-content: space-between;
-    color: $color-white;
     font-size: $small-font-size;
 
     padding: 2.3rem 2.3rem 3.8rem 2.3rem;
-    background-color: $color-tertiary-dark;
+    background-color: $color-primary-dark;
     border-radius: $normal-border-radius $normal-border-radius 0 0;
 
     .customer-meta {
@@ -17,7 +16,7 @@
             display: none;
             top: 125%;
             padding: 1rem 2rem;
-            background-color: $color-secondary-dark;
+            background-color: $color-significance-dark;
             border-radius: $normal-border-radius;
             width: 200%;
         }
@@ -44,9 +43,8 @@
 }
 
 .orders-history {
+    @include containerBorderColor;
     padding: 2rem;
-    background-color: $color-secondary-dark;
-    border-radius: $normal-border-radius;
     flex-grow: 2.7;
     
     &>div:not(:last-child) {
@@ -79,8 +77,8 @@
     &__product-image {
         width: 21.6rem;
         height: 21.6rem;
+        background-color: $color-primary-dark;
         border-radius: $normal-border-radius;
-        background-color: $color-secondary-dark;
     }
 
     &__product-details {
