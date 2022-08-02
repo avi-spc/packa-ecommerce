@@ -1,10 +1,13 @@
 .product-card {
     font-size: $normal-font-size;
     width: 38rem;
+    padding: 1.7rem;
+    background-color: $color-primary-dark;
+    border-radius: $normal-border-radius;
 
     &__product-image {
         background-color: $color-primary-light;
-        border-radius: $normal-border-radius $normal-border-radius 0 0;
+        border-radius: $normal-border-radius;
         height: 25rem;
         position: relative;
 
@@ -20,8 +23,7 @@
     }
 
     &__product-details {
-        padding: 2rem;
-        background-color: #A5A5A5;
+        padding: 2rem .8rem .3rem .8rem;
         border-radius: 0 0 $normal-border-radius $normal-border-radius;
 
         div:not(:last-child){

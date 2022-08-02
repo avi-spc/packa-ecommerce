@@ -113,7 +113,6 @@
                 top: 100%;
                 width: 100%;
                 
-                color: $color-primary-light;
                 background-color: $color-primary-dark;
                 border-radius: $normal-border-radius;
                 z-index: 100;
@@ -125,7 +124,7 @@
                 .active-suggested-string {
                     padding: 1.8rem 1.5rem;
                     color: $color-black;
-                    background-color: $color-primary-light;
+                    background-color: $color-selected-dark;
                     border-radius: $normal-border-radius;
                 }
             }

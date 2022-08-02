@@ -1,9 +1,8 @@
 .price-tag {
     display: inline-block;
     padding: 1.7rem 3.3rem;
-    background-color: $color-black;
+    background-color: $color-significance-dark;
     border-radius: $normal-border-radius;
-    color: $color-white;
     
     &__price {
         font-size: $large-font-size;

@@ -61,7 +61,7 @@
 
     &__list{
         padding: 1.5rem;
-        background-color: $color-primary-light;
+        border: thin solid;
         border-radius: $normal-border-radius;
 
         :not(:last-child) {
@@ -71,8 +71,7 @@
 
     .offer {
         padding: 2.7rem;
-        color: $color-white;
-        background-color: $color-primary-dark;
+        background-color: $color-primary-light;
         border-radius: $normal-border-radius;
     }
 }
