@@ -80,7 +80,7 @@ body {
   .btn__tertiary {
     font-size: 1.6rem;
     color: white;
-    padding: 1.2rem 5.6rem;
+    padding: 1.2rem 3rem;
     background-color: black; }
 
 .nav-secondary__products-category {
@@ -100,11 +100,10 @@ body {
   justify-content: space-between;
   align-items: flex-start; }
   .section-checkout .checkout-details-p-summary > section:last-child {
-    flex-grow: 1;
     margin: 5.5rem 0 0 8rem; }
 
 .section-checkout .checkout-details {
-  flex-grow: 2.7; }
+  flex-basis: 65%; }
   .section-checkout .checkout-details__address-list {
     padding: 2rem;
     margin-top: 2.5rem;
@@ -325,7 +324,8 @@ body {
   font-size: 2rem;
   padding: 2rem;
   background-color: #C2E7FF;
-  border-radius: 1.5rem; }
+  border-radius: 1.5rem;
+  flex-basis: 30%; }
   .section-order-summary > :first-child, .section-lifetime-savings > :first-child {
     margin: 1rem 0 2.6rem 0; }
   .section-order-summary .btn-proceed-to-pay, .section-lifetime-savings .btn-proceed-to-pay {
@@ -420,7 +420,7 @@ body {
   border: thin solid;
   border-radius: 1.5rem;
   padding: 2rem;
-  flex-grow: 2.7; }
+  flex-basis: 65%; }
   .orders-history > div:not(:last-child) {
     margin-bottom: 2rem; }
   .orders-history__individual {
@@ -454,10 +454,6 @@ body {
   flex-direction: column; }
   .order-actions > div:not(:last-child) {
     margin-bottom: 1.5rem; }
-
-.section-lifetime-savings {
-  margin-left: 8rem;
-  flex-grow: 1; }
 
 .section-payment > div:first-child {
   margin-top: 5rem;
@@ -737,7 +733,7 @@ body {
 .section-shopping-cart .shopping-cart__cart-p-subtotal {
   display: flex;
   flex-direction: column;
-  flex-grow: 2.7; }
+  flex-basis: 65%; }
 
 .section-shopping-cart .shopping-cart__products-list {
   padding: 2rem;
@@ -781,8 +777,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 8rem;
-  flex-grow: 1;
+  flex-basis: 30%;
   font-size: 2.4rem;
   background-color: #C2E7FF;
   border-radius: 1.5rem;
