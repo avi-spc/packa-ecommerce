@@ -63,7 +63,7 @@ const OrderSummary = ({ cartProducts, cartTotalAmount, emptyCart }) => {
                 <span>Rs. {orderTotalAmount.toFixed(2)}</span>
             </div>
             {/* <Link to="/returns_orders"> */}
-            {selectedAddress != null && selectedPayment.paymentMode !== "" ? (
+            {selectedAddress != null && selectedPayment.paymentMode !== "" && cartProducts.length ? (
                 <div className="btn-proceed-to-pay" onClick={placeOrder}>
                     Proceed to Pay
                 </div>

@@ -16,6 +16,13 @@
         border-radius: $normal-border-radius;
         margin-top: 4.3rem;
         cursor: pointer;
+        user-select: none;
+
+        &:hover {
+            background-color: $color-significance-dark;
+            color: $color-black;
+            box-shadow: 0 .6rem 5rem rgba($color: $color-black, $alpha: .25);
+        }
     }
 }
 

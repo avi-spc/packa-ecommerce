@@ -18,6 +18,11 @@
         border-radius: $normal-border-radius;
         padding: 1rem 2rem;
         cursor: pointer;
+        user-select: none;
+
+        &:hover {
+            background-color: $color-primary-dark;
+        }
     }
 }
 

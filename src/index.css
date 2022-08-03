@@ -48,6 +48,8 @@ body {
 .radio-selected {
   background-color: #FCD56C !important;
   box-shadow: 0 0.6rem 5rem rgba(0, 0, 0, 0.25); }
+  .radio-selected input, .radio-selected select {
+    background-color: #FFE9AF !important; }
 
 .empty-list-msg {
   font-size: 2rem;
@@ -60,7 +62,11 @@ body {
   display: inline-block;
   border-radius: 1.5rem;
   text-align: center;
-  cursor: pointer; }
+  cursor: pointer;
+  user-select: none; }
+  .btn:hover {
+    background-color: #FCD56C !important;
+    color: black; }
   .btn__primary {
     font-size: 2.4rem;
     font-weight: 700;
@@ -329,7 +335,12 @@ body {
     background-color: black;
     border-radius: 1.5rem;
     margin-top: 4.3rem;
-    cursor: pointer; }
+    cursor: pointer;
+    user-select: none; }
+    .section-order-summary .btn-proceed-to-pay:hover, .section-lifetime-savings .btn-proceed-to-pay:hover {
+      background-color: #FCD56C;
+      color: black;
+      box-shadow: 0 0.6rem 5rem rgba(0, 0, 0, 0.25); }
 
 .order-summary__charges, .order-summary__coupon, .order-summary__order-total {
   padding: 2rem 2.4rem;
@@ -473,7 +484,7 @@ body {
       font-family: inherit;
       font-size: inherit;
       padding: 1.5rem;
-      background-color: #C2E7FF;
+      background-color: #8AB4F8;
       border-radius: 1.5rem;
       border-style: none;
       outline-style: none; }
@@ -519,6 +530,8 @@ body {
   padding: 1.7rem;
   background-color: #8AB4F8;
   border-radius: 1.5rem; }
+  .product-card:hover {
+    box-shadow: 0 0.6rem 5rem rgba(0, 0, 0, 0.25); }
   .product-card__product-image {
     background-color: #C2E7FF;
     border-radius: 1.5rem;
@@ -681,7 +694,10 @@ body {
   background-color: #C2E7FF;
   border-radius: 1.5rem;
   padding: 1rem 2rem;
-  cursor: pointer; }
+  cursor: pointer;
+  user-select: none; }
+  .quantity .decrement:hover, .quantity .increment:hover {
+    background-color: #8AB4F8; }
 
 .small > div:first-child {
   font-size: 2rem;

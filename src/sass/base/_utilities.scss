@@ -13,6 +13,10 @@
 .radio-selected {
     background-color: $color-significance-dark !important;
     box-shadow: 0 .6rem 5rem rgba($color: $color-black, $alpha: .25);
+
+    input, select {
+        background-color: $color-selected-light !important;
+    }
 }
 
 .empty-list-msg {

@@ -3,6 +3,12 @@
     border-radius: $normal-border-radius;
     text-align: center;
     cursor: pointer;
+    user-select: none;
+
+    &:hover {
+        background-color: $color-significance-dark !important;
+        color: $color-black;
+    }
 
     &__primary {
         font-size: $medium-font-size;
