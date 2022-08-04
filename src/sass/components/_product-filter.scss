@@ -3,6 +3,7 @@
     background-color: $color-primary-light;
     padding: 1.3rem;
     border-radius: $normal-border-radius;
+    flex-basis: 20%;
 
     .filter-heading {
         background-color: $color-primary-dark;
@@ -17,7 +18,7 @@
 
         label {
             display: inline-block;
-            margin-left: .5rem;
+            // margin-left: .5rem;
         }
 
         &--name {
@@ -30,6 +31,25 @@
     .filter-option {
         display: flex;
         align-items: center;
+
+        label::before {
+            content: "";
+            display: inline-block;
+            width: 3rem;
+            height: 3rem;
+            margin-right: 1rem;
+            background-image: url(/public/images/icons/checkbox_unchecked.svg);
+            background-size: cover;
+            vertical-align: middle;
+        }
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        input[type="checkbox"]:checked + label::before {
+            background-image: url(/public/images/icons/checkbox_checked.svg);
+        }
 
         &:not(:last-child) {
             margin-bottom: .5rem;

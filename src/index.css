@@ -18,6 +18,20 @@ body {
   body label {
     cursor: pointer; }
 
+input[type="radio"] {
+  display: none; }
+
+.icon-radio::before {
+  content: "";
+  width: 3rem;
+  height: 3rem;
+  background-image: url(/public/images/icons/radio_unchecked.svg);
+  background-size: cover;
+  display: flex; }
+
+input[type="radio"]:checked + ::before {
+  background-image: url(/public/images/icons/radio_checked.svg); }
+
 ::selection {
   background-color: #C2E7FF;
   color: black; }
@@ -124,6 +138,7 @@ body {
     align-items: flex-start; }
   .section-checkout .individual-address__address-details {
     line-height: 2rem;
+    margin-top: .2rem;
     margin-left: 4rem; }
     .section-checkout .individual-address__address-details div:nth-child(2) {
       margin-top: .5rem; }
@@ -562,7 +577,8 @@ body {
 .product-filter {
   background-color: #C2E7FF;
   padding: 1.3rem;
-  border-radius: 1.5rem; }
+  border-radius: 1.5rem;
+  flex-basis: 20%; }
   .product-filter .filter-heading {
     background-color: #8AB4F8;
     padding: 1rem;
@@ -572,8 +588,7 @@ body {
     font-size: 2rem;
     padding: 0 1.2rem; }
     .product-filter__category label {
-      display: inline-block;
-      margin-left: .5rem; }
+      display: inline-block; }
     .product-filter__category--name {
       margin-top: 2rem;
       margin-bottom: 1rem;
@@ -581,6 +596,19 @@ body {
   .product-filter .filter-option {
     display: flex;
     align-items: center; }
+    .product-filter .filter-option label::before {
+      content: "";
+      display: inline-block;
+      width: 3rem;
+      height: 3rem;
+      margin-right: 1rem;
+      background-image: url(/public/images/icons/checkbox_unchecked.svg);
+      background-size: cover;
+      vertical-align: middle; }
+    .product-filter .filter-option input[type="checkbox"] {
+      display: none; }
+    .product-filter .filter-option input[type="checkbox"]:checked + label::before {
+      background-image: url(/public/images/icons/checkbox_checked.svg); }
     .product-filter .filter-option:not(:last-child) {
       margin-bottom: .5rem; }
 
@@ -602,7 +630,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-gap: 5rem;
-  grid-auto-rows: 1fr; }
+  flex-basis: 75%; }
 
 .product__visuals-p-details {
   display: flex; }

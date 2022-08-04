@@ -26,6 +26,23 @@ body {
     }
 }
 
+input[type="radio"] {
+    display: none;
+}
+
+.icon-radio::before {
+    content: "";
+    width: 3rem;
+    height: 3rem;
+    background-image: url(/public/images/icons/radio_unchecked.svg);
+    background-size: cover;
+    display: flex;
+}
+
+input[type="radio"]:checked + ::before {
+    background-image: url(/public/images/icons/radio_checked.svg);
+}
+
 ::selection {
     background-color: $color-primary-light;
     color: $color-black;

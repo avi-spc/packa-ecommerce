@@ -14,6 +14,7 @@ const IndividualAddress = ({ address, selectDeliveryAddress, radioSelector }) =>
                         radioSelector.paintSelectedStyle(e.target.name);
                     }}
                 />
+                <div className="icon-radio" />
                 <div className="individual-address__address-details">
                     <div className="tertiary-heading">{address.customerName}</div>
                     <div>{address.customerAddress}</div>

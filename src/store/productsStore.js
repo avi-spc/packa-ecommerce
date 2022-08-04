@@ -75,4 +75,27 @@ export const ProductsStore = [
         ],
         category: ["computers", "electronics"],
     },
+    {
+        id: generateUniqueId(),
+        name: "Logitech G413 TKL SE Mechanical Gaming Keyboard",
+        brand: "Logitech",
+        rating: 4.8,
+        rate: 5995,
+        discount: 23,
+        eta: generateDeliveryDate(),
+        description:
+            "Take your gaming skills to the next level: The Logitech G413 TKL SE is a tenkeyless keyboard with gaming-first features and the durability and performance necessary to compete. PBT keycaps: Heat- and wear-resistant, this compact gaming keyboard features the most durable material used in keycap design",
+        offers: [
+            {
+                id: 1,
+                offer: "Get GST invoice and save up to 28% on business purchases.",
+            },
+            {
+                id: 2,
+                offer: "Apply now & get ₹500 back + rewards worth ₹1700",
+            },
+        ],
+        category: ["computers", "electronics"],
+    },
+
 ];

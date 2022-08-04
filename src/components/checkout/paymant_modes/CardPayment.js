@@ -24,6 +24,7 @@ const CardPayment = ({ createPaymentDetails, radioSelector }) => {
                     radioSelector.paintSelectedStyle(e.target.name);
                 }}
             />
+            <div className="icon-radio" />
             <div className="payment-option__details">
                 <div className="payment-option__heading tertiary-heading">Debit // Credit // ATM Card</div>
                 <div className="payment-option__instruction payment-option__instruction--name">

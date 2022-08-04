@@ -19,6 +19,7 @@ const PodPayment = ({ createPaymentDetails, radioSelector }) => {
                     radioSelector.paintSelectedStyle(e.target.name);
                 }}
             />
+            <div className="icon-radio" />
             <div className="payment-option__details">
                 <div className="payment-option__heading tertiary-heading">Pay On Delivery</div>
             </div>
