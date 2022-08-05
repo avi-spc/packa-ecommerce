@@ -78,7 +78,8 @@ input[type="radio"]:checked + ::before {
   border-radius: 1.5rem;
   text-align: center;
   cursor: pointer;
-  user-select: none; }
+  user-select: none;
+  transition: all .3s; }
   .btn:hover {
     background-color: #FCD56C !important;
     color: black; }
@@ -131,7 +132,8 @@ input[type="radio"]:checked + ::before {
   align-items: center;
   padding: 3rem;
   background-color: #C2E7FF;
-  border-radius: 1.5rem; }
+  border-radius: 1.5rem;
+  transition: all .3s; }
   .section-checkout .individual-address:not(:last-child) {
     margin-bottom: 2rem; }
   .section-checkout .individual-address__address-m-btn {
@@ -352,7 +354,8 @@ input[type="radio"]:checked + ::before {
     border-radius: 1.5rem;
     margin-top: 4.3rem;
     cursor: pointer;
-    user-select: none; }
+    user-select: none;
+    transition: all .3s; }
     .section-order-summary .btn-proceed-to-pay:hover, .section-lifetime-savings .btn-proceed-to-pay:hover {
       background-color: #FCD56C;
       color: black;
@@ -485,8 +488,10 @@ input[type="radio"]:checked + ::before {
   align-items: flex-start;
   padding: 3rem;
   background-color: #C2E7FF;
-  border-radius: 1.5rem; }
+  border-radius: 1.5rem;
+  transition: all .3s; }
   .payment-option__details {
+    margin-top: .5rem;
     margin-left: 3rem;
     width: 50%; }
   .payment-option__instruction {
@@ -542,7 +547,8 @@ input[type="radio"]:checked + ::before {
   height: 100%;
   padding: 1.7rem;
   background-color: #8AB4F8;
-  border-radius: 1.5rem; }
+  border-radius: 1.5rem;
+  transition: all .5s; }
   .product-card:hover {
     box-shadow: 0 0.6rem 5rem rgba(0, 0, 0, 0.25); }
   .product-card__product-image {
@@ -722,7 +728,8 @@ input[type="radio"]:checked + ::before {
   border-radius: 1.5rem;
   padding: 1rem 2rem;
   cursor: pointer;
-  user-select: none; }
+  user-select: none;
+  transition: all .3s; }
   .quantity .decrement:hover, .quantity .increment:hover {
     background-color: #8AB4F8; }
 

@@ -16,9 +16,11 @@
     padding: 3rem;
     background-color: $color-primary-light;
     border-radius: $normal-border-radius;
+    
+    transition: all .3s;
 
     &__details {
-        // margin-top: .8rem;
+        margin-top: .5rem;
         margin-left: 3rem;
         width: 50%;
     }

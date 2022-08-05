@@ -19,6 +19,8 @@
         cursor: pointer;
         user-select: none;
 
+        transition: all .3s;
+
         &:hover {
             background-color: $color-significance-dark;
             color: $color-black;
