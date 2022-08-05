@@ -27,7 +27,8 @@ input[type="radio"] {
   height: 3rem;
   background-image: url(/public/images/icons/radio_unchecked.svg);
   background-size: cover;
-  display: flex; }
+  display: flex;
+  transition: all .2s; }
 
 input[type="radio"]:checked + ::before {
   background-image: url(/public/images/icons/radio_checked.svg); }
@@ -538,6 +539,7 @@ input[type="radio"]:checked + ::before {
 .product-card {
   font-size: 2rem;
   width: 38rem;
+  height: 100%;
   padding: 1.7rem;
   background-color: #8AB4F8;
   border-radius: 1.5rem; }
@@ -599,12 +601,13 @@ input[type="radio"]:checked + ::before {
     .product-filter .filter-option label::before {
       content: "";
       display: inline-block;
-      width: 3rem;
-      height: 3rem;
+      width: 2.5rem;
+      height: 2.5rem;
       margin-right: 1rem;
       background-image: url(/public/images/icons/checkbox_unchecked.svg);
       background-size: cover;
-      vertical-align: middle; }
+      vertical-align: middle;
+      transition: all .2s; }
     .product-filter .filter-option input[type="checkbox"] {
       display: none; }
     .product-filter .filter-option input[type="checkbox"]:checked + label::before {
