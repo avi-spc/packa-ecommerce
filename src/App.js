@@ -16,6 +16,7 @@ import CheckoutContextProvider from "./contexts/checkoutContext";
 import PaymentProgress from "./components/checkout/PaymentProgress";
 import OrdersContextProvider from "./contexts/ordersContext";
 import CustomerContextProvider from "./contexts/customerContext";
+import Home from "./components/pages/home";
 
 function App() {
     return (
@@ -29,7 +30,7 @@ function App() {
                                     <Navbar />
                                     <CategoryNavbar />
                                     <Routes>
-                                        <Route path="/" element={<ProductSearch />} />
+                                        <Route path="/" element={<Home />} />
                                         <Route path="/products/:product_id" element={<Product />} />
                                         <Route path="/returns_orders" element={<OrdersHistory />} />
                                         <Route path="/shopcart" element={<ShoppingCart />} />
