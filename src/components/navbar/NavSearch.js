@@ -1,23 +1,25 @@
 import { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { ProductsContext } from "../../contexts/productsContext";
 import { ProductsStore } from "../../store/productsStore";
 import { ProductCategories } from "../../store/productsCategory";
 
 const NavSearch = () => {
-    const [searchString, setSearchString] = useState("");
+    const [searchString, setSearchString] = useState({ subCategory: "", baseCategory: "all" });
     const [suggestedSearchStrings, setSuggestedSearchStrings] = useState([]);
     const [currentSuggestedStringIndex, setCurrentSuggestedStringIndex] = useState(-1);
     const [currentSuggestedStringValue, setCurrentSuggestedStringValue] = useState(null);
     const [hasUserEntered, setHasUserEntered] = useState(false);
 
-    const { fetchSearchedProducts } = useContext(ProductsContext);
+    const { fetchSearchedProducts, fetchProductsSearchCategory } = useContext(ProductsContext);
+    const navigate = useNavigate();
 
     useEffect(() => {
-        if (searchString.length && currentSuggestedStringValue == null) {
+        if (searchString.subCategory.length && !hasUserEntered) {
             setSuggestedSearchStrings(
                 ProductCategories.filter((category) => {
-                    return category.includes(searchString.toLowerCase());
+                    return category.subCategory.includes(searchString.subCategory.toLowerCase());
                 })
             );
         } else {
@@ -56,11 +58,15 @@ const NavSearch = () => {
 
     useEffect(() => {
         if (hasUserEntered) {
+            navigate("/products_search");
+
             fetchSearchedProducts(
                 ProductsStore.filter((product) => {
-                    return product.category.includes(searchString.toLowerCase());
+                    return product.category.includes(searchString.subCategory.toLowerCase());
                 })
             );
+
+            fetchProductsSearchCategory(searchString.subCategory);
         }
     }, [hasUserEntered]);
 
@@ -70,10 +76,15 @@ const NavSearch = () => {
         } else if (e.code === "ArrowUp" && currentSuggestedStringIndex > -1) {
             setCurrentSuggestedStringIndex(currentSuggestedStringIndex - 1);
         } else if (e.code === "Enter" || e.code === "NumpadEnter") {
-            document.querySelector(".product-search__suggested-searches-list").classList.add("hidden");
-
             if (currentSuggestedStringValue != null) {
                 setSearchString(currentSuggestedStringValue);
+            } else if (
+                suggestedSearchStrings.length === 1 &&
+                suggestedSearchStrings[0].subCategory.length === searchString.subCategory.length
+            ) {
+                setSearchString({ ...searchString, baseCategory: suggestedSearchStrings[0].baseCategory });
+            } else {
+                setSearchString({ ...searchString, baseCategory: "all" });
             }
 
             setHasUserEntered(true);
@@ -81,7 +92,7 @@ const NavSearch = () => {
     };
 
     const handleSearchStringChange = (e) => {
-        setSearchString(e.target.value);
+        setSearchString({ ...searchString, subCategory: e.target.value });
         setCurrentSuggestedStringIndex(-1);
         setCurrentSuggestedStringValue(null);
         setHasUserEntered(false);
@@ -89,11 +100,11 @@ const NavSearch = () => {
 
     return (
         <div className="nav-primary__product-search">
-            <div className="product-search__search-category">pantry</div>
+            <div className="product-search__search-category">{searchString.baseCategory}</div>
             <input
                 className="product-search__search-input"
                 type="text"
-                value={searchString}
+                value={searchString.subCategory}
                 onChange={(e) => handleSearchStringChange(e)}
                 onKeyUp={(e) => handleSuggestedSearchStringsNavigation(e)}
             />
@@ -101,7 +112,7 @@ const NavSearch = () => {
                 {suggestedSearchStrings.map((suggestedString, index) => {
                     return (
                         <li className="suggested-string" key={index}>
-                            {suggestedString}
+                            {suggestedString.subCategory}
                         </li>
                     );
                 })}

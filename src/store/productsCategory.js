@@ -1,1 +1,5 @@
-export const ProductCategories = ["mobiles", "electronics", "computers", "coffee"];
+export const ProductCategories = [
+    { subCategory: "coffee", baseCategory: "pantry" },
+    { subCategory: "mobiles", baseCategory: "electronics" },
+    { subCategory: "computers", baseCategory: "electronics" },
+];

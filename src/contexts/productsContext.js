@@ -4,6 +4,7 @@ export const ProductsContext = createContext();
 
 const ProductsContextProvider = (props) => {
     const [products, setProducts] = useState([]);
+    const [productsSearchCategory, setProductsSearchCategory] = useState("");
     const [filteredProducts, setFilteredProducts] = useState({
         isFilterOn: false,
         products: [],
@@ -17,8 +18,21 @@ const ProductsContextProvider = (props) => {
         setFilteredProducts({ isFilterOn, products: filteredProducts });
     };
 
+    const fetchProductsSearchCategory = (searchCategory) => {
+        setProductsSearchCategory(searchCategory);
+    };
+
     return (
-        <ProductsContext.Provider value={{ products, filteredProducts, fetchSearchedProducts, fetchFilteredProducts }}>
+        <ProductsContext.Provider
+            value={{
+                products,
+                productsSearchCategory,
+                filteredProducts,
+                fetchSearchedProducts,
+                fetchFilteredProducts,
+                fetchProductsSearchCategory,
+            }}
+        >
             {props.children}
         </ProductsContext.Provider>
     );

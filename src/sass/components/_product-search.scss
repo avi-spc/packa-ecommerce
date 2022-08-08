@@ -1,5 +1,14 @@
 .section-product-search {
     .product-search {
+        &__search-count {
+            margin-bottom: 5rem;
+            font-size: $medium-font-size;
+
+            span {
+                font-weight: 700;
+            }
+        }
+
         &__filter-p-grid {
             display: flex;
             justify-content: space-between;

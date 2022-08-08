@@ -31,6 +31,7 @@ function App() {
                                     <CategoryNavbar />
                                     <Routes>
                                         <Route path="/" element={<Home />} />
+                                        <Route path="/products_search" element={<ProductSearch />} />
                                         <Route path="/products/:product_id" element={<Product />} />
                                         <Route path="/returns_orders" element={<OrdersHistory />} />
                                         <Route path="/shopcart" element={<ShoppingCart />} />
