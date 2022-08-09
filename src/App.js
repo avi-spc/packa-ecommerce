@@ -17,33 +17,36 @@ import PaymentProgress from "./components/checkout/PaymentProgress";
 import OrdersContextProvider from "./contexts/ordersContext";
 import CustomerContextProvider from "./contexts/customerContext";
 import Home from "./components/pages/home";
+import NotificationContextProvider from "./contexts/notificationContext";
 
 function App() {
     return (
         <div className="App">
             <BrowserRouter>
-                <CartContextProvider>
-                    <ProductsContextProvider>
-                        <CheckoutContextProvider>
-                            <OrdersContextProvider>
-                                <CustomerContextProvider>
-                                    <Navbar />
-                                    <CategoryNavbar />
-                                    <Routes>
-                                        <Route path="/" element={<Home />} />
-                                        <Route path="/products_search" element={<ProductSearch />} />
-                                        <Route path="/products/:product_id" element={<Product />} />
-                                        <Route path="/returns_orders" element={<OrdersHistory />} />
-                                        <Route path="/shopcart" element={<ShoppingCart />} />
-                                        <Route path="/checkout" element={<Checkout />} />
-                                        <Route path="/payment_progress" element={<PaymentProgress />} />
-                                    </Routes>
-                                    <Footer />
-                                </CustomerContextProvider>
-                            </OrdersContextProvider>
-                        </CheckoutContextProvider>
-                    </ProductsContextProvider>
-                </CartContextProvider>
+                <NotificationContextProvider>
+                    <CartContextProvider>
+                        <ProductsContextProvider>
+                            <CheckoutContextProvider>
+                                <OrdersContextProvider>
+                                    <CustomerContextProvider>
+                                        <Navbar />
+                                        <CategoryNavbar />
+                                        <Routes>
+                                            <Route path="/" element={<Home />} />
+                                            <Route path="/products_search" element={<ProductSearch />} />
+                                            <Route path="/products/:product_id" element={<Product />} />
+                                            <Route path="/returns_orders" element={<OrdersHistory />} />
+                                            <Route path="/shopcart" element={<ShoppingCart />} />
+                                            <Route path="/checkout" element={<Checkout />} />
+                                            <Route path="/payment_progress" element={<PaymentProgress />} />
+                                        </Routes>
+                                        <Footer />
+                                    </CustomerContextProvider>
+                                </OrdersContextProvider>
+                            </CheckoutContextProvider>
+                        </ProductsContextProvider>
+                    </CartContextProvider>
+                </NotificationContextProvider>
             </BrowserRouter>
         </div>
     );

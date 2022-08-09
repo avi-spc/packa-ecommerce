@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Notification from "../utility/Notification";
 
 import NavCart from "./NavCart";
 import NavLocation from "./NavLocation";
@@ -23,6 +24,7 @@ const Navbar = () => {
             <Link to="/shopcart">
                 <NavCart />
             </Link>
+            <Notification />
         </nav>
     );
 };

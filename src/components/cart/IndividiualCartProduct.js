@@ -6,6 +6,7 @@ import { CartContext } from "../../contexts/cartContext";
 
 const IndividualCartProduct = ({ cartProduct }) => {
     const { removeProductFromCart } = useContext(CartContext);
+
     return (
         <div className="cart-product">
             <div className="cart-product__details-m-price">

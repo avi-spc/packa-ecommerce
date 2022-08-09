@@ -1,4 +1,6 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useContext } from "react";
+
+import { NotificationContext } from "./notificationContext";
 
 export const CartContext = createContext();
 
@@ -7,6 +9,8 @@ const CartContextProvider = (props) => {
     const [cartTotalQuantity, setCartTotalQuantity] = useState(0);
     const [cartTotalAmount, setCartTotalAmount] = useState(0);
     const [isCartEmpty, setIsCartEmpty] = useState(true);
+
+    const { toggleNotificationStatus } = useContext(NotificationContext);
 
     const addProductToCart = (product) => {
         let isNewProduct = true;
@@ -30,6 +34,8 @@ const CartContextProvider = (props) => {
             setCart(freshCart);
         }
 
+        toggleNotificationStatus(true, "Item added to cart");
+
         setIsCartEmpty(false);
         setCartTotalAmount(cartTotalAmount + product.quantity * product.rate);
     };
@@ -48,6 +54,8 @@ const CartContextProvider = (props) => {
             setIsCartEmpty(true);
         }
 
+        toggleNotificationStatus(true, "Item removed to cart");
+
         setCart(modifiedCart);
     };
 
@@ -65,6 +73,8 @@ const CartContextProvider = (props) => {
                 }
                 return cartProduct.id !== productID;
             });
+
+            toggleNotificationStatus(true, "Item removed to cart");
         } else {
             modifiedCart = cart.map((cartProduct) => {
                 if (cartProduct.id === productID) {
@@ -95,6 +105,8 @@ const CartContextProvider = (props) => {
         setCartTotalAmount(0);
         setIsCartEmpty(true);
         setCart([]);
+
+        toggleNotificationStatus(true, "Cart emptied");
     };
 
     return (

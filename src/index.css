@@ -338,6 +338,16 @@ input[type="radio"]:checked + ::before {
         background-color: #FCD56C;
         border-radius: 1.5rem; }
 
+.notification {
+  font-size: 2rem;
+  background-color: #FCD56C;
+  border-radius: 1.5rem;
+  padding: 2rem 3rem;
+  position: fixed;
+  top: 90vh;
+  left: 50%;
+  transform: translateX(-50%); }
+
 .section-order-summary, .section-lifetime-savings {
   font-size: 2rem;
   padding: 2rem;

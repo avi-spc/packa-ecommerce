@@ -22,7 +22,7 @@ const ShoppingCart = () => {
         <section className="section-shopping-cart container">
             <div className="shopping-cart__heading-p-btn margin-bottom-huge">
                 <div className="primary-heading">Shopping Cart</div>
-                <SecondaryButton name="Empty Cart" action={emptyCart} actionPayload={{}} />
+                {cartTotalQuantity ? <SecondaryButton name="Empty Cart" action={emptyCart} actionPayload={{}} /> : null}
             </div>
             <div className="shopping-cart__cart-p-subcheck">
                 <div className="shopping-cart__cart-p-subtotal">

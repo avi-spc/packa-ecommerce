@@ -1,0 +1,11 @@
+.notification {
+    font-size: $normal-font-size;
+    background-color: $color-significance-dark;
+    border-radius: $normal-border-radius;
+    padding: 2rem 3rem;
+
+    position: fixed;
+    top: 90vh;
+    left: 50%;
+    transform: translateX(-50%);
+}
