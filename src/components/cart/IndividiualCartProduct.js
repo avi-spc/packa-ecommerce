@@ -5,7 +5,7 @@ import QuantityCounter from "../product/QuantityCounter";
 import { CartContext } from "../../contexts/cartContext";
 
 const IndividualCartProduct = ({ cartProduct }) => {
-    const { removeProductFromCart } = useContext(CartContext);
+    const { removeProductFromCart, addProductToSavedForLater } = useContext(CartContext);
 
     return (
         <div className="cart-product">
@@ -16,7 +16,11 @@ const IndividualCartProduct = ({ cartProduct }) => {
                     <div className="secondary-heading">{cartProduct.name}</div>
                     <QuantityCounter variant="small" quantity={cartProduct.quantity} productID={cartProduct.id} />
                     <div className="cart-product__action-buttons">
-                        <SecondaryButton name="Save for later" />
+                        <SecondaryButton
+                            name="Save for later"
+                            action={addProductToSavedForLater}
+                            actionPayload={{ payload: cartProduct.id }}
+                        />
                         <SecondaryButton
                             name="Delete"
                             action={removeProductFromCart}

@@ -9,7 +9,7 @@ import { CartContext } from "../../contexts/cartContext";
 import { CheckoutContext } from "../../contexts/checkoutContext";
 
 const ShoppingCart = () => {
-    const { cart, isCartEmpty, cartTotalQuantity, cartTotalAmount, emptyCart } = useContext(CartContext);
+    const { cart, isCartEmpty, cartTotalQuantity, cartTotalAmount, emptyCart, savedForLater } = useContext(CartContext);
     const { calculateCouponAmount } = useContext(CheckoutContext);
 
     useEffect(() => {
@@ -31,7 +31,7 @@ const ShoppingCart = () => {
                 </div>
                 <SubtotalCheckout cartTotalAmount={cartTotalAmount} cartProductsCount={cartTotalQuantity} />
             </div>
-            {/* <CartProductsLater /> */}
+            {savedForLater.length ? <CartProductsLater productsSavedForLater={savedForLater} /> : null}
         </section>
     );
 };

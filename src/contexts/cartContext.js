@@ -9,6 +9,7 @@ const CartContextProvider = (props) => {
     const [cartTotalQuantity, setCartTotalQuantity] = useState(0);
     const [cartTotalAmount, setCartTotalAmount] = useState(0);
     const [isCartEmpty, setIsCartEmpty] = useState(true);
+    const [savedForLater, setSavedForLater] = useState([]);
 
     const { toggleNotificationStatus } = useContext(NotificationContext);
 
@@ -109,6 +110,11 @@ const CartContextProvider = (props) => {
         toggleNotificationStatus(true, "Cart emptied");
     };
 
+    const addProductToSavedForLater = (productID) => {
+        setSavedForLater([...savedForLater, { productID }]);
+        removeProductFromCart(productID);
+    };
+
     return (
         <CartContext.Provider
             value={{
@@ -121,6 +127,8 @@ const CartContextProvider = (props) => {
                 changeCartTotalQuantity,
                 changeCartProductQuantity,
                 emptyCart,
+                savedForLater,
+                addProductToSavedForLater,
             }}
         >
             {props.children}
