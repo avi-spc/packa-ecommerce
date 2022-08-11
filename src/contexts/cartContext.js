@@ -75,7 +75,7 @@ const CartContextProvider = (props) => {
                 return cartProduct.id !== productID;
             });
 
-            toggleNotificationStatus(true, "Item removed to cart");
+            toggleNotificationStatus(true, "Item removed from cart");
         } else {
             modifiedCart = cart.map((cartProduct) => {
                 if (cartProduct.id === productID) {
@@ -115,6 +115,25 @@ const CartContextProvider = (props) => {
         removeProductFromCart(productID);
     };
 
+    const removeProductFromSavedForLater = (productID) => {
+        const modifiedCart = savedForLater.filter((savedForLaterProduct) => {
+            // if (cartProduct.id === productID) {
+            //     setCartTotalQuantity(cartTotalQuantity - cartProduct.quantity);
+            //     setCartTotalAmount(cartTotalAmount - cartProduct.amount);
+            // }
+
+            return savedForLaterProduct.productID !== productID;
+        });
+
+        // if (!modifiedCart.length) {
+        //     setIsCartEmpty(true);
+        // }
+
+        toggleNotificationStatus(true, "Item removed from saved for later");
+
+        setSavedForLater(modifiedCart);
+    };
+
     return (
         <CartContext.Provider
             value={{
@@ -129,6 +148,7 @@ const CartContextProvider = (props) => {
                 emptyCart,
                 savedForLater,
                 addProductToSavedForLater,
+                removeProductFromSavedForLater,
             }}
         >
             {props.children}

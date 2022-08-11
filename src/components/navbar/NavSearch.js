@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { ProductsContext } from "../../contexts/productsContext";
@@ -13,7 +13,9 @@ const NavSearch = () => {
     const [hasUserEntered, setHasUserEntered] = useState(false);
 
     const { fetchSearchedProducts, fetchProductsSearchCategory } = useContext(ProductsContext);
+
     const navigate = useNavigate();
+    const suggestedSearchList = useRef();
 
     useEffect(() => {
         if (searchString.subCategory.length && !hasUserEntered) {
@@ -49,10 +51,12 @@ const NavSearch = () => {
     }, [currentSuggestedStringIndex]);
 
     useEffect(() => {
-        if (suggestedSearchStrings.length) {
-            document.querySelector(".product-search__suggested-searches-list").classList.remove("hidden");
-        } else {
-            document.querySelector(".product-search__suggested-searches-list").classList.add("hidden");
+        if (suggestedSearchList) {
+            if (suggestedSearchStrings.length) {
+                suggestedSearchList.current.classList.remove("hidden");
+            } else {
+                suggestedSearchList.current.classList.add("hidden");
+            }
         }
     }, [suggestedSearchStrings]);
 
@@ -108,7 +112,7 @@ const NavSearch = () => {
                 onChange={(e) => handleSearchStringChange(e)}
                 onKeyUp={(e) => handleSuggestedSearchStringsNavigation(e)}
             />
-            <ul className="product-search__suggested-searches-list hidden">
+            <ul className="product-search__suggested-searches-list hidden" ref={suggestedSearchList}>
                 {suggestedSearchStrings.map((suggestedString, index) => {
                     return (
                         <li className="suggested-string" key={index}>

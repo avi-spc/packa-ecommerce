@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 
 import QuantityCounter from "./QuantityCounter";
 import PriceTag from "./PriceTag";
@@ -29,6 +29,7 @@ const ProductDetails = ({ product }) => {
     // };
 
     const [quantity, setQuantity] = useState(1);
+    const ratingBar = useRef();
 
     const changeQuantity = (newQuantity) => {
         if (!(newQuantity < 1)) {
@@ -46,13 +47,13 @@ const ProductDetails = ({ product }) => {
     };
 
     useEffect(() => {
-        const ratingBar = document.querySelector(".product-details__rating");
-
-        for (let i = 0; i < 5; i++) {
-            if (i <= Math.round(product.rating - 1)) {
-                ratingBar.children[i].classList.add("positive");
-            } else {
-                ratingBar.children[i].classList.add("negative");
+        if (ratingBar) {
+            for (let i = 0; i < 5; i++) {
+                if (i <= Math.round(product.rating - 1)) {
+                    ratingBar.current.children[i].classList.add("positive");
+                } else {
+                    ratingBar.current.children[i].classList.add("negative");
+                }
             }
         }
     }, []);
@@ -61,7 +62,7 @@ const ProductDetails = ({ product }) => {
         <div className="product-details">
             <div className="product-details__name primary-heading">{product.name}</div>
             <div className="product-details__brand-name secondary-heading">Brand : : {product.brand}</div>
-            <div className="product-details__rating rating-bar rating-bar__small">
+            <div className="product-details__rating rating-bar rating-bar__small" ref={ratingBar}>
                 <span className="material-symbols-outlined">circle</span>
                 <span className="material-symbols-outlined">circle</span>
                 <span className="material-symbols-outlined">circle</span>
