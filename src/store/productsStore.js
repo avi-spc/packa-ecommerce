@@ -29,7 +29,7 @@ export const ProductsStore = [
                 offer: "Get GST invoice and save up to 28% on business purchases.",
             },
         ],
-        category: ["coffee"],
+        category: ["coffee", "beverage", "drink", "food", "pantry", "countrybean"],
     },
     {
         id: generateUniqueId(),
@@ -51,7 +51,7 @@ export const ProductsStore = [
                 offer: "Apply now & get ₹500 back + rewards worth ₹1700",
             },
         ],
-        category: ["mobiles", "electronics", "computers"],
+        category: ["mobiles", "electronics", "accessories", "earphones", "airdopes", "peripherals", "boat"],
     },
     {
         id: generateUniqueId(),
@@ -73,18 +73,18 @@ export const ProductsStore = [
                 offer: "Apply now & get ₹500 back + rewards worth ₹1700",
             },
         ],
-        category: ["computers", "electronics"],
+        category: ["computers", "electronics", "keyboard", "peripherals", "gaming", "logitech"],
     },
     {
         id: generateUniqueId(),
-        name: "Logitech G413 TKL SE Mechanical Gaming Keyboard",
-        brand: "Logitech",
-        rating: 4.8,
-        rate: 5995,
-        discount: 23,
+        name: "Knorr Classic Chicken Delite Soup, 42g",
+        brand: "Knorr",
+        rating: 4,
+        rate: 8,
+        discount: 3,
         eta: generateDeliveryDate(),
         description:
-            "Take your gaming skills to the next level: The Logitech G413 TKL SE is a tenkeyless keyboard with gaming-first features and the durability and performance necessary to compete. PBT keycaps: Heat- and wear-resistant, this compact gaming keyboard features the most durable material used in keycap design",
+            "Made with Real Chicken and 100% real vegetables. Contains no added preservatives. Ready to eat in 3 simple steps. Serves 4. Goes well with: White Sauce Pasta or Red Sauce Pasta. Chef's Tip: Garnish with grated cheese & garlic and serve with pan fried bread pieces",
         offers: [
             {
                 id: 1,
@@ -95,7 +95,94 @@ export const ProductsStore = [
                 offer: "Apply now & get ₹500 back + rewards worth ₹1700",
             },
         ],
-        category: ["computers", "electronics"],
+        category: ["soup", "beverage", "drink", "food", "pantry", "knorr"],
     },
-
+    {
+        id: generateUniqueId(),
+        name: "Dennis Lingo Men Shirt",
+        brand: "Dennis",
+        rating: 4,
+        rate: 499,
+        discount: 28,
+        eta: generateDeliveryDate(),
+        description:
+            "About the Brand DENNIS LINGO - Finding Basic Menswear for daily use can be hard among todays Over priced Fast fashion world, where trends change daily. That’s why we started Dennis Lingo, to create a one stop shop for premium essential clothing for everyday use at lowest prices and bring Basics back in trend.",
+        offers: [
+            {
+                id: 1,
+                offer: "Get GST invoice and save up to 28% on business purchases.",
+            },
+            {
+                id: 2,
+                offer: "Apply now & get ₹500 back + rewards worth ₹1700",
+            },
+        ],
+        category: ["clothing", "shirt", "wearables", "men shirt", "cotton", "dennis"],
+    },
+    {
+        id: generateUniqueId(),
+        name: "Logitech MX Master 3S Mouse",
+        brand: "Logitech",
+        rating: 4.2,
+        rate: 10995,
+        discount: 15,
+        eta: generateDeliveryDate(),
+        description:
+            "Any-surface tracking - now 8K DPI: Use MX Master 3S cordless computer mouse to work on any surface - even glass (1) - with the upgraded 8000 DPI sensor with customizable sensitivity",
+        offers: [
+            {
+                id: 1,
+                offer: "Get GST invoice and save up to 28% on business purchases.",
+            },
+            {
+                id: 2,
+                offer: "Apply now & get ₹500 back + rewards worth ₹1700",
+            },
+        ],
+        category: ["computers", "electronics", "mouse", "peripherals", "gaming", "logitech"],
+    },
+    {
+        id: generateUniqueId(),
+        name: "RiteBite Max Protein 7 Grain Breakfast Cookies",
+        brand: "RiteBite",
+        rating: 4.8,
+        rate: 220,
+        discount: 5,
+        eta: generateDeliveryDate(),
+        description:
+            "CLEAN INDULGENCE: Indulge in our Max Protein cookies while meeting your diet goals. Each bite only takes you towards your goal. These delicious protein cookies have the right amount of carbs, protein and whole lot of flavor.",
+        offers: [
+            {
+                id: 1,
+                offer: "Apply now & get ₹500 back + rewards worth ₹1700",
+            },
+            {
+                id: 2,
+                offer: "Get GST invoice and save up to 28% on business purchases.",
+            },
+        ],
+        category: ["biscuit", "wafers", "edible", "food", "pantry", "ritebite"],
+    },
+    {
+        id: generateUniqueId(),
+        name: "Parle-g Original Glucose Biscuit, 800g",
+        brand: "Parle-g",
+        rating: 4.4,
+        rate: 79,
+        discount: 11,
+        eta: generateDeliveryDate(),
+        description:
+            "Parle-G has been a source of all round nourishment for the nation since 1939. As its unique taste expanded over the globe. Filled with goodness of wheat and milk. Shelf Life: 5 Months",
+        offers: [
+            {
+                id: 1,
+                offer: "Apply now & get ₹500 back + rewards worth ₹1700",
+            },
+            {
+                id: 2,
+                offer: "Get GST invoice and save up to 28% on business purchases.",
+            },
+        ],
+        category: ["biscuit", "wafers", "edible", "food", "pantry", "parleg"],
+    },
 ];

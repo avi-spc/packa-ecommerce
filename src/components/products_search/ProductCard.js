@@ -28,7 +28,7 @@ const ProductCard = ({ product }) => {
                         </span>
                     </div>
                     <div className="product-card__price">
-                        Rs. {product.rate} :: {product.discount}%
+                        Rs. {product.rate} :: {product.discount}% Off
                     </div>
                     <div className="product-card__eta">
                         <img src="/images/icons/delivery_icon.svg" alt="" />

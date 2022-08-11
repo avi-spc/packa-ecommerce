@@ -19,7 +19,7 @@ const NavSearch = () => {
         if (searchString.subCategory.length && !hasUserEntered) {
             setSuggestedSearchStrings(
                 ProductCategories.filter((category) => {
-                    return category.subCategory.includes(searchString.subCategory.toLowerCase());
+                    return category.subCategory.startsWith(searchString.subCategory.toLowerCase());
                 })
             );
         } else {
