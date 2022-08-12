@@ -1,21 +1,21 @@
 import { useContext } from "react";
 import { CartContext } from "../../contexts/cartContext";
 
-const PriamryButton = (props) => {
+const PrimaryButton = (props) => {
     const { product } = props;
 
-    const { addProductToCart, changeCartTotalQuantity } = useContext(CartContext);
-
-    const addProductBatchToCart = () => {
-        addProductToCart(product);
-        changeCartTotalQuantity(product.quantity);
-    };
+    const { addProductToCart } = useContext(CartContext);
 
     return (
-        <div className="btn btn__primary" onClick={addProductBatchToCart}>
+        <div
+            className="btn btn__primary"
+            onClick={() => {
+                addProductToCart(product);
+            }}
+        >
             {props.name}
         </div>
     );
 };
 
-export default PriamryButton;
+export default PrimaryButton;

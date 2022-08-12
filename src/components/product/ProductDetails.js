@@ -4,7 +4,7 @@ import QuantityCounter from "./QuantityCounter";
 import PriceTag from "./PriceTag";
 import ProductDesc from "./ProductDesc";
 import ProductOffers from "./ProductOffers";
-import PriamryButton from "../buttons/PrimaryButton";
+import PrimaryButton from "../buttons/PrimaryButton";
 
 const ProductDetails = ({ product }) => {
     // const createRatingBar = () => {
@@ -71,7 +71,7 @@ const ProductDetails = ({ product }) => {
             </div>
             <PriceTag variant="product" priceValue={product.rate} discountValue={product.discount} />
             <QuantityCounter variant="big" quantity={quantity} changeQuantity={changeQuantity} />
-            <PriamryButton name="ADD TO CART" product={cartProduct} />
+            <PrimaryButton name="ADD TO CART" product={cartProduct} />
             <ProductDesc description={product.description} />
             <ProductOffers offers={product.offers} />
         </div>

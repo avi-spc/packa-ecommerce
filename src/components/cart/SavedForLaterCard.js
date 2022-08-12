@@ -5,6 +5,12 @@ import SecondaryButton from "../buttons/SecondaryButton";
 
 const SavedForLaterCard = ({ product }) => {
     const { addProductToCart, removeProductFromSavedForLater } = useContext(CartContext);
+
+    const moveProductToCart = (product) => {
+        addProductToCart(product);
+        removeProductFromSavedForLater(product.id);
+    };
+
     return (
         // <Link to={`/products/${product.id}`}>
         <div className="product-card">
@@ -22,7 +28,7 @@ const SavedForLaterCard = ({ product }) => {
                 <div className="product-card__price">
                     Rs. {product.rate} :: {product.discount}%
                 </div>
-                {/* <SecondaryButton name="Move To Cart" action={addProductToCart} actionPayload={{ payload: product }} /> */}
+                <SecondaryButton name="Move To Cart" action={moveProductToCart} actionPayload={{ payload: product }} />
                 <SecondaryButton
                     name="Delete"
                     action={removeProductFromSavedForLater}

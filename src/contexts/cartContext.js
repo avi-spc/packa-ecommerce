@@ -16,6 +16,14 @@ const CartContextProvider = (props) => {
     const addProductToCart = (product) => {
         let isNewProduct = true;
 
+        if (savedForLater.length) {
+            setSavedForLater(
+                savedForLater.filter((productSaved) => {
+                    return productSaved.productID !== product.id;
+                })
+            );
+        }
+
         const freshCart = cart.map((cartProduct) => {
             if (cartProduct.id === product.id) {
                 isNewProduct = false;
@@ -30,6 +38,10 @@ const CartContextProvider = (props) => {
         });
 
         if (isNewProduct) {
+            if (!product.quantity) {
+                product.quantity = 1;
+                product.amount = product.rate;
+            }
             setCart([...cart, product]);
         } else {
             setCart(freshCart);
@@ -38,6 +50,7 @@ const CartContextProvider = (props) => {
         toggleNotificationStatus(true, "Item added to cart");
 
         setIsCartEmpty(false);
+        changeCartTotalQuantity(product.quantity);
         setCartTotalAmount(cartTotalAmount + product.quantity * product.rate);
     };
 
@@ -88,9 +101,6 @@ const CartContextProvider = (props) => {
                 } else {
                     return cartProduct;
                 }
-                // return cartProduct.id === productID
-                //     ? { ...cartProduct, quantity: newProductQuantity, amount: cartProduct.rate * newProductQuantity }
-                //     : cartProduct;
             });
         }
 
@@ -117,17 +127,8 @@ const CartContextProvider = (props) => {
 
     const removeProductFromSavedForLater = (productID) => {
         const modifiedCart = savedForLater.filter((savedForLaterProduct) => {
-            // if (cartProduct.id === productID) {
-            //     setCartTotalQuantity(cartTotalQuantity - cartProduct.quantity);
-            //     setCartTotalAmount(cartTotalAmount - cartProduct.amount);
-            // }
-
             return savedForLaterProduct.productID !== productID;
         });
-
-        // if (!modifiedCart.length) {
-        //     setIsCartEmpty(true);
-        // }
 
         toggleNotificationStatus(true, "Item removed from saved for later");
 
