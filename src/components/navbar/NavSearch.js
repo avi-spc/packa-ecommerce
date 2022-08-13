@@ -79,19 +79,6 @@ const NavSearch = () => {
             setCurrentSuggestedStringIndex(currentSuggestedStringIndex + 1);
         } else if (e.code === "ArrowUp" && currentSuggestedStringIndex > -1) {
             setCurrentSuggestedStringIndex(currentSuggestedStringIndex - 1);
-        } else if (e.code === "Enter" || e.code === "NumpadEnter") {
-            if (currentSuggestedStringValue != null) {
-                setSearchString(currentSuggestedStringValue);
-            } else if (
-                suggestedSearchStrings.length === 1 &&
-                suggestedSearchStrings[0].subCategory.length === searchString.subCategory.length
-            ) {
-                setSearchString({ ...searchString, baseCategory: suggestedSearchStrings[0].baseCategory });
-            } else {
-                setSearchString({ ...searchString, baseCategory: "all" });
-            }
-
-            setHasUserEntered(true);
         }
     };
 
@@ -102,16 +89,36 @@ const NavSearch = () => {
         setHasUserEntered(false);
     };
 
+    const handleInitiateSearch = (e) => {
+        e.preventDefault();
+
+        if (currentSuggestedStringValue != null) {
+            setSearchString(currentSuggestedStringValue);
+        } else if (
+            suggestedSearchStrings.length === 1 &&
+            suggestedSearchStrings[0].subCategory.length === searchString.subCategory.length
+        ) {
+            setSearchString({ ...searchString, baseCategory: suggestedSearchStrings[0].baseCategory });
+        } else {
+            setSearchString({ ...searchString, baseCategory: "all" });
+        }
+
+        setHasUserEntered(true);
+    };
+
     return (
         <div className="nav-primary__product-search">
             <div className="product-search__search-category">{searchString.baseCategory}</div>
-            <input
-                className="product-search__search-input"
-                type="text"
-                value={searchString.subCategory}
-                onChange={(e) => handleSearchStringChange(e)}
-                onKeyUp={(e) => handleSuggestedSearchStringsNavigation(e)}
-            />
+            <form onSubmit={(e) => handleInitiateSearch(e)}>
+                <input
+                    className="product-search__search-input"
+                    type="text"
+                    value={searchString.subCategory}
+                    onChange={(e) => handleSearchStringChange(e)}
+                    onKeyUp={(e) => handleSuggestedSearchStringsNavigation(e)}
+                    placeholder="Search products here..."
+                />
+            </form>
             <ul className="product-search__suggested-searches-list hidden" ref={suggestedSearchList}>
                 {suggestedSearchStrings.map((suggestedString, index) => {
                     return (

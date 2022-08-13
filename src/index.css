@@ -318,7 +318,10 @@ input[type="radio"]:checked + ::before {
       border-radius: 0 1.5rem 1.5rem 0;
       border-style: none;
       outline-style: none;
-      width: 50rem; }
+      width: 50rem;
+      height: 100%; }
+      .nav-primary__product-search .product-search__search-input::placeholder {
+        font-style: italic; }
     .nav-primary__product-search .product-search__suggested-searches-list {
       list-style: none;
       padding: 2.5rem 2.8rem;

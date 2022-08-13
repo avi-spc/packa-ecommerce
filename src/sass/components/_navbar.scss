@@ -101,6 +101,11 @@
                 border-style: none;
                 outline-style: none;
                 width: 50rem;
+                height: 100%;
+
+                &::placeholder {
+                    font-style: italic;
+                }
             }
 
 
