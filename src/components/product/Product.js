@@ -6,6 +6,7 @@ import ProductDetails from "./ProductDetails";
 import ProductVisuals from "./ProductVisuals";
 import RelatedProducts from "./RelatedProducts";
 import CustomerReviews from "./CustomerReviews";
+import { useDocumentTitle } from "../../hooks/useDocumentTitle";
 
 const Product = () => {
     const { product_id } = useParams();
@@ -14,6 +15,8 @@ const Product = () => {
     const product = products.find((product) => {
         return product.id == product_id;
     });
+
+    useDocumentTitle(product.name);
 
     return (
         <section className="section-product container">

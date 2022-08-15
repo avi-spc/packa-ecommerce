@@ -7,10 +7,13 @@ import CartSubtotal from "./CartSubtotal";
 import SubtotalCheckout from "./SubtotalCheckout";
 import { CartContext } from "../../contexts/cartContext";
 import { CheckoutContext } from "../../contexts/checkoutContext";
+import { useDocumentTitle } from "../../hooks/useDocumentTitle";
 
 const ShoppingCart = () => {
     const { cart, isCartEmpty, cartTotalQuantity, cartTotalAmount, emptyCart, savedForLater } = useContext(CartContext);
     const { calculateCouponAmount } = useContext(CheckoutContext);
+
+    useDocumentTitle("Shopping Cart");
 
     useEffect(() => {
         if (isCartEmpty) {

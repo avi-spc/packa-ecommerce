@@ -4,9 +4,12 @@ import OrderMeta from "./OrderMeta";
 import IndividualOrderHistory from "./IndividualOrderHistory";
 import LifetimeSavings from "./LifetimeSavings";
 import { OrdersContext } from "../../contexts/ordersContext";
+import { useDocumentTitle } from "../../hooks/useDocumentTitle";
 
 const OrdersHistory = () => {
     const { orders, savings } = useContext(OrdersContext);
+
+    useDocumentTitle("Returns & Orders");
 
     return (
         <section className="section-orders-history container">

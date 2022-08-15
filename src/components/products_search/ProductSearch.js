@@ -1,11 +1,14 @@
 import { useContext, useEffect } from "react";
 import { ProductsContext } from "../../contexts/productsContext";
+import { useDocumentTitle } from "../../hooks/useDocumentTitle";
 
 import ProductCard from "./ProductCard";
 import ProductFilter from "./ProductFilter";
 
 const ProductSearch = () => {
     const { products, productsSearchCategory, filteredProducts } = useContext(ProductsContext);
+
+    useDocumentTitle(productsSearchCategory);
 
     return (
         <section className="section-product-search container">

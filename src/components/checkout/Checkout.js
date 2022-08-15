@@ -5,10 +5,13 @@ import ItemsAndDelivery from "./ItemsAndDelivery";
 import OrderSummary from "./OrderSummary";
 import PaymentModes from "./paymant_modes/PaymentModes";
 import { CartContext } from "../../contexts/cartContext";
+import { useDocumentTitle } from "../../hooks/useDocumentTitle";
 
 const Checkout = () => {
     const { cart, cartTotalAmount, emptyCart } = useContext(CartContext);
 
+    useDocumentTitle("Checkout");
+    
     return (
         <section className="section-checkout container">
             <div className="primary-heading margin-bottom-huge">Checkout</div>
@@ -16,9 +19,9 @@ const Checkout = () => {
                 <div className="checkout-details">
                     <DeliveryAddressList />
                     <PaymentModes />
-                    <ItemsAndDelivery cartProducts={cart}/>
+                    <ItemsAndDelivery cartProducts={cart} />
                 </div>
-                <OrderSummary cartProducts={cart} cartTotalAmount={cartTotalAmount} emptyCart={emptyCart}/>
+                <OrderSummary cartProducts={cart} cartTotalAmount={cartTotalAmount} emptyCart={emptyCart} />
             </div>
         </section>
     );

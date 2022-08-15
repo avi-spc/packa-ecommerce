@@ -1,4 +1,8 @@
+import { useDocumentTitle } from "../../hooks/useDocumentTitle";
+
 const Home = () => {
+    useDocumentTitle("Online shopping made easy");
+
     return (
         <div className="section-home">
             <main className="home__highlights">
