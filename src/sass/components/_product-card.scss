@@ -5,6 +5,10 @@
     padding: 1.7rem;
     background-color: $color-primary-dark;
     border-radius: $normal-border-radius;
+    
+    @include responsive(phone) {
+        width: 100%;
+    }
 
     transition: all .5s;
 

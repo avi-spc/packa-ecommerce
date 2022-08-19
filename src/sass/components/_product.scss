@@ -1,12 +1,21 @@
 .product {
     &__visuals-p-details {
         display: flex;
+
+        @include responsive(phone) {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 }
 
 .product-visuals {
     width: 61.5rem;
     margin-right: 7.5rem;
+
+    @include responsive(phone) {
+        margin: 0;
+    }
 
     &__primary {
         height: 61.5rem;
@@ -36,6 +45,10 @@
     &__brand-name {
         margin-top: 1rem;
         margin-bottom: 2rem;
+    }
+
+    @include responsive(phone) {
+        margin-top: 4rem;
     }
 }
 

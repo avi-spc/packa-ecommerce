@@ -10,6 +10,10 @@
 
 html {
     font-size: 50%;
+
+    @include responsive(phone) {
+        font-size: 35%;
+    }
 }
 
 body {

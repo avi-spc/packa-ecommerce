@@ -10,7 +10,7 @@ const IndividualCartProduct = ({ cartProduct }) => {
     return (
         <div className="cart-product">
             <div className="cart-product__details-m-price">
-                <input type="checkbox" />
+                {/* <input type="checkbox" /> */}
                 <div className="cart-product__image"></div>
                 <div className="cart-product__details">
                     <div className="secondary-heading">{cartProduct.name}</div>

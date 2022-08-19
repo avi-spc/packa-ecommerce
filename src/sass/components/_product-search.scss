@@ -1,4 +1,10 @@
 .section-product-search {
+    .product-filter {
+        @include responsive(phone) {
+            display: none;
+        }
+    }
+    
     .product-search {
         &__search-count {
             margin-bottom: 5rem;
@@ -7,12 +13,20 @@
             span {
                 font-weight: 700;
             }
+
+            @include responsive(phone) {
+                text-align: center;
+            }
         }
 
         &__filter-p-grid {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
+
+            @include responsive(phone) {
+                justify-content: center;
+            }
         }
 
         &__grid {
@@ -20,6 +34,11 @@
             grid-template-columns: repeat(3, minmax(0, 1fr));
             grid-gap: 5rem;
             flex-basis: 75%;
+
+            @include responsive(phone) {
+                flex-basis: 100%;
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+            }
         }
     }
 }

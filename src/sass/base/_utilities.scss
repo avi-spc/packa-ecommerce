@@ -1,5 +1,9 @@
 .container {
     margin: 0 16rem;
+
+    @include responsive(phone) {
+        margin: 0 4rem;
+    }
 }
 
 .p-center-text {
