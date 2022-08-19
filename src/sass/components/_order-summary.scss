@@ -4,9 +4,13 @@
     background-color: $color-primary-light;
     border-radius: $normal-border-radius;
     flex-basis: 30%;
-
+    
     &>:first-child {
         margin: 1rem 0 2.6rem 0;
+    }
+    
+    @include responsive(phone) {
+        width: 100%;
     }
 
     .btn-proceed-to-pay {

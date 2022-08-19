@@ -40,12 +40,20 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+
+    @include responsive(phone) {
+        flex-direction: column;
+    }
 }
 
 .orders-history {
     @include containerBorderColor;
     padding: 2rem;
     flex-basis: 65%;
+
+    @include responsive(phone) {
+        margin-bottom: 4rem;
+    }
     
     &>div:not(:last-child) {
         margin-bottom: 2rem;
@@ -65,6 +73,10 @@
 .order-products-list {
     display: flex;
     justify-content: space-between;
+
+    @include responsive(phone) {
+        flex-direction: column;
+    }
 }
 
 .order-product {
@@ -95,7 +107,10 @@
     display: flex;
     flex-direction: column;
 
-
+    @include responsive(phone) {
+        margin-top: 4rem;
+    }
+    
     &>div:not(:last-child) {
         margin-bottom: 1.5rem;
     }

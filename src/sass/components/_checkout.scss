@@ -7,6 +7,14 @@
         &>section:last-child {
             margin: 5.5rem 0 0 8rem;
         }
+
+        @include responsive(phone) {
+            &>section:last-child {
+                margin: 5.5rem 0 0 0;
+            }
+            
+            flex-direction: column;
+        }
     }
 
     .checkout-details {
@@ -16,6 +24,10 @@
             padding: 2rem;
             margin-top: 2.5rem;               
             @include containerBorderColor;
+        }
+
+        @include responsive(phone) {
+            width: 100%;;
         }
     }
 
@@ -77,7 +89,21 @@
         border-radius: $normal-border-radius;
         background-color: $color-primary-light;
         padding: 2.3rem;
-    
+        
+        .product-card__eta {
+            background-color: $color-primary-dark;
+
+            @include responsive(phone) {
+                justify-content: center;
+                margin-top: 2rem;
+            }
+        }
+        
+        @include responsive(phone) {
+            display: block;
+            flex-direction: column;
+        }
+        
         &:not(:last-child) {
             margin-bottom: 2rem;
         }
@@ -86,6 +112,10 @@
             display: flex;
             align-items: flex-start;
             border-radius: inherit;
+
+            @include responsive(phone) {
+                justify-content: space-between;
+            }
         }
     
         &__details {

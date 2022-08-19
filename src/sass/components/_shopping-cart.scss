@@ -30,6 +30,10 @@
         &__products-list {
             padding: 2rem;
             @include containerBorderColor;
+
+            @include responsive(phone) {
+                margin-bottom: 15rem;
+            }
         }
     }
     
@@ -40,6 +44,10 @@
 
         @include responsive(phone) {
             flex-direction: column;
+
+            .secondary-heading {
+                margin-top: 2rem;
+            }
         }
         
         border-radius: $normal-border-radius;
@@ -63,6 +71,7 @@
 
             @include responsive(phone) {
                 margin: 0;
+                width: 100%;
             }
         }
 

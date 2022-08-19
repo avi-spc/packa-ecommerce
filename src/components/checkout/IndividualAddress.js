@@ -21,7 +21,7 @@ const IndividualAddress = ({ address, selectDeliveryAddress, radioSelector }) =>
                     <div>Phone : : {address.customerPhone}</div>
                 </div>
             </div>
-            <SecondaryButton name="Edit Address" />
+            {/* <SecondaryButton name="Edit Address" /> */}
         </label>
     );
 };

@@ -22,7 +22,11 @@
     &__details {
         margin-top: .5rem;
         margin-left: 3rem;
-        width: 50%;
+        flex-basis: 50%;
+
+        @include responsive(phone) {
+            flex-basis: 100%;
+        }
     }
 
     &__instruction {
