@@ -5,7 +5,30 @@
         }
     }
     
+    input[type="checkbox"] {
+        display: none;
+
+        @include responsive(phone) {
+            &:checked + .product-filter {
+                display: block;
+            }
+        }
+    }
+
     .product-search {
+        &__mobile-filter {
+            display: none;
+            
+            @include responsive(phone) {
+                padding: 1.5rem 2.5rem;
+                background-color: $color-primary-dark;
+                border-radius: $normal-border-radius;
+                display: inline-block;
+                align-self: flex-end;
+                margin-bottom: 4rem;
+            }
+        }
+
         &__search-count {
             margin-bottom: 5rem;
             font-size: $medium-font-size;
@@ -25,6 +48,9 @@
             align-items: flex-start;
 
             @include responsive(phone) {
+                position: relative;
+
+                flex-direction: column;
                 justify-content: center;
             }
         }
@@ -36,7 +62,7 @@
             flex-basis: 75%;
 
             @include responsive(phone) {
-                flex-basis: 100%;
+                width: 100%;
                 grid-template-columns: repeat(1, minmax(0, 1fr));
             }
         }

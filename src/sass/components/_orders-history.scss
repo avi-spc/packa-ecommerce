@@ -80,7 +80,11 @@
 }
 
 .order-product {
-    display: flex; 
+    display: flex;
+    
+    @include responsive(phone) {
+        flex-direction: column;
+    }
     
     &:not(:last-child) {
         margin-bottom: 2.3rem;
@@ -91,10 +95,19 @@
         height: 21.6rem;
         background-color: $color-primary-dark;
         border-radius: $normal-border-radius;
+
+        @include responsive(phone) {
+            width: 100%;
+        }
     }
 
     &__product-details {
         margin-left: 2.8rem;
+
+        @include responsive(phone) {
+            margin-left: 0;
+            margin-top: 2rem;
+        }
 
         .product-name {
             margin-bottom: 1.5rem;
@@ -108,7 +121,7 @@
     flex-direction: column;
 
     @include responsive(phone) {
-        margin-top: 4rem;
+        margin-top: 6rem;
     }
     
     &>div:not(:last-child) {

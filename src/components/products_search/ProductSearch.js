@@ -17,15 +17,21 @@ const ProductSearch = () => {
                 <span>{productsSearchCategory}</span>
             </div>
             <div className="product-search__filter-p-grid">
+                <div className="product-search__mobile-filter secondary-heading">
+                    <label htmlFor="filter-checkbox">
+                        Filter
+                    </label>
+                </div>
+                <input type="checkbox" id="filter-checkbox" />
                 <ProductFilter />
                 <div className="product-search__grid">
                     {filteredProducts.isFilterOn
                         ? filteredProducts.products.map((product) => {
-                              return <ProductCard product={product} key={product.id} />;
-                          })
+                            return <ProductCard product={product} key={product.id} />;
+                        })
                         : products.map((product) => {
-                              return <ProductCard product={product} key={product.id} />;
-                          })}
+                            return <ProductCard product={product} key={product.id} />;
+                        })}
                 </div>
             </div>
         </section>
