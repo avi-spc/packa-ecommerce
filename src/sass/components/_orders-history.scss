@@ -53,6 +53,7 @@
 
     @include responsive(phone) {
         margin-bottom: 4rem;
+        width: 100%;
     }
     
     &>div:not(:last-child) {

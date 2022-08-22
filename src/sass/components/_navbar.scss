@@ -158,3 +158,54 @@
         }
     }
 }
+
+.mobile-navbar {
+    display: none;
+
+    @include responsive(phone) {
+        font-size: $normal-font-size;
+        font-weight: 700;
+        background-color: $color-primary-dark;
+        border-radius: $large-border-radius;
+        box-shadow: 0 .6rem 5rem rgba($color: $color-black, $alpha: .25);
+
+        display: inline-block;
+
+        position: fixed;
+        bottom: 3rem;
+        right: 3rem;
+        line-height: 0;
+
+        img {
+            padding: 2rem;
+            width: 8rem;
+            height: 8rem;
+        }
+
+        &__nav-items-list {
+            list-style: none;
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translateY(-110%,);
+
+            border-radius: $normal-border-radius;
+            background-color: $color-significance-dark;
+
+            li {
+                padding: 2.5rem 4rem;
+                line-height: 1;
+            }
+        }
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        input[type="checkbox"]:checked + &__nav-items-list {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

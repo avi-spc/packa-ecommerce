@@ -58,7 +58,8 @@ input[type="radio"]:checked + ::before {
   margin: 0 16rem; }
   @media (max-width: 37.5em) {
     .container {
-      margin: 0 4rem; } }
+      margin: 0 4rem;
+      margin-bottom: 15rem; } }
 
 .p-center-text {
   text-align: center; }
@@ -279,6 +280,9 @@ input[type="radio"]:checked + ::before {
   padding: 3rem 0;
   margin-top: 10rem;
   background-color: #C2E7FF; }
+  @media (max-width: 37.5em) {
+    .footer__content {
+      display: none; } }
 
 .nav-primary {
   margin: 3rem 16rem;
@@ -386,6 +390,42 @@ input[type="radio"]:checked + ::before {
         color: black;
         background-color: #FCD56C;
         border-radius: 1.5rem; }
+
+.mobile-navbar {
+  display: none; }
+  @media (max-width: 37.5em) {
+    .mobile-navbar {
+      font-size: 2rem;
+      font-weight: 700;
+      background-color: #8AB4F8;
+      border-radius: 5rem;
+      box-shadow: 0 0.6rem 5rem rgba(0, 0, 0, 0.25);
+      display: inline-block;
+      position: fixed;
+      bottom: 3rem;
+      right: 3rem;
+      line-height: 0; }
+      .mobile-navbar img {
+        padding: 2rem;
+        width: 8rem;
+        height: 8rem; }
+      .mobile-navbar__nav-items-list {
+        list-style: none;
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translateY(-110%);
+        border-radius: 1.5rem;
+        background-color: #FCD56C; }
+        .mobile-navbar__nav-items-list li {
+          padding: 2.5rem 4rem;
+          line-height: 1; }
+      .mobile-navbar input[type="checkbox"] {
+        display: none; }
+      input[type="checkbox"]:checked + .mobile-navbar__nav-items-list {
+        display: flex;
+        flex-direction: column; } }
 
 .notification {
   font-size: 2rem;
@@ -507,7 +547,8 @@ input[type="radio"]:checked + ::before {
   flex-basis: 65%; }
   @media (max-width: 37.5em) {
     .orders-history {
-      margin-bottom: 4rem; } }
+      margin-bottom: 4rem;
+      width: 100%; } }
   .orders-history > div:not(:last-child) {
     margin-bottom: 2rem; }
   .orders-history__individual {
@@ -932,7 +973,7 @@ input[type="radio"]:checked + ::before {
   border-radius: 1.5rem; }
   @media (max-width: 37.5em) {
     .section-shopping-cart .shopping-cart__products-list {
-      margin-bottom: 15rem; } }
+      margin-bottom: 25rem; } }
 
 .section-shopping-cart .cart-product {
   display: flex;

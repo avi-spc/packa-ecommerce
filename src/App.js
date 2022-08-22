@@ -18,6 +18,7 @@ import OrdersContextProvider from "./contexts/ordersContext";
 import CustomerContextProvider from "./contexts/customerContext";
 import Home from "./components/pages/home";
 import NotificationContextProvider from "./contexts/notificationContext";
+import MobileNavbar from "./components/navbar/MobileNavbar";
 
 function App() {
     return (
@@ -40,6 +41,7 @@ function App() {
                                             <Route path="/checkout" element={<Checkout />} />
                                             <Route path="/payment_progress" element={<PaymentProgress />} />
                                         </Routes>
+                                        <MobileNavbar />
                                         <Footer />
                                     </CustomerContextProvider>
                                 </OrdersContextProvider>
