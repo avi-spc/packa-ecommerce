@@ -97,6 +97,25 @@
             width: 100%;
         }
 
+        .back-btn {
+            display: none;
+
+            @include responsive(phone) {
+                display: inline-block;
+                padding: 2.5rem 3rem;
+                border-radius: $normal-border-radius;
+                background-color: $color-primary-dark;                
+            }
+        }
+
+        form {
+            @include responsive(phone) {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
         .product-search {
             &__search-category {
                 font-weight: 700;
@@ -108,6 +127,7 @@
                     display: none;
                 }
             }
+
 
             &__search-input {
                 font-family: inherit;
@@ -125,7 +145,7 @@
                 }
 
                 @include responsive(phone) {
-                    width: 100%;
+                    width: 84%;
                     border-radius: $normal-border-radius;
                 }
             }

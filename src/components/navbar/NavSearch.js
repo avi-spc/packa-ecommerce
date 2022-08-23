@@ -110,6 +110,9 @@ const NavSearch = () => {
         <div className="nav-primary__product-search">
             <div className="product-search__search-category">{searchString.baseCategory}</div>
             <form onSubmit={(e) => handleInitiateSearch(e)}>
+                <span className="btn back-btn" onClick={() => navigate(-1)}>
+                    &larr;
+                </span>
                 <input
                     className="product-search__search-input"
                     type="text"

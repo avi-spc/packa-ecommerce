@@ -13,10 +13,13 @@ const MobileNavbar = () => {
 			<input type="checkbox" id="mobile-nav" />
 			<ul className="mobile-navbar__nav-items-list">
 				<li>
-					<Link to="/returns_orders">Orders</Link>
+					<Link to="/">Home</Link>
 				</li>
 				<li>
 					<Link to="/shopcart">Cart</Link>
+				</li>
+				<li>
+					<Link to="/returns_orders">Orders</Link>
 				</li>
 			</ul>
 		</div>
