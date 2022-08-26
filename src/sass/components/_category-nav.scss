@@ -5,12 +5,18 @@
         font-weight: 700;
         background-color: $color-primary-light;
         margin-bottom: 8rem;
+
+        position: relative;
         
-        & ul {
+        ul {
             display: flex;
             list-style-type: none;
             padding: 3rem 16rem;
     
+            li {
+                cursor: pointer;
+            }
+
             & li:not(:last-child) {
                 margin-right: 4rem;
             }
@@ -20,5 +26,27 @@
             display: none;
         }
         
+        .products-category {
+            &__sub-categories {
+                flex-direction: column;
+                padding: 3rem 4rem;
+
+                position: absolute;
+                z-index: 100;
+                background-color: $color-significance-dark;
+                border-radius: $normal-border-radius;
+
+                li {
+                    margin: .5rem 0;
+
+                    &:hover {
+                        padding: .5rem 1.3rem;
+                        background-color: $color-primary-dark;
+                        border-radius: $normal-border-radius;
+                    }
+                }
+            }
+        }
     }
+
 }
