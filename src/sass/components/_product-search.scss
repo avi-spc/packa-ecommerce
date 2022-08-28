@@ -1,5 +1,9 @@
 .section-product-search {
     .product-filter {
+        @include responsive(tab_p) {
+            flex-basis: 28%;
+        }
+
         @include responsive(phone) {
             display: none;
         }
@@ -60,6 +64,11 @@
             grid-template-columns: repeat(3, minmax(0, 1fr));
             grid-gap: 5rem;
             flex-basis: 75%;
+
+            @include responsive(tab_p) {
+                flex-basis: 65%;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
 
             @include responsive(phone) {
                 width: 100%;

@@ -93,13 +93,13 @@
         .product-card__eta {
             background-color: $color-primary-dark;
 
-            @include responsive(phone) {
+            @include responsive(tab_p) {
                 justify-content: center;
                 margin-top: 2rem;
             }
         }
-        
-        @include responsive(phone) {
+
+        @include responsive (tab_p) {
             display: block;
             flex-direction: column;
         }

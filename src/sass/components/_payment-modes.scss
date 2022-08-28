@@ -24,6 +24,10 @@
         margin-left: 3rem;
         flex-basis: 50%;
 
+        @include responsive(tab_p) {
+            flex-basis: 70%;
+        }
+
         @include responsive(phone) {
             flex-basis: 100%;
         }

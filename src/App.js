@@ -19,6 +19,7 @@ import CustomerContextProvider from "./contexts/customerContext";
 import Home from "./components/pages/home";
 import NotificationContextProvider from "./contexts/notificationContext";
 import MobileNavbar from "./components/navbar/MobileNavbar";
+import Notification from "./components/utility/Notification";
 
 function App() {
     return (
@@ -42,6 +43,7 @@ function App() {
                                             <Route path="/payment_progress" element={<PaymentProgress />} />
                                         </Routes>
                                         <MobileNavbar />
+                                        <Notification />
                                         <Footer />
                                     </CustomerContextProvider>
                                 </OrdersContextProvider>

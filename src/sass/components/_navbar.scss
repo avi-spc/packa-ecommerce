@@ -4,6 +4,10 @@
     justify-content: space-between;
     align-items: center;
 
+    @include responsive(tab_p) {
+        margin: 3rem 6rem;
+    }
+
     @include responsive(phone) {
         &>:not(:nth-child(2)) {
             display: none;
@@ -142,6 +146,10 @@
 
                 &::placeholder {
                     font-style: italic;
+                }
+
+                @include responsive(tab_p) {
+                    width: 27rem;
                 }
 
                 @include responsive(phone) {

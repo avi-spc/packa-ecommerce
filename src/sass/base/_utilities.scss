@@ -1,6 +1,11 @@
 .container {
     margin: 0 16rem;
 
+    @include responsive(tab_p) {
+        margin: 0 6rem;
+        // margin-bottom: 15rem;
+    }
+
     @include responsive(phone) {
         margin: 0 4rem;
         margin-bottom: 15rem;
