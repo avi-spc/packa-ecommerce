@@ -1,9 +1,13 @@
 .container {
     margin: 0 16rem;
+    min-height: 70vh;
+
+    @include responsive(tab_l) {
+        margin: 0 10rem;
+    } 
 
     @include responsive(tab_p) {
         margin: 0 6rem;
-        // margin-bottom: 15rem;
     }
 
     @include responsive(phone) {

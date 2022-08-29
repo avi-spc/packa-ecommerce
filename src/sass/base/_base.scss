@@ -11,6 +11,10 @@
 html {
     font-size: 50%;
 
+    @include responsive(tab_l) {
+        font-size: 42%;
+    }
+
     @include responsive(tab_p) {
         font-size: 35%;
     }

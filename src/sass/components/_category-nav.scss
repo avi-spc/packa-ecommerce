@@ -13,6 +13,10 @@
             list-style-type: none;
             padding: 3rem 16rem;
 
+            @include responsive(tab_l) {
+                padding: 3rem 10rem;
+            }
+
             @include responsive(tab_p) {
                 padding: 3rem 6rem;
             }

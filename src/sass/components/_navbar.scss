@@ -4,6 +4,10 @@
     justify-content: space-between;
     align-items: center;
 
+    @include responsive(tab_l) {
+        margin: 3rem 10rem;
+    }
+
     @include responsive(tab_p) {
         margin: 3rem 6rem;
     }
