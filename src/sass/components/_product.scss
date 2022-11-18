@@ -1,117 +1,124 @@
 .product {
-    &__visuals-p-details {
-        display: flex;
+	&__visuals-p-details {
+		display: flex;
 
-        @include responsive(phone) {
-            flex-direction: column;
-            align-items: center;
-        }
-    }
+		@include responsive(phone) {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
 }
 
 .product-visuals {
-    width: 61.5rem;
-    margin-right: 7.5rem;
+	width: 61.5rem;
+	margin-right: 7.5rem;
 
-    @include responsive(phone) {
-        margin: 0;
-    }
+	@include responsive(phone) {
+		margin: 0;
+	}
 
-    &__primary {
-        height: 61.5rem;
-        background-color: $color-primary-light;
-        border-radius: $normal-border-radius;
-    }
+	&__primary {
+		height: 61.5rem;
+		background-color: $color-primary-light;
+		border-radius: $normal-border-radius;
 
-    &__secondary {
-        margin-top: 4rem;
-        display: flex;
-        justify-content: space-between;
-    }
+		overflow: hidden;
 
-    .secondary-visual {
-        width: 12.4rem;
-        height: 12.4rem;
-        background-color: $color-primary-light;
-        border-radius: $normal-border-radius;
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
 
-        &:not(:last-child){
-            margin-right: 4rem;
-        }
-    }
+	&__secondary {
+		margin-top: 4rem;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.secondary-visual {
+		width: 12.4rem;
+		height: 12.4rem;
+		background-color: $color-primary-light;
+		border-radius: $normal-border-radius;
+
+		&:not(:last-child) {
+			margin-right: 4rem;
+		}
+	}
 }
 
 .product-details {
-    &__brand-name {
-        margin-top: 1rem;
-        margin-bottom: 2rem;
-    }
+	&__brand-name {
+		margin-top: 1rem;
+		margin-bottom: 2rem;
+	}
 
-    @include responsive(phone) {
-        margin-top: 4rem;
-    }
+	@include responsive(phone) {
+		margin-top: 4rem;
+	}
 }
 
 .product-description {
-    &>div {
-        margin-top: 5rem;
-        margin-bottom: 3.5rem;
-    }
+	& > div {
+		margin-top: 5rem;
+		margin-bottom: 3.5rem;
+	}
 
-    p {
-        padding: 2.5rem;
-        font-size: $normal-font-size;
-        background-color: $color-primary-light;
-        border-radius: $normal-border-radius;
-    }
+	p {
+		padding: 2.5rem;
+		font-size: $normal-font-size;
+		background-color: $color-primary-light;
+		border-radius: $normal-border-radius;
+	}
 }
 
 .product-offers {
-    &>div:first-child {
-        margin-top: 5rem;
-        margin-bottom: 3.5rem;
-    }
+	& > div:first-child {
+		margin-top: 5rem;
+		margin-bottom: 3.5rem;
+	}
 
-    &__list{
-        padding: 1.5rem;
-        border: thin solid;
-        border-radius: $normal-border-radius;
+	&__list {
+		padding: 1.5rem;
+		border: thin solid;
+		border-radius: $normal-border-radius;
 
-        :not(:last-child) {
-            margin-bottom: 1.5rem;
-        }
-    }
+		:not(:last-child) {
+			margin-bottom: 1.5rem;
+		}
+	}
 
-    .offer {
-        padding: 2.7rem;
-        background-color: $color-primary-light;
-        border-radius: $normal-border-radius;
-    }
+	.offer {
+		padding: 2.7rem;
+		background-color: $color-primary-light;
+		border-radius: $normal-border-radius;
+	}
 }
 
 .related-products {
-    background-color: $color-primary-light;
-    border-radius: $normal-border-radius;
-    padding: 5rem 5rem 7rem 5rem;
-    margin-top: 15rem;
-    
-    &__arrows-p-items {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+	background-color: $color-primary-light;
+	border-radius: $normal-border-radius;
+	padding: 5rem 5rem 7rem 5rem;
+	margin-top: 15rem;
 
-        img {
-            flex-grow: .5;
-        }
-    }
+	&__arrows-p-items {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 
-    &__items {
-        display: flex;
-        justify-content: space-between;
-        padding: 3rem;
-        margin: 5rem 3rem 0 3rem;
-        flex-grow: 2;
-        background-color: $color-primary-dark;
-        border-radius: $normal-border-radius;
-    }
+		img {
+			flex-grow: 0.5;
+		}
+	}
+
+	&__items {
+		display: flex;
+		justify-content: space-between;
+		padding: 3rem;
+		margin: 5rem 3rem 0 3rem;
+		flex-grow: 2;
+		background-color: $color-primary-dark;
+		border-radius: $normal-border-radius;
+	}
 }

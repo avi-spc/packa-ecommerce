@@ -3,61 +3,65 @@
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 html {
-    font-size: 50%;
+	font-size: 50%;
 
-    @include responsive(tab_l) {
-        font-size: 42%;
-    }
+	@include responsive(tab_l) {
+		font-size: 42%;
+	}
 
-    @include responsive(tab_p) {
-        font-size: 35%;
-    }
+	@include responsive(tab_p) {
+		font-size: 35%;
+	}
 
-    @include responsive(phone) {
-        font-size: 35%;
-    }
+	@include responsive(phone) {
+		font-size: 35%;
+	}
 }
 
 body {
-    font-family: 'Sora', sans-serif;
-    line-height: 3rem;
+	font-family: 'Sora', sans-serif;
+	line-height: 3rem;
 
-    a {
-        text-decoration: none;
-        color: $color-black;
-    }
-    
-    label {
-        cursor: pointer;
-    }
+	a {
+		text-decoration: none;
+		color: $color-black;
+	}
+
+	label {
+		cursor: pointer;
+	}
 }
 
-input[type="radio"] {
-    display: none;
+input[type='radio'] {
+	display: none;
 }
 
 .icon-radio::before {
-    content: "";
-    width: 3rem;
-    height: 3rem;
-    background-image: url(/public/images/icons/radio_unchecked.svg);
-    background-size: cover;
-    display: flex;
+	content: '';
+	width: 3rem;
+	height: 3rem;
+	background-image: url(/public/images/icons/radio_unchecked.svg);
+	background-size: cover;
+	display: flex;
 
-    transition: all .2s;
+	transition: all 0.2s;
 }
 
-input[type="radio"]:checked + ::before {
-    background-image: url(/public/images/icons/radio_checked.svg);
+input[type='radio']:checked + ::before {
+	background-image: url(/public/images/icons/radio_checked.svg);
 }
 
 ::selection {
-    background-color: $color-primary-light;
-    color: $color-black;
+	background-color: $color-primary-light;
+	color: $color-black;
+}
+
+img {
+	object-fit: cover;
 }
